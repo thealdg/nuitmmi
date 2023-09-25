@@ -1,0 +1,38 @@
+#shop .logo img{
+    width: 200px;
+    display: block;
+    margin-inline: auto;
+}
+#shop .articles{
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+}
+#shop .article{
+    flex-basis: 33%;
+    margin-inline: 2rem;
+}
+#shop .article a{
+    display: block;
+    position: relative;
+}
+#shop .article a img{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+#shop .article a img.back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.2s;
+}
+#shop .article a:hover img.back{
+    opacity: 1;
+    transition: all 0.2s;
+}
+#shop .article h1{
+    font-size: 6rem;
+    text-align: center;
+}

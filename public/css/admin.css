@@ -1,0 +1,225 @@
+#deny{
+    display: none;
+}
+.deny_form{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 150px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.deny_form > div{
+    z-index: 3;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    border: solid white 1px;
+    background-color: #080808;
+}
+.deny_form form{
+    padding: 20px;
+    width: 80%;
+}
+.deny_form > div > label{
+    align-self: flex-end;
+    margin: 2rem;
+    font-weight: 300;
+}
+section th{
+    font-weight: normal;
+    color: #DAC469;
+    padding: 1rem;
+    border-bottom: solid #DAC469 1px;
+}
+section td{
+    font-weight: 300;
+    padding: 1rem;
+    padding-block: 3rem;
+    border-bottom: solid white 1px;
+    border-collapse: collapse;
+}
+section table{
+    width: 100%;
+    margin-inline: auto;
+    font-size: 2rem;
+}
+
+section thead, section tbody{
+    width: 100%;
+    text-align: center;
+}
+section h1{
+    margin-top: 15rem;
+    font-size: 6rem;
+    text-align: center;
+    color: #DAC469;
+}
+section i{
+    font-size: 5rem;
+    display: block;
+    margin: 0;
+}
+section a, section label{
+    font-size: 2rem;
+    color: #DAC469;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: normal;
+}
+#deny:checked + .deny_form{
+    display: block;
+}
+#deny:not(:checked) + .deny_form{
+    display: none;
+}
+.reasons label{
+    display: inline;
+    font-weight: normal;
+    font-size: 2rem;
+}
+.reasons{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.reasons div{
+    display: flex;
+    align-items: center;
+    margin-block: 1rem;
+}
+.reasons input[type="checkbox"]{
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+section textarea{
+    width: 100%;
+    resize: vertical;
+    margin-block: 2rem;
+    background-color: #080808;
+    color: white;
+    outline: none;
+    padding: 1rem;
+}
+.deny_form h2{
+    font-size: 4rem;
+}
+.deny_form button{
+    background-color: #080808;
+    border: solid white 1px;
+    background-color: #DAC469;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-block: 3rem;
+}
+.decision{
+    display: flex;
+    align-items: center;
+}
+.decision  > label{
+    color: red;
+    display: block;
+    font-size: 4rem;
+    margin-right: 1rem;
+}
+.decision a:nth-last-child(1){
+    color: green;
+    display: block;
+    margin-left: 1rem;
+}
+section form > div label{
+    color: white;
+}
+section form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 8rem;
+}
+section form div{
+    display: flex;
+    align-items: center;
+}
+section form input[type="search"] + label i{
+    opacity: 0.5;
+    font-size: 2.5rem;
+}
+section form div.search{
+    border-bottom: solid white 1px;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
+}
+section form input[type="search"]{
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    width: 200px;
+    margin-right: 1rem
+}
+section form select, section form option{
+    background: #080808;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    outline: none;
+    margin-left: 1rem;
+    color: #DAC469;
+}
+#admin{
+    padding: 0;
+}
+#admin .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#admin h1{
+    margin-bottom: 0;
+    margin-top: 20rem;
+}
+section .links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+}
+section .links a{
+    display: block;
+    font-size: 3rem;
+    color: white;
+    margin-block: 2rem;
+    position: relative;
+}
+section .links a::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background: white;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: all 0.2s;
+}
+section .links a:hover:after{
+    transform: scaleX(1);
+}
+body main {
+    padding: 0;
+}

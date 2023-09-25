@@ -1,0 +1,248 @@
+input[type="file"]{
+    display: none;
+}
+#popup{
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    backdrop-filter: brightness(0.5);
+}
+#popup .box{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    padding: 4rem;
+
+}
+#popup p{
+    max-width: 500px;
+    text-align: justify;
+    margin-block: 1rem;
+}
+#popup h2{
+    color: #DAC469;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+#popup a{
+    font-size: 2rem;
+    display: block;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+    transition: all 0.2s;
+}
+
+#popup a:hover{
+    color: white;
+}
+#popup button{
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding-block: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    border: none;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+#participate form{
+    width: 60%;
+}
+#participate form > div:not(.validate){
+    display: flex;
+    background-color: #080808;
+    padding: 2rem;
+    margin-block: 3rem;
+    border: solid white 1px;
+    position: relative;
+}
+.input{
+    align-items: center;
+    justify-content: space-between;
+}
+#participate .input label{
+    display: block;
+    font-size: 2.3rem;
+    flex-basis: 25%;
+}
+#participate label:not(.not_required)::after{
+    content: " *";
+    color: #DAC469;
+}
+#participate form > .description{
+    flex-direction: column;
+    padding: 0;
+}
+.description > label{
+    border-bottom: solid white 1px;
+    padding: 2rem;
+    padding-left: 0;
+    font-size: 2.3rem;
+}
+.files{
+    display: flex;
+    background-color: rgba(255, 255, 255,0.8);
+    padding: 2rem;
+}
+.files label{
+    font-size: 2rem;
+    color: #080808;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    margin-right: 2rem;
+    cursor: pointer;
+}
+.files label i{
+    margin-right: 1rem;
+}
+section h1{
+    font-size: 6rem;
+    color: #DAC469;
+    text-align: center;
+    margin-block: 10rem;
+}
+#participate input[type=text],#participate input[type=date],#participate select, #participate option,#participate textarea{
+    font-size: 2rem;
+    border: none;
+    color: white;
+    outline: none;
+    background: none;
+    width: 75%;
+    padding-block: 1rem;
+    font-weight: 300;
+}
+#participate ::placeholder{
+    opacity: 0.5;
+}
+#participate select, #participate option{
+    cursor: pointer;
+}
+#participate textarea{
+    width: 100%;
+    padding: 0;
+    resize: vertical;
+    margin-inline: auto;
+    display: block;
+    padding-block: 1rem;
+    margin-block: 3rem;
+}
+#participate input, #participate textarea{
+    border-bottom: solid white 1px;
+}
+#participate select{
+    border: solid white 1px;
+}
+#participate select{
+    background-color: #080808;
+    padding-inline: 1rem;
+}
+#participate form p{
+    position: absolute;
+    left: 105%;
+    top: 0;
+    transform: translate(0,0);
+    width: 75%;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: justify;
+    margin: 0;
+}
+#participate form p span{
+    color: #DAC469;
+    font-weight: normal;
+}
+#participate form p a{
+    text-decoration: underline;
+    text-decoration-color: #DAC469;
+}
+#participate form button{
+    background: none;
+    color: white;
+    border: solid white 1px;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    display: block;
+    margin-top: 5rem;
+    cursor: pointer;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+.validate{
+    border: none;
+    padding: 0;
+}
+#participate form .conditions div{
+    display: flex;
+    align-items: center;
+    margin-block: 1rem;
+}
+#participate form .validate label{
+    font-size: 1.8rem;
+}
+#participate form input[type="checkbox"]{
+    width: fit-content;
+    margin-right: 1rem;
+    cursor: pointer;
+
+}
+#participate .container > p{
+    font-size: 2rem;
+    font-weight: 300
+}
+#participate form .validate label span, #popup a{
+    color: #DAC469;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+#participate form .validate label span:after, #popup a:after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #DAC469;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: all 0.2s;
+}
+#popup a:after{
+    transform: scaleX(1);
+}
+#participate form .validate label span:hover:after{
+    transform: scaleX(1);
+    transition: all 0.2s;
+}
+#participate input[type="text"]{
+    border-bottom: solid white 1px;
+}
+#participate .container > p span{
+    color: #DAC469;
+    font-weight: normal;
+}
+.hidden{
+    display: none;
+}
+#preview{
+    aspect-ratio: 16/9;
+    height: 100px;
+    width: auto;
+    object-fit: contain;
+
+}

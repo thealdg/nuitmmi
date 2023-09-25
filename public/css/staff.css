@@ -1,0 +1,82 @@
+#about .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#about h1{
+    font-size: 6rem;
+    color: #DAC469 ;
+}
+#about h2{
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+#about p{
+    max-width: 1000px;
+    margin-block: 2rem;
+}
+#staff h2{
+    font-weight: normal;
+    font-size: 3rem;
+    margin-block: 5rem;
+}
+#staff .category{
+    border-bottom: solid rgba(255, 255, 255, 0.5) 2px;
+    padding-bottom: 8rem;
+}
+#staff .cards{
+    display: flex;
+}
+#staff .card{
+    flex-basis: 24%;
+    margin-right: 1%;
+    position: relative;
+}
+#staff .card img{
+    height: auto;
+    transition-timing-function: linear;
+    transition: all 0.5s;
+}
+#staff .card img.back{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+#staff .card img.front{
+    display: block;
+    width: 100%;
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+
+}
+#staff .card:hover img.back{
+    transform: rotate3d(1,0,0,30deg) translateY(50px);
+    opacity: 0.5;
+
+}
+#staff .card:hover img.front{
+    opacity: 1;
+    transform: translateY(-50px);
+    transition-delay: 0.2s;
+
+}
+#staff .card:hover h4{
+    transform: translateY(-50px);
+    transition-delay: 0.2s;
+}
+#staff h4{
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+    transition: all 0.5s;
+    font-family: Montserrat;
+}
+

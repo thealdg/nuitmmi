@@ -1,0 +1,301 @@
+input[type="radio"]{
+    display: none;
+}
+.container input[type="radio"]:not(:checked) + section{
+    display: none;
+}
+#logout{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    backdrop-filter: brightness(0.5);
+    z-index: 2;
+}
+#logout .box{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    padding: 4rem;
+}
+#logout .box p{
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 4rem;
+}
+#logout .box .choice > *{
+    font-size: 2.5rem;
+    cursor: pointer;
+    display: block;
+    width: fit-content;
+    margin-inline: 2rem;
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem 4rem;
+}
+#logout .box .choice{
+    display: flex;
+
+}
+#logout .box .choice span{
+    border: solid white 1px;
+}
+#logout .box .choice a{
+    background-color: white;
+    color: #080808;
+}
+#profil .container{
+    display: flex;
+    margin-top: 6rem;
+}
+#profil h1{
+    font-size: 6rem;
+    margin-top: 0;
+    color: #DAC469;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+#profil .container nav{
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.5rem;
+    border-right: solid white 1px;
+    padding-right: 5rem;
+}
+#profil .container nav label, #profil .container nav span{
+    display: block;
+    margin-bottom: 3rem;
+    cursor: pointer;
+    font-weight: normal;
+    transition: all 0.2s;
+    padding: 1rem 2rem;
+    position: relative;
+    text-decoration: none;
+    padding-right: 8rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+#profil .container nav > span{
+    color: #DAC469;
+    margin-top: 3rem;
+}
+#profil .container nav label.current{
+    background-color: rgba(255, 255, 255,0.1);
+    color: white;
+}
+#profil .container nav label.current:before{
+    content: "";
+    height: 90%;
+    width: 2px;
+    background-color: #DAC469;
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    border-radius: 15px;
+    transform: translateY(-50%);
+}
+#profil .container section{
+    flex-basis: 85%;
+    padding-left: 100px;
+    padding-block: 0;
+    padding-right: 0;
+}
+.works_section .works{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.works_section .work{
+    flex-basis: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+.works_section .work img{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.works_section .work h3{
+    font-size: 2.2rem;
+    color: #DAC469;
+    margin-block: 1rem;
+    margin-top: 2rem;
+    font-weight: normal;
+    font-family: Montserrat;
+}
+.works_section .work h4{
+    margin: 0;
+    font-weight: 300;
+    font-family: Montserrat;
+}
+.works_section .work h5{
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: Montserrat;
+
+}
+div.works.hidden{
+    display: none;
+}
+.switch{
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.switch h2{
+    font-size: 3rem;
+    font-weight: normal;
+    margin-inline: 2rem;
+    padding-block: 1rem;
+    position: relative;
+    margin-top: 0;
+}
+.current{
+    display: inline-block;
+    position: relative;
+}
+h2.current:after, .switch h2:after{
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #DAC469;
+    bottom: -2px;
+    left: 0;
+    position: absolute;
+    transform-origin: left;
+   
+}
+
+.switch h2:not(.current){
+    cursor: pointer;
+    opacity: 0.6;
+}
+.switch h2:not(.current):after{
+    transform: scaleX(0);
+    transition: all 0.2s;
+}
+.switch h2:not(.current):hover:after{
+    opacity: 1;
+    transform: scaleX(1);
+    transition: all 0.2s;
+   
+}
+.works_section p{
+    font-size: 2rem;
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+}
+.account_section form > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5rem;
+    flex-wrap: wrap-reverse;
+    
+}
+.account_section .infos{
+    flex-basis: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.account_section .infos .entry{
+    flex-basis: 45%;
+}
+.account_section .infos p{
+    font-style: italic;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+.account_section .pp{
+    flex-basis: 25%;
+    position: relative;
+}
+.account_section .pp img{
+    aspect-ratio: 1/1;
+    width: 100%;
+    min-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 100%;
+}
+input[type="file"]{
+    display: none;
+}
+.account_section, .security_section{
+    font-size: 2rem;
+}
+.account_section input, .security_section input{
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 300;
+    padding: 1rem;
+    border-bottom: solid white 1px;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+.account_section input#linkedin{
+    margin-bottom: 2rem;
+}
+.account_section input:read-only{
+    color: rgba(255, 255, 255, 0.6);
+}
+.account_section .infos label{
+    display: block;
+    white-space: nowrap;
+}
+.account_section button, .security_section button{
+    display: block;
+    width: fit-content;
+    padding: 1rem 3rem;
+    background: none;
+    border: solid white 1px;
+    color: white;
+    cursor: pointer;
+    margin-top: 5rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+.account_section .pp label{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+    background-color: #080808;
+    color: white;
+    border: solid #DAC469 1px;
+    padding: 1rem;
+    cursor: pointer;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+.security_section h2{
+    font-weight: normal;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+}
+.security_section button{
+    margin-top: 1rem;
+}
+.security_section form{
+    max-width: 60%;
+}

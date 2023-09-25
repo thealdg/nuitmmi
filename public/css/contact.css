@@ -1,0 +1,95 @@
+main{
+    background-color: #080808;
+}
+#contact{
+    background-color: #080808;
+    color: white;
+}
+#contact .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5rem;
+}
+
+#contact h1{
+    font-size: 4rem;
+    font-weight: 500;
+    flex-basis: 25%;
+    margin-block: 0;
+    white-space: nowrap;
+}
+.contact_form{
+    font-size: 2rem;
+    font-weight: 300;
+    padding-top: 50px;
+    border-top: solid white 1px;
+    flex-basis: 60%;
+    display: inline;
+    margin-top: 35px;
+}
+.contact_form form{
+    margin-bottom: 100px;
+}
+
+#contact form button{
+    display: block;
+    background: none;
+    border: solid white 1px;
+    color: white;
+    padding: 1rem 2rem;
+    cursor: pointer;
+}
+
+.contact_form form > *{
+    margin-block: 3rem;
+}
+.contact_form input, .contact_form textarea{
+    background: none;
+    color: white;
+    outline: none;
+    border: none;
+    border-bottom: solid white 1px;
+    padding-bottom: 1rem;
+}
+
+.contact_form textarea{
+    width: 100%;
+    resize: vertical;
+}
+.contact_form form > div{
+    display: flex;
+}
+.contact_form form > div input{
+    flex-grow: 1;
+}
+.contact_form form > div input:nth-child(1){
+    margin-right: 10px;
+}
+.contact_form form > div input:nth-child(2){
+    margin-left: 10px;
+}
+.contact_form > div{
+    display: flex;
+    flex-direction: column;
+}
+.contact_info{
+    display: flex;
+    
+}
+.contact_info > div{
+    flex-basis: 45%;
+    margin-right: 4rem;
+    margin-bottom: 3rem;
+}
+.contact_info b{
+    text-transform: capitalize;
+    font-weight: normal;
+}
+.contact_info > div i{
+    font-size: 3rem;
+    transform: translateY(-0.5rem);
+}
+.contact_info > div p{
+    margin-block: 1rem;
+}

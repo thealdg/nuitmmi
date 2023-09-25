@@ -1,0 +1,41 @@
+
+main, section{
+    padding: 0;
+}
+#confirm .container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#confirm h1{
+    font-size: 5rem;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin: 0;
+}
+#confirm p{
+    max-width: 1000px;
+    text-align: center;
+}
+#confirm p span{
+    color: #DAC469;
+    font-weight: normal;
+}
+#confirm input{
+    border: solid white 1px;
+    outline: none;
+    color: white;
+    background: none;
+    font-size: 6rem;
+    margin-top: 5rem;
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    text-indent: 2rem;
+    padding: 1rem;
+}
+#confirm form + p{
+    font-style: italic;
+}

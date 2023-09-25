@@ -1,0 +1,24 @@
+main > .container > section{
+    padding: 0;
+    margin-block: 10rem;
+}
+main > .container {
+    margin-top: 15rem;
+    text-align: justify;
+    
+}
+main > .container h1{
+    font-size: 6rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+main > .container > p{
+    width: 50%;
+    text-align: center;
+    margin-inline: auto;
+    margin-bottom: 15rem;
+}
+main > .container h2{
+    font-size: 3rem;
+    font-weight: normal;
+}

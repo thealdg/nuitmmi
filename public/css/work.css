@@ -1,0 +1,144 @@
+
+#work .category{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+}
+section .container{
+    max-width: 100%;
+    margin-inline: 10%;
+}
+#work h1{
+    font-size: 4.5rem;
+    font-style: italic;
+    margin: 0;
+    width: fit-content;
+}
+#work h2{
+    margin: 0;
+    font-weight: normal;
+    font-size: 3rem;
+    position: relative;
+
+}
+#work h2::after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #DAC469;
+    bottom: -5px;
+    left: 0;
+    position: absolute;
+    transform-origin: left;
+   
+}
+#work .work{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+}
+#work .work .thumbnail{
+    flex-basis: 45%;
+}
+#work .work .thumbnail img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    object-fit: cover;
+}
+#work .work .infos{
+    flex-basis: 40%;
+    font-size: 2rem;
+    text-align: justify;
+}
+#work .work h3{
+    font-size: 4rem;
+    margin: 0;
+    width: fit-content;
+    display: inline-block;
+    font-family: Montserrat;
+    margin-right: 1rem;
+    letter-spacing: 0;
+}
+#work .work h4{
+    font-weight: normal;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+    font-family: Montserrat;
+    letter-spacing: 0;
+}
+#work .work h4 span{
+    color: #DAC469;
+    font-family: Montserrat;
+    letter-spacing: 0;
+}
+#work .work p strong{
+    color: #DAC469;
+}
+#work .work p{
+    font-weight: 300;
+    margin-block: 3rem;
+}
+section h1{
+    font-size: 4rem;
+    white-space: nowrap;
+    margin-bottom: 6rem;
+}
+section h1 span{
+    color: #DAC469;
+    display: inline-block;
+    width: fit-content;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+section .works{
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+}
+section .works .work{
+    min-width: 30%;
+    max-width: 30%;
+    margin-right: 3.3333%;
+}
+section .works .work img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    height: auto;
+    object-fit: cover;
+    transition: all 0.5s;
+    border-radius: 10px;
+}
+section .works .work img:hover{
+    transform: scale(1.02);
+}
+section .works h2, section .works h3, section .works h4{
+    font-weight: normal;
+}
+section .works h2{
+    font-size: 3rem;
+    margin-top: 0;
+    white-space: nowrap;
+    font-family: Montserrat;
+    letter-spacing: 0;
+}
+section .works h3{
+    font-size: 2.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    font-family: Montserrat;
+    letter-spacing: 0;
+    
+}
+section .works h4{
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    color: #DAC469;
+    font-family: Montserrat;
+    letter-spacing: 0;
+    
+}

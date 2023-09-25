@@ -1,0 +1,114 @@
+.category h1{
+    font-size: 3rem;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    margin-bottom: 3rem;
+    width: fit-content;
+}
+.category h1 span{
+    color: #DAC469;
+    display: inline-block;
+    margin-left: 1rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+   
+}
+.category > a{
+    display: block;
+    width: fit-content;
+}
+.works{
+    display: flex;
+    flex-wrap: wrap;
+}
+.work{
+    flex-basis: 30%;
+    margin-right: 3.33%;
+    margin-block: 2rem;
+}
+.work img{
+    aspect-ratio: 16/9;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+.work img:hover{
+    transform: scale(1.02);
+}
+.work div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+.work h3, .work h4{
+    margin: 0;
+}
+.work h3{
+    font-size: 1.8rem;
+    text-align: left;
+    font-family: Montserrat;
+    letter-spacing: 0;
+    width: 60%;
+}
+.work h4{
+    font-size: 1.5rem;
+    color: #DAC469;
+    text-align: right;
+    font-family: Montserrat;
+    letter-spacing: 0;
+    width: 30%;
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+div.hidden{
+    display: none;
+}
+.switch{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 3rem;
+}
+.switch h3{
+    font-size: 3rem;
+    font-weight: normal;
+    position: relative;
+    margin-left: 3rem;
+}
+.current{
+    display: inline-block;
+    position: relative;
+}
+.current:after, .switch h3:after{
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #DAC469;
+    bottom: -5px;
+    left: 0;
+    position: absolute;
+    transform-origin: left;
+   
+}
+
+.switch h3:not(.current){
+    cursor: pointer;
+    opacity: 0.6;
+}
+.switch h3:not(.current):after{
+    transform: scaleX(0);
+    transition: all 0.2s;
+}
+.switch h3:not(.current):hover:after{
+    opacity: 1;
+    transform: scaleX(1);
+    transition: all 0.2s;
+   
+}
+.categoryName{
+    width: fit-content;
+}

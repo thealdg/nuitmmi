@@ -1,0 +1,209 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+#form h1{
+    font-size: 5rem;
+    text-align: center;
+}
+#form form{
+    width: 60%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem;
+}
+#form label{
+    font-size: 2rem;
+    margin-block: 1rem;
+    white-space: nowrap;
+    display: block;
+    font-weight: 300;
+
+}
+#form h2{
+    font-size: 3rem;
+}
+#form form > label, #form form .form_section > label{
+    font-weight: normal;
+    margin-top: 2rem;
+    margin-inline: 0;
+}
+#form form > label i, #form form .form_section > label i{
+    font-weight: 300;
+}
+#form input, #form select, #form option{
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+    outline: none;
+    background-color: #080808;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    margin-block: 1rem;
+}
+#form input:focus{
+    border-color: #DAC469;
+}
+#form input[type="checkbox"]{
+    transform: scale(1.5) translateY(0);
+}
+#form form div.form_section{
+    display: flex;
+    flex-direction: column;
+    margin-block: 3rem;
+}
+
+#form form > div:not(.link,.form_section){
+    display: flex;
+   flex-direction: column;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+#form form > div:not(.link,.form_section) > div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+#form form > div:not(.link,.form_section) > div > div{
+    display: flex;
+    align-items: center;
+    
+
+}
+#form form div.link{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+#form form div.link label{
+    font-size: 4rem;
+    margin: 0;
+    margin-right: 1.5rem;
+    display: block;
+}
+#form form div.link input{
+    width: 100%;
+    border: solid white 1px;
+}
+#form form div.link + p{
+    text-align: left;
+    font-style: italic;
+}
+#form select option:hover{
+    background-color: #DAC469;
+    color: white;
+}
+#form form div label{
+    margin-inline: 1.5rem;
+}
+#form a{
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    text-align: center;
+}
+#form a span{
+    color: #DAC469;
+    font-weight: normal;
+}
+#form a:hover{
+    text-decoration: underline;
+}
+#form button{
+    width: fit-content;
+    margin-inline: auto;
+    font-size: 2rem;
+    padding: 1rem 6rem;
+    cursor: pointer;
+    background: none;
+    border: solid white 1px;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+#form form p{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 0;
+}
+#form form p span{
+    color: #DAC469;
+}
+#form form > a{
+    margin-top: 2rem;
+}
+#confirm{
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.3);
+    z-index: 4;
+}
+#confirm > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid #DAC469 1px;
+    background-color: #080808;
+    padding: 5rem 8rem;
+}
+#confirm h1{
+    font-size: 4rem;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+#confirm a{
+    text-decoration: none;
+    color: #DAC469;
+    font-size: 2rem;
+    font-family: Cabin;
+    display: block;
+    width: fit-content;
+    border-bottom: solid #DAC469 1px;
+    font-family: Montserrat;
+    letter-spacing: 0;
+}
+#confirm p{
+    max-width: 700px;
+    text-align: center;
+    font-size: 1.8rem;
+}
+#confirm p span{
+    color: #DAC469;
+    font-weight: normal;
+    font-family: Montserrat;
+}
+#confirm input{
+    border: solid white 1px;
+    outline: none;
+    color: white;
+    background: none;
+    font-size: 4rem;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2rem;
+    text-indent: 1.5rem;
+    padding: 1rem;
+}
+#confirm form + p{
+    font-style: italic;
+}
+#form .container > p{
+    text-align: center;
+}

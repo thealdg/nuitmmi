@@ -1,0 +1,63 @@
+main > .container > fieldset{
+    padding: 3rem;
+    margin-block: 5rem;
+    border-width: 1px;
+}
+main > .container > fieldset legend{
+    font-size: 3.5rem;
+    padding-inline: 2rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+main > .container h1{
+    margin-bottom: 10rem;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+#general h2{
+    font-size: 4rem;
+    color: #DAC469;
+    text-align: center;
+    font-family: Moonic;
+    letter-spacing: 2px;
+}
+#general{
+    margin-bottom: 12rem;
+    text-align: center;
+}
+#general p{
+    max-width: 1000px;
+    margin-inline: auto;
+}
+main > .container > form > button{
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 1rem 3rem;
+    border: solid white 1px;
+    margin-top: 3rem;
+    margin-bottom: 10rem;
+    background: none;
+    cursor: pointer;
+}
+main > .container > form div{
+    display: flex;
+    margin-top: 10rem;
+    width: fit-content;
+    margin-inline: auto;
+}
+main > .container > form div label{
+    display: block;
+    margin-inline: 1rem;
+    font-weight: 300;
+    font-size: 2rem;
+}
+main > .container > form div input{
+    cursor: pointer;
+}
+
+
