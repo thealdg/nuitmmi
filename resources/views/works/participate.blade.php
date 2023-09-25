@@ -17,7 +17,8 @@
     <div class="container">
         <h1>Participer à La Nuit MMI</h1>
         <p>Les champs marqués d'un <span> * </span> sont obligatoires dans tous les cas.</p>
-        <form action="index.php?action=participateT" method="post" enctype="multipart/form-data">
+        <form action="{{route('participateT')}}" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="input">
                 <label for="title">Titre</label>
                 <input placeholder="Titre de l'oeuvre" type="text" name="title" id="title" required>
@@ -79,8 +80,8 @@
             </div>
             
         </form>
-        @if(isset($_SESSION["error"]))
-            <p id="error">{{$_SESSION["error"]}}</p>
+        @if(session()->has("error"))
+            <p id="error">{{session("error")}}</p>
             @unset($_SESSION["error"])
             @endif
     </div>
