@@ -129,5 +129,48 @@ class Visuals extends Controller
             return view("admin/moderation",compact("validations"));
         }
     }
+    function preorders(){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            if(isset($_GET["sort"])){
+                if($_GET["sort"] == "increasing"){
+                    $sort = "ORDER BY amount ASC";
+                } else if($_GET["sort"] == "decreasing"){
+                    $sort = "ORDER BY amount DESC";
+                } else if($_GET["sort"] == "alphabetical"){
+                    $sort = "ORDER BY preorders.name, preorders.surname ASC";
+                } 
+             
+            } else {
+                $sort = "ORDER BY preorders.name, preorders.surname ASC";
+            }
+            if(isset($_GET["search"]) and !empty($_GET["search"])){
+                $preorders = DB::select("SELECT preorders.*, merch.name AS productName, products.color, products.size, preorders.quantity * merch.price AS amount FROM preorders JOIN products ON preorders.idProduct = products.id JOIN merch ON products.idMerch = merch.id WHERE preorders.name LIKE ? OR preorders.surname LIKE ? ".$sort.";",[$_POST["search"]]);
+            } else {
+                $preorders = DB::select("SELECT preorders.*, merch.name AS productName, products.color, products.size, preorders.quantity * merch.price AS amount FROM preorders JOIN products ON preorders.idProduct = products.id JOIN merch ON products.idMerch = merch.id ".$sort.";");
+            }
+            return view("admin/preorders",compact("preorders"));
 
-}
+        }
+    }
+    function stocks(){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            if(isset($_GET["sort"])){
+                if($_GET["sort"] == "increasing"){
+                    $sort = "ORDER BY sold ASC";
+                } else if($_GET["sort"] == "decreasing"){
+                    $sort = "ORDER BY sold DESC";
+                } else if($_GET["sort"] == "alphabetical"){
+                    $sort = "ORDER BY name ASC";
+                }
+        } else {
+            $sort = "ORDER BY name ASC";
+        }
+        $stocks = DB::select("SELECT * FROM products JOIN merch ON products.idMerch = merch.id ".$sort.";");
+        return view("admin/stocks",compact("stocks"));
+    }
+    } 
+}  
