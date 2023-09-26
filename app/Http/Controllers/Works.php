@@ -57,8 +57,8 @@ class Works extends Controller
                     session(["error"=>"Une oeuvre dans cette catégorie est déjà validée ou est en cours de validation."]);
                     return back();
                 } else {
-                    $path = public_path("images/upload/".time()."_".session("id").".".pathinfo($_FILES["thumbnail"]["name"], PATHINFO_EXTENSION));
-                    move_uploaded_file($_FILES["thumbnail"]["tmp_name"],$path);
+                    $path = "images/upload/".time()."_".session("id").".".pathinfo($_FILES["thumbnail"]["name"], PATHINFO_EXTENSION);
+                    move_uploaded_file($_FILES["thumbnail"]["tmp_name"],public_path($path));
                     DB::insert("INSERT INTO works (authors,date,description,name,thumbnail,tools, context) VALUES (?,?,?,?,?,?,?);",[$_POST["authors"],$_POST["date"],$_POST["description"],$_POST["title"],$path,$_POST["tools"],$_POST["context"]]);
                     $id = DB::select("SELECT LAST_INSERT_ID() ass id;")[0]->id;
                     DB::insert("INSERT INTO validation (idUser,idCategory,idWork) VALUES (?,?,?);",[session("id"),$_POST["category"],$id]);
