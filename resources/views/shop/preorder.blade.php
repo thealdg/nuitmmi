@@ -38,11 +38,7 @@
 </form>
 </div>
 </section>
-<script>
-    setInterval(() => {
-        if(document.getElementById("code").value.length == 6){
-            document.getElementById("verify").submit();
-        }        
-    }, 100);
+<script src="{{asset('js/validationCode.js')}}">
+
 </script>
 @endsection
