@@ -29,6 +29,7 @@
         </div>
     </div>
 </section>
+@if(!empty($userWorks))
 <section id="userWorks">
     <div class="container">
         <h1>Découvrez les autres travaux de <span>@if(property_exists($userWorks[0], 'linkedin')) <a href="{{$userWorks[0]->linkedin}}">{{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}}</a>@else {{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}} @endif</span></h1>
@@ -48,6 +49,8 @@
         </div>
     </div>
 </section>
+@endif
+@if(!empty($categoryWorks))
 <section id="categoryWorks">
     <div class="container">
         <h1>Dans la même catégorie</h1>
@@ -66,4 +69,5 @@
         </div>
     </div>
 </section>
+@endif
 @endsection

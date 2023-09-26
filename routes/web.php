@@ -33,6 +33,13 @@ Route::get("/participer",[Visuals::class,"participate"])->name("participate");
 Route::get("/boutique/panier",[Visuals::class,"cart"])->name("cart");
 Route::get("/boutique/panier/precommander",[Visuals::class,"preorder"])->name("preorder");
 
+Route::get("/admin",[Visuals::class,"admin"])->name("admin");
+Route::get("/admin/moderation",[Visuals::class,"moderation"])->name("moderation");
+Route::get("/admin/moderation/allow/{id}",[Works::class,"allow"])->name("allow");
+Route::post("/admin/moderation/deny",[Works::class,"deny"])->name("deny");
+Route::get("/admin/precommandes",[Visuals::class,"preorders"])->name("preorders");
+Route::get("/admin/stocks",[Visuals::class,"stocks"])->name("stocks");
+
 Route::post("/profil/connexionT",[Users::class,"login"])->name("loginT");
 Route::get("/profil/deconnexion",[Users::class,"logout"])->name("logout");
 Route::post("/profil/registerT",[Users::class,"register"])->name("registerT");

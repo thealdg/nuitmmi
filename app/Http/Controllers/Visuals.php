@@ -114,5 +114,20 @@ class Visuals extends Controller
             return back();
         }
     }
+    function admin(){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            return view("admin/admin");
+        }
+    }
+    function moderation(){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            $validations = DB::select("SELECT works.id AS workId, works.name AS workName, works.competition, users.*, categories.name AS categoryName FROM works JOIN validation ON works.id = validation.idWork JOIN users ON validation.idUser = users.id JOIN categories ON validation.idCategory = categories.id WHERE validation.result IS NULL;");
+            return view("admin/moderation",compact("validations"));
+        }
+    }
 
 }

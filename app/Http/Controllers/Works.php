@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Mail\Allow;
+use App\Mail\Deny;
+use Illuminate\Support\Facades\Mail;
 class Works extends Controller
 {
     function participate(){
@@ -72,5 +75,46 @@ class Works extends Controller
                     return redirect("/");
                 }
             }
+    }
+    function allow($id){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            DB::update("UPDATE validation SET result = 1 WHERE idWork = ?",[$id]);
+            $infos = DB::select("SELECT users.name AS userName, users.email, users.surname AS userSurname, categories.name AS category, works.name AS workName, works.competition FROM users JOIN validation ON users.id = validation.idUser JOIN works ON validation.idWork = works.id JOIN categories ON validation.idCategory = categories.id WHERE validation.idWork = ?",[$id])[0];
+            Mail::to($infos->email)->send(new Allow($infos));
+            return back();
+        }
+    }
+    function deny(){
+        if(!session()->has("admin")){
+            return redirect("/");
+        } else {
+            if(!isset($_POST["reasons"]) and !isset($_POST["more_reasons"])){
+                session(["error"=>"Aucune raison n'a été entrée, veuillez recommencer."]);
+                return back();
+            } else {
+                $reasons = "";
+                if(isset($_POST["reasons"])){
+                    foreach($_POST["reasons"] as $reason){
+                        if(in_array($reason, ["Atteinte aux droits d'auteurs","Non respect des conditions de participation","Oeuvre non neutre"])){
+                            $reasons = $reasons.$reason."<br>";
+                        }
+                    }
+                } else {
+                    $reasons = $reasons."Autre's) raison(s)";
+                }
+                DB::update("UPDATE validation SET result = 0, commentary = ? WHERE validation.idWork = ?",[$reasons,$_POST["id"]]);
+                $infos = DB::select("SELECT users.name AS userName, users.email, users.surname AS userSurname, categories.name AS category, works.name AS workName, works.competition FROM users JOIN validation ON users.id = validation.idUser JOIN works ON validation.idWork = works.id JOIN categories ON validation.idCategory = categories.id WHERE validation.idWork = ?",[$_POST["id"]])[0];
+                if(isset($_POST["more_reasons"])){
+                    $reasons = ["reasons" => $reasons, "more_reasons"=>$_POST["more_reasons"]];
+                } else {
+                    $reasons = ["reasons"=>$reasons];
+                }
+                Mail::to($infos->email)->send(new Deny($infos,$reasons));
+                return back();
+
+            }
+        }
     }
 }

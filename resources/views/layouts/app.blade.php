@@ -44,7 +44,7 @@ $headerCategories = DB::select("SELECT * FROM categories");
                 <a href="{{route('shop')}}">Boutique</a>
                 <a href="{{route('about')}}">À propos</a>
                 @if(session()->has("admin") and session("admin")==true)
-                <a href="index.php?action=admin">Administration</a>
+                <a href="{{route('admin')}}">Administration</a>
                 @else
                 <a href="{{route('participate')}}">Participer</a>
                 @endif 

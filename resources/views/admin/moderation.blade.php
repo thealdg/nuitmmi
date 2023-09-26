@@ -1,7 +1,7 @@
 
 @extends("layouts.app")
 @section("css")
-<link rel="stylesheet" href="css/admin.css">
+<link rel="stylesheet" href="{{asset('css/admin.css')}}">
 @endsection
 @section("content")
 <section id="validations">
@@ -24,17 +24,17 @@
                 @if(!empty($validations))
                 @foreach($validations as $validation)
                 <tr>
-                    <td>{{$validation["name"]}} {{$validation["surname"]}}</td>
-                    <td>{{$validation["workName"]}}</td>
-                    <td>{{$validation["categoryName"]}}</td>
-                    <td>{{$validation["email"]}}</td>
-                    <td>{{$validation["phone"]}}</td>
-                    @if($validation["competition"] == "1")
+                    <td>{{$validation->name}} {{$validation->surname}}</td>
+                    <td>{{$validation->workName}}</td>
+                    <td>{{$validation->categoryName}}</td>
+                    <td>{{$validation->email}}</td>
+                    <td>{{$validation->phone}}</td>
+                    @if($validation->competition == "1")
                     <td>Oui</td>
                     @else
                     <td>Non</td>
                     @endif
-                    <td><a href="index.php?action=work&id={{$validation['workId']}}">Voir</a></td>
+                    <td><a href="{{route('work',[$validation->categoryName,$validation->workId])}}">Voir</a></td>
                     <td><div class="decision">
                                 <label for="deny">X</label>
                                 <input type="checkbox" id="deny">
@@ -42,7 +42,8 @@
                                     <div>
                                         <label for="deny">X</label>
                                         <h2>Rejeter une oeuvre</h2>
-                                        <form action="index.php?action=deny&id={{$validation['workId']}}" method="post">
+                                        <form action="{{route('deny')}}" method="post">
+                                            @csrf
                                             <div class="reasons">
                                                 <div>
                                                     <input type="checkbox" name="reasons[]" id="plagiat" value="Atteinte aux droits d'auteurs">
@@ -58,11 +59,12 @@
                                                 </div>
                                             </div>
                                             <textarea name="more_reasons" rows="5" placeholder="Autres raisons"></textarea>
+                                            <input type="hidden" name="id" value="{{$validation->workId}}">
                                             <button type="submit">Rejeter la participation</button>
                                         </form>
                                     </div>
                                 </div>
-                            <a href="index.php?action=validate&id={{$validation['workId']}}"><i class='bx bx-check'></i></a>
+                            <a href="{{route('allow',[$validation->workId])}}"><i class='bx bx-check'></i></a>
                         </div></td>
                 </tr>
                 @endforeach
