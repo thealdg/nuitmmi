@@ -79,6 +79,7 @@ class Visuals extends Controller
 
     }
     function cart(){
+        
         if(!session()->has("cart") or empty(session("cart"))){
             return redirect(route("shop"));
         } else {

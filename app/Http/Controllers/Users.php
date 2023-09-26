@@ -90,6 +90,7 @@ class Users extends Controller
                     session(["error"=>"Le code rentré n'est pas le bon, veuillez recommencer."]);
                     return redirect(route("register"));
                 } else {
+                    Cookie::queue(Cookie::forget("verify"));
                     DB::insert("INSERT INTO users(name,surname,email,password,year) VALUES (?,?,?,SHA1(?),?)",[session("register")["name"],session("register")["surname"],session("register")["email"],session("register")["password"],session("register")["year"]]);
                     $id = DB::select("SELECT LAST_INSERT_ID() AS id;")[0];
                     if(isset(session("register")["phone"])){

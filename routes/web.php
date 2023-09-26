@@ -39,6 +39,8 @@ Route::post("/profil/registerT",[Users::class,"register"])->name("registerT");
 Route::post("/profil/register/validation",[Users::class,"validation"])->name("registerValidation");
 Route::post("/partipateR",[Visuals::class,"participateRead"])->name("participateRead");
 Route::post("/participer/participateT",[Works::class,"participate"])->name("participateT");
+Route::post("/boutique/panier/precommander/preorderT",[Shop::class,"preorder"])->name("preorderT");
+Route::post("/boutique/panier/precommander/validation",[Shop::class,"validation"])->name("preorderValidation");
 
 Route::post("/boutique/panier/ajouter",[Shop::class,"addCart"])->name("addCart");
 
