@@ -27,7 +27,7 @@ class Users extends Controller
                     Cookie::queue("password",$_POST["password"],60*24*30);
                 }
                 session(["id"=>$line->id]);
-                if(isset($line->profilePicture)){
+                if(property_exists($line,"profilePicture")){
                     session(["profilePicture"=> $line->profilePicture]);
                 }
                 if($line->admin == 1){
@@ -125,6 +125,7 @@ class Users extends Controller
                         $path = "images/upload/profilePictures/".session("id").".".pathinfo($_FILES["profilePic"]["name"], PATHINFO_EXTENSION);
                         move_uploaded_file($_FILES["profilePic"]["tmp_name"],public_path($path));
                         DB::update("UPDATE users SET profilePicture = ? WHERE users.id = ?",[$path,session("id")]);
+                        session(["profilePicture"=> $path]);
                     }
                     if(isset($_POST["linkedin"]) and filter_var($_POST["linkedin"],FILTER_VALIDATE_URL) and str_contains($_POST["linkedin"],"https://www.linkedin.com/in")){
                         DB::update("UPDATE users SET linkedin = ? WHERE id = ?",[$_POST["linkedin"],session("id")]);

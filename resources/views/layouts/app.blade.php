@@ -56,11 +56,11 @@ $headerCategories = DB::select("SELECT * FROM categories");
                         @else
                         <a href="{{route('login')}}">
                         @endif
-                            @if(session()->has("profilPicture"))
-                            <img src="{{asset(session('profilPicture'))}}" alt="">
-                            
+                            @if(session()->has("profilePicture"))
+                            <img src="{{asset(session('profilePicture'))}}" alt="Photo de profil">
+
                             @else
-                            <img src="{{asset('images/icons/profile.png')}}" alt="">
+                            <img src="{{asset('images/icons/profile.png')}}" alt="Photo de profil">
                            
                             @endif</a>
             </div>
