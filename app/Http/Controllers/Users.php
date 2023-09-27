@@ -108,17 +108,15 @@ class Users extends Controller
         function edit(){
             if(!session()->has("id")){
                 return redirect(route("login"));
-            } else {
-                if(!isset($_POST["email"])){
-                    session(["error"=>"Erreur lors de la modification de l'email."]);
-                    return back();
-                } else {
-                    $query = DB::select("SELECT * FROM users WHERE email=? AND id!=?",[$_POST["email"],session("id")]);
-                    if(!empty($query)){
-                        session(["error"=>"Adresse email déjà existante."]);
-                        return back();
-                    } else {
-                        DB::update("UPDATE users SET email = ? WHERE users.id = ?;",[$_POST["email"],session("id")]);
+            } else { 
+                    if(isset($_POST["email"])){       
+                        $query = DB::select("SELECT * FROM users WHERE email=? AND id!=?",[$_POST["email"],session("id")]);
+                        if(!empty($query)){
+                            session(["error"=>"Adresse email déjà existante."]);
+                            return back();
+                        } else {
+                            DB::update("UPDATE users SET email = ? WHERE users.id = ?;",[$_POST["email"],session("id")]);
+                        }
                     }
                     if(isset($_POST["phone"])){
                         DB::update("UPDATE users SET phone = ? WHERE users.id = ?;",[$_POST["phone"],session("id")]);
@@ -131,10 +129,26 @@ class Users extends Controller
                     if(isset($_POST["linkedin"]) and filter_var($_POST["linkedin"],FILTER_VALIDATE_URL) and str_contains($_POST["linkedin"],"https://www.linkedin.com/in")){
                         DB::update("UPDATE users SET linkedin = ? WHERE id = ?",[$_POST["linkedin"],session("id")]);
                     }
+                    if(isset($_POST["oldPassword"]) and isset($_POST["password1"]) and isset($_POST["password2"])){
+                        if($_POST["password1"]!=$_POST["password2"]){
+                            session(["error"=>"Les mots de passe ne correspondent pas."]);
+                            return back();
+                        } else {
+                            $query = DB::select("SELECT * FROM users WHERE id = ? AND password LIKE SHA1(?);",[session("id"),$_POST["oldPassword"]]);
+                            if(empty($query)){
+                                session(["error"=>"Le mot de passe actuel n'est pas le bon."]);
+                                return back();
+                            } else {
+                                DB::UPDATE("UPDATE users SET password = SHA1(?) WHERE id = ?;",[$_POST["password1"],session("id")]);
+                                return back();
+                            }
+                        }
+                    }
+
                     return back();
                 }
                 
             }
         }
 
-    }
+    

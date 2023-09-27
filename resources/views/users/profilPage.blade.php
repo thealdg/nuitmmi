@@ -62,7 +62,8 @@
         <section class="security_section">
             <h1>Sécurité</h1>
             <h2>Changer le mot de passe</h2>
-            <form action="index.php?action=updateT" method="post">
+            <form action="{{route('edit')}}" method="post">
+                @csrf
                 <label for="oldPassword">Mot de passe actuel</label>
                 <input type="password" name="oldPassword" id="oldPassword">
                 <label for="password1">Nouveau mot de passe</label>
