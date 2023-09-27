@@ -43,6 +43,8 @@ Route::get("/admin/stocks",[Visuals::class,"stocks"])->name("stocks");
 Route::post("/profil/connexionT",[Users::class,"login"])->name("loginT");
 Route::get("/profil/deconnexion",[Users::class,"logout"])->name("logout");
 Route::post("/profil/registerT",[Users::class,"register"])->name("registerT");
+Route::post("/profil/edit",[Users::class,"edit"])->name("edit");
+
 Route::post("/profil/register/validation",[Users::class,"validation"])->name("registerValidation");
 Route::post("/partipateR",[Visuals::class,"participateRead"])->name("participateRead");
 Route::post("/participer/participateT",[Works::class,"participate"])->name("participateT");

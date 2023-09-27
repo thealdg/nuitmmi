@@ -25,7 +25,8 @@
         <input type="radio" id="account" name="section" checked>
         <section class="account_section">
             <h1>Mon compte</h1>
-            <form action="index.php?action=updateT" method="post" enctype="multipart/form-data">
+            <form action="{{route('edit')}}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div>
                 <div class="infos">
                     <div class="entry">

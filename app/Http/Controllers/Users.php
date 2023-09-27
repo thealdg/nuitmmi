@@ -105,5 +105,36 @@ class Users extends Controller
                 }
             }
         }
+        function edit(){
+            if(!session()->has("id")){
+                return redirect(route("login"));
+            } else {
+                if(!isset($_POST["email"])){
+                    session(["error"=>"Erreur lors de la modification de l'email."]);
+                    return back();
+                } else {
+                    $query = DB::select("SELECT * FROM users WHERE email=? AND id!=?",[$_POST["email"],session("id")]);
+                    if(!empty($query)){
+                        session(["error"=>"Adresse email déjà existante."]);
+                        return back();
+                    } else {
+                        DB::update("UPDATE users SET email = ? WHERE users.id = ?;",[$_POST["email"],session("id")]);
+                    }
+                    if(isset($_POST["phone"])){
+                        DB::update("UPDATE users SET phone = ? WHERE users.id = ?;",[$_POST["phone"],session("id")]);
+                    }
+                    if(isset($_FILES["profilePic"])){
+                        $path = "images/upload/profilePictures/".session("id").".".pathinfo($_FILES["profilePic"]["name"], PATHINFO_EXTENSION);
+                        move_uploaded_file($_FILES["profilePic"]["tmp_name"],public_path($path));
+                        DB::update("UPDATE users SET profilePicture = ? WHERE users.id = ?",[$path,session("id")]);
+                    }
+                    if(isset($_POST["linkedin"]) and filter_var($_POST["linkedin"],FILTER_VALIDATE_URL) and str_contains($_POST["linkedin"],"https://www.linkedin.com/in")){
+                        DB::update("UPDATE users SET linkedin = ? WHERE id = ?",[$_POST["linkedin"],session("id")]);
+                    }
+                    return back();
+                }
+                
+            }
+        }
 
     }
