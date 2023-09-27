@@ -53,7 +53,7 @@
                     <input type="number" name="quantity" min="1" max="5" value="1">
                 </div>
                 <input type="hidden" name="id" value="{{$id}}">
-                <button type="submit">Ajouter aux précommandes</button>
+                <button type="submit">Ajouter au panier</button>
             </form>
         </div>
     </div>

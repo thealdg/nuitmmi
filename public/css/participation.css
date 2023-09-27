@@ -28,6 +28,7 @@ main > .container h1{
 #general p{
     max-width: 1000px;
     margin-inline: auto;
+    text-align: justify;
 }
 main > .container > form > button{
     display: block;

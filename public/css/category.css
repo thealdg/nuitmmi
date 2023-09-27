@@ -75,7 +75,9 @@ section#title:not(.empty) .container h2{
     
 }
 section h2 span{
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;      
 }
 section h2 span a{
     color: inherit;
@@ -149,7 +151,7 @@ section h2 span a{
     content: "";
     width: 100%;
     height: 1px;
-    background-color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
     bottom: -5px;
     left: 0;
     position: absolute;

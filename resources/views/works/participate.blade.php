@@ -16,7 +16,7 @@
 <section id="participate">
     <div class="container">
         <h1>Participer à La Nuit MMI</h1>
-        <p>Les champs marqués d'un <span> * </span> sont obligatoires dans tous les cas.</p>
+        <p>Les champs marqués d'un <span> * </span> sont obligatoires.</p>
         <form action="{{route('participateT')}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="input">
@@ -39,7 +39,7 @@
                 <input type="file" name="thumbnail" id="thumbnail" accept="image/*" onchange="loadFile(event)" required>
                 <img src="#" alt="preview" class="hidden" id="preview">
             </div>
-            <p>Une <span>miniature</span> est obligatoire à fournir afin de participer. Celle-ci doit être en format <span>png</span> ou <span>jpg</span> de dimensions <span>1920x1080</span>.</p>
+            <p>Une <span>miniature</span> est obligatoire afin de participer. Celle-ci doit être en format <span>png</span> ou <span>jpg</span> de dimensions <span>1920x1080</span>.</p>
             </div>
             <div class="input">
                 <label for="category">Catégorie</label>

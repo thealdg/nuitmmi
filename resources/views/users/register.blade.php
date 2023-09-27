@@ -6,7 +6,7 @@
 @if(isset($_COOKIE["verify"]))
 <section id="confirm">
     <div>
-        <h1>Vérifiez votre adresse email</h1>
+        <h1>Vérifier votre adresse email</h1>
         <p>Un code à six chiffres a été envoyé à l'adresse <span>{{session("register")["email"]}}</span>. Entrez le code ci-dessous pour confirmer votre adresse email.</p>
         <form action="{{route('registerValidation')}}" method="post" id="verify">
             @csrf

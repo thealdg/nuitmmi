@@ -5,14 +5,20 @@
     align-items: center;
     margin-bottom: 3rem;
     width: fit-content;
+    text-transform: none;
 }
 .category h1 span{
-    color: #DAC469;
     display: inline-block;
     margin-left: 1rem;
     font-family: Moonic;
     letter-spacing: 2px;
-   
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.category{
+    margin-bottom: 5rem;
 }
 .category > a{
     display: block;
@@ -39,31 +45,24 @@
     transform: scale(1.02);
 }
 .work div{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 2rem;
 }
 .work h3, .work h4{
     margin: 0;
 }
 .work h3{
-    font-size: 1.8rem;
-    text-align: left;
+    font-size: 2rem;
     font-family: Montserrat;
     letter-spacing: 0;
-    width: 60%;
 }
 .work h4{
-    font-size: 1.5rem;
-    color: #DAC469;
-    text-align: right;
+    font-size: 1.8rem;
     font-family: Montserrat;
     letter-spacing: 0;
-    width: 30%;
-    text-overflow: ellipsis;
-    overflow: hidden; 
-    white-space: nowrap;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin-top: 1rem;
 }
 div.hidden{
     display: none;
@@ -87,7 +86,7 @@ div.hidden{
     content: "";
     width: 100%;
     height: 1px;
-    background-color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
     bottom: -5px;
     left: 0;
     position: absolute;

@@ -188,6 +188,8 @@ main{
     color: #DAC469;
     font-weight: normal;
     font-family: Montserrat;
+    text-decoration: underline;
+    text-decoration-color: #DAC469;
 }
 #confirm input{
     border: solid white 1px;

@@ -12,7 +12,7 @@ class Visuals extends Controller
         return view("index",compact("categories"));
     }
     function works(){
-        $works = DB::select("SELECT categories.name as categoryName, works.*, validation.idCategory, users.year FROM works JOIN validation ON works.id = validation.idWork JOIN categories ON validation.idCategory = categories.id JOIN users ON validation.idUser = users.id WHERE validation.result = 1");
+        $works = DB::select("SELECT categories.name as categoryName, works.*, validation.idCategory, users.year FROM works JOIN validation ON works.id = validation.idWork JOIN categories ON validation.idCategory = categories.id JOIN users ON validation.idUser = users.id WHERE validation.result = 1 ORDER BY categoryName");
         $categories = [];
         $competitions = [];
         foreach($works as $work){

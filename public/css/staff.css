@@ -14,7 +14,7 @@
     margin-bottom: 2rem;
 }
 #about p{
-    max-width: 1000px;
+    text-align: justify;
     margin-block: 2rem;
 }
 #staff h2{
