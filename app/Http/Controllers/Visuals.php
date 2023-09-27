@@ -173,4 +173,15 @@ class Visuals extends Controller
         return view("admin/stocks",compact("stocks"));
     }
     } 
+    function password(){
+        return view("users/resetPassword");
+    }
+    function changePassword($email,$token){
+        if(session("token")["email"]!=$email or session("token")["code"]!=$token){
+            return(route("password"));
+        } else {
+            return view("users/changePassword");
+
+        }
+    }
 }  

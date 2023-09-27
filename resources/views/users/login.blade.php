@@ -18,7 +18,7 @@
             @endif
             <button type="submit">Valider</button>
             <a href="{{route('register')}}">Pas de compte? <span>Inscrivez-vous !</span></a>
-            <a href="index.php?action=profil&page=resetPassword"><span>Mot de passe oublié ?</span></a>
+            <a href="{{route('password')}}"><span>Mot de passe oublié ?</span></a>
         </form>
     </div>
 </section>

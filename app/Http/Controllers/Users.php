@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cookie;
 use App\Mail\Validation;
+use App\Mail\ResetPassword;
 use Illuminate\Support\Facades\Mail;
 class Users extends Controller
 {
@@ -149,6 +150,38 @@ class Users extends Controller
                     return back();
                 }
                 
+            }
+            function resetPassword(){
+                if(!isset($_POST["email"]) or !filter_var($_POST["email"],FILTER_VALIDATE_EMAIL)){
+                    session(["error"=>"Erreur lors de l'insertion du mail, veuillez recommencer."]);
+                    return back();
+                } else {
+                    $query = DB::SELECT("SELECT * FROM users WHERE email LIKE ?",[$_POST["email"]]);
+                    if(empty($query)){
+                        session(["error"=>"Adresse email non reconnue, veuillez recommencer."]);
+                        return back();
+                    } else {
+                        $query = $query[0];
+                        session(["token"=>["email"=>$_POST["email"],"code"=>bin2hex(random_bytes(10))]]);
+                        Mail::to($_POST["email"])->send(new ResetPassword($query->name." ".$query->surname,$query->email,session("token")["code"]));
+                        return back();
+                    }    
+                }
+
+            }
+            function changePasswordT(){
+                if(!isset($_POST["password1"]) or !isset($_POST["password2"]) or !session()->has("token")){
+                    session(["error"=>"Erreur lors de l'insertion des mots de passes, veuillez recommencer."]);
+                    return back();
+                } else {
+                    if($_POST["password1"]!=$_POST["password2"]){
+                        session(["error"=>"Les mots de passe ne correspondent pas."]);
+                        return back();
+                    } else {
+                        DB::update("UPDATE users SET password = SHA1(?) WHERE email LIKE ?",[$_POST["password1"],session("token")["email"]]);
+                        return redirect(route("login"));
+                    }
+                }
             }
         }
 
