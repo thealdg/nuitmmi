@@ -33,7 +33,7 @@ main{
     font-weight: 300;
 }
 #form input, #form select, #form option{
-    padding: 1rem;
+    padding-block: 1rem;
     font-size: 2rem;
     font-weight: 300;
     outline: none;
@@ -87,6 +87,7 @@ main{
 #form form div.link input{
     width: 100%;
     border: solid white 1px;
+    padding-inline: 1rem;
 }
 #form form div.link + p{
     text-align: left;

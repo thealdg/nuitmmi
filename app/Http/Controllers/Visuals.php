@@ -100,11 +100,16 @@ class Visuals extends Controller
         }
     }
     function participate(){
-        if(!Cookie::has("participate") or isset($_GET["modalite"])){
-            return view("works/participation");
+        if(!session()->has("id")){
+            return redirect(route("login"));
         } else {
-            return view("works/participate");
+            if(!Cookie::has("participate") or isset($_GET["modalite"])){
+                return view("works/participation");
+            } else {
+                return view("works/participate");
+            }
         }
+        
     }
     function participateRead(){
         if(isset($_POST["read"])){

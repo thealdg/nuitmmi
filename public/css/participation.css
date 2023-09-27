@@ -43,6 +43,7 @@ main > .container > form > button{
     margin-bottom: 10rem;
     background: none;
     cursor: pointer;
+    font-family: Moonic;
 }
 main > .container > form div{
     display: flex;

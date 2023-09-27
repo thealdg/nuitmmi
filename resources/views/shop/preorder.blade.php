@@ -28,11 +28,11 @@
         @csrf
         <div class="form_section">
         <h2>Informations personnelles</h2>
-            <label for="surname">Nom</label><input type="text" name="surname" required id="surname" value="<?php if(isset($infos) and property_exists($infos,"surname")): echo $infos->surname; endif;?>">
-            <label for="name">Prénom</label><input type="text" name="name" required id="name" value="<?php if(isset($infos) and property_exists($infos,"name")): echo $infos->name; endif;?>">
+            <label for="surname">Nom</label><input type="text" name="surname" required id="surname" value="<?php if(isset($infos) and property_exists($infos,"surname")): echo $infos->surname; endif;?>" placeholder="Votre nom">
+            <label for="name">Prénom</label><input type="text" name="name" required id="name" value="<?php if(isset($infos) and property_exists($infos,"name")): echo $infos->name; endif;?>" placeholder="Votre prénom">
         </div>
-        <div class="form_section"><h2>Contact</h2><label for="email">Email</label><input type="email" name="email" id="email"  required value="<?php if(isset($infos) and property_exists($infos,"email")): echo $infos->email; endif;?>">
-            <label for="phone">Numéro de téléphone <i>(optionnel)</i></label><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" value="<?php if(isset($infos) and property_exists($infos,"phone")): echo $infos->phone; endif;?>"></div>
+        <div class="form_section"><h2>Contact</h2><label for="email">Email</label><input type="email" name="email" id="email"  required value="<?php if(isset($infos) and property_exists($infos,"email")): echo $infos->email; endif;?>" placeholder="Votre email">
+            <label for="phone">Numéro de téléphone <i>(optionnel)</i></label><input type="tel" name="phone" id="phone" pattern="[0-9]{10}" value="<?php if(isset($infos) and property_exists($infos,"phone")): echo $infos->phone; endif;?>" placeholder="01 02 03 04 05"></div>
             <div></div>
             <button type="submit">Valider</button>
 </form>

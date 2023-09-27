@@ -179,6 +179,7 @@ section h1{
     cursor: pointer;
     font-family: Moonic;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 .validate{
     border: none;

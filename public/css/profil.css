@@ -246,7 +246,7 @@ input[type="file"]{
     outline: none;
     color: white;
     font-weight: 300;
-    padding: 1rem;
+    padding-block: 1rem;
     border-bottom: solid white 1px;
     margin-bottom: 5rem;
     width: 100%;
