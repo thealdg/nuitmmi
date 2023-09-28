@@ -5,7 +5,7 @@
 @section("content")
 <section id="form">
     <div class="container">
-        <h1>Demande de réinitialisation de mot de passe</h1>
+        <h1>Réinitialisation de mot de passe</h1>
         <p>Si votre email est reconnu, vous recevrez un lien pour réinitialiser votre mot de passe sur celui-ci.</p>
         <form action="{{route('resetPassword')}}" method="post">
             @csrf
@@ -15,6 +15,7 @@
             @unset($_SESSION["error"])
             @endif
             <button type="submit">Valider</button>
+            <a href="{{route('register')}}">Pas de compte ? <span>Inscrivez-vous !</span></a>
         </form>
     </div>
 </section>

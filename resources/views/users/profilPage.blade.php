@@ -39,10 +39,10 @@
                     <input type="email" name="email" id="email" value="{{$data->email}}" placeholder="{{$data->email}}"></div>
                     <div class="entry"><label for="phone">Numéro de téléphone</label>
                     <input type="tel" name="phone" id="phone" value="{{$data->phone}}" placeholder="01 02 03 04 05"></div>
-                    <div class="entry"><label for="linkedin" style="font-size: 3rem"><i class='bx bxl-linkedin-square' ></i></label>
+                    <div class="entry" id="linkedin"><label for="linkedin" style="font-size: 3rem"><i class='bx bxl-linkedin-square' ></i></label>
                     <input type="text" name="linkedin" id="linkedin" value="{{$data->linkedin}}" placeholder="https://www.linkedin.com">
                 </div>
-                    <p>Votre profil LinkedIn sera visible par les visiteurs ayant accés à une ou plusieurs de vos œuvres sur le site.</p>
+                    <p>Votre profil LinkedIn sera visible dans les pages dédiées à vos oeuvres.</p>
                 </div>
                 <div class="pp">
                     @if(property_exists($data,"profilePicture"))
@@ -64,20 +64,20 @@
             <h2>Changer le mot de passe</h2>
             <form action="{{route('edit')}}" method="post">
                 @csrf
-                <label for="oldPassword">Mot de passe actuel</label>
-                <input type="password" name="oldPassword" id="oldPassword">
-                <label for="password1">Nouveau mot de passe</label>
-                <input type="password" name="password1" id="password1">
-                <label for="password2">Confirmer mot de passe</label>
-                <input type="password" name="password2" id="password2">
+                <div class="form_section"><label for="oldPassword">Mot de passe actuel</label>
+                <input type="password" name="oldPassword" id="oldPassword" placeholder="Votre mot de passe actuel"></div>
+                <div><div class='form_section'><label for="password1">Nouveau mot de passe</label>
+                <input type="password" name="password1" id="password1" placeholder="Votre nouveau mot de passe"></div>
+                <div class="form_section"><label for="password2">Confirmer mot de passe</label>
+                <input type="password" name="password2" id="password2" placeholder="Confirmer le nouveau mot de passe"></div></div>
                 <button type="submit">Confirmer</button>
             </form>
         </section>
         <input type="radio" id="works" name="section">
         <section class="works_section">
         <h1>Mes œuvres</h1>
-        <p>Les œuvres doivent tout d'abord être validées par les organisateurs de l'événement afin de figurer sur le site et être exposées le jour J.</p>
-        <p>Une seule œuvre au maximum doit être validée par catégorie.</p>
+        <p>Les œuvres doivent tout d'abord être validées par les organisateurs de l'événement afin de figurer sur le site et être exposées le jour même.</p>
+        <p>Une <strong>seule œuvre</strong> au maximum doit être validée <strong>par catégorie</strong>.</p>
         <div class="switch">
             <h2 class="current" onclick="exposition()" id="select_exposition">En exposition</h3>
             <h2 onclick="participation()" id="select_competition">En compétition</h3>

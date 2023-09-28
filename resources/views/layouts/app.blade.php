@@ -92,8 +92,8 @@ $headerCategories = DB::select("SELECT * FROM categories");
                         <h3>Contact</h3>
                         <div class="underline"></div>
                     </div>
-                    <div><p><a href="tel:+33612817526"> 06 12 81 75 26  <i class='bx bx-right-top-arrow-circle' ></i></a></p>
-                    <p><a href="mailto:contact@lanuitmmi.fr"> contact@lanuitmmi.fr  <i class='bx bx-right-top-arrow-circle' ></i></a></p></div>
+                    <div><p><a href="tel:+33612817526"> 06 12 81 75 26  </a></p>
+                    <p><a href="mailto:contact@lanuitmmi.fr"> contact@lanuitmmi.fr  </a></p></div>
                     <p><a href="{{route('contact')}}">Contactez-nous</a></p>
                    </div>
                 </div>
@@ -111,7 +111,7 @@ $headerCategories = DB::select("SELECT * FROM categories");
 </div>
           <div class="footer_bottom">
                 <div class="rs"><a href="#"><i class='bx bxl-facebook'></i></a><a href="#"><i class='bx bxl-instagram' ></i></a><a href="#"><i class='bx bxl-tiktok' ></i></a></div>
-                <div class="links"><a href="#">Espace Presse</a><span>-</span><a href="#">Mentions légales</a></div>
+                <div class="links"><a href="{{route('press')}}">Espace Presse</a><span>-</span><a href="{{route('legal')}}">Mentions légales</a></div>
                 <p><i class='bx bx-copyright' ></i> La Nuit MMI 2023, Tous droits réservés</p>
             </div>
         </div>

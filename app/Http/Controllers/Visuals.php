@@ -189,4 +189,10 @@ class Visuals extends Controller
 
         }
     }
+    function legal(){
+        return view("legal");
+    }
+    function press(){
+        return view("press");
+    }
 }  

@@ -22,7 +22,7 @@ input[type="radio"]{
     flex-direction: column;
     align-items: center;
     background-color: #080808;
-    padding: 4rem;
+    padding: 8rem 10rem;
     border: solid #DAC469 1px;
 }
 #logout .box p{
@@ -31,7 +31,7 @@ input[type="radio"]{
     margin-bottom: 4rem;
 }
 #logout .box .choice > *{
-    font-size: 2.5rem;
+    font-size: 2rem;
     cursor: pointer;
     display: block;
     width: fit-content;
@@ -42,6 +42,7 @@ input[type="radio"]{
 }
 #logout .box .choice{
     display: flex;
+    margin-top: 1rem;
 
 }
 #logout .box .choice span{
@@ -58,7 +59,9 @@ input[type="radio"]{
 #profil h1{
     font-size: 6rem;
     margin-top: 0;
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     margin-bottom: 5rem;
     text-align: center;
 }
@@ -68,7 +71,8 @@ input[type="radio"]{
     flex-direction: column;
     font-size: 2.5rem;
     border-right: solid white 1px;
-    padding-right: 5rem;
+    padding-right: 10rem;
+    padding-top: 10rem;
 }
 #profil .container nav label, #profil .container nav span{
     display: block;
@@ -133,22 +137,29 @@ input[type="radio"]{
 }
 .works_section .work h3{
     font-size: 2.2rem;
-    color: #DAC469;
     margin-block: 1rem;
     margin-top: 2rem;
     font-weight: normal;
     font-family: Montserrat;
+    letter-spacing: 0px;
+    font-weight: 300;
 }
 .works_section .work h4{
     margin: 0;
     font-weight: 300;
     font-family: Montserrat;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    letter-spacing: 0px;
 }
 .works_section .work h5{
     font-size: 1.8rem;
     text-align: center;
     font-family: Montserrat;
     white-space: nowrap;
+    letter-spacing: 0px;
+    font-weight: 300;
 
 }
 div.works.hidden{
@@ -200,8 +211,7 @@ h2.current:after, .switch h2:after{
 }
 .works_section p{
     font-size: 2rem;
-    text-align: center;
-    max-width: 700px;
+    text-align: justify;
     margin-inline: auto;
 }
 .account_section form > div{
@@ -222,8 +232,20 @@ h2.current:after, .switch h2:after{
 .account_section .infos .entry{
     flex-basis: 45%;
 }
+.account_section .infos .entry#linkedin{
+    display: flex;
+    align-items: center;
+    flex-basis: 100%;
+}
+.account_section .infos .entry#linkedin label{
+    margin-block: 0;
+    margin-right: 2rem;
+}
+.account_section .infos .entry#linkedin label i{
+    font-size: 4rem;
+
+}
 .account_section .infos p{
-    font-style: italic;
     margin: 0;
     font-size: 1.5rem;
     text-align: justify;
@@ -246,6 +268,12 @@ input[type="file"]{
 .account_section, .security_section{
     font-size: 2rem;
 }
+
+.security_section form > div:not(.form_section){
+    display: flex;
+    justify-content: space-between;
+}
+
 .account_section input, .security_section input{
     background: none;
     border: none;
@@ -256,6 +284,7 @@ input[type="file"]{
     border-bottom: solid white 1px;
     margin-bottom: 5rem;
     width: 100%;
+    font-size: 1.8rem;
 }
 .account_section input#linkedin{
     margin-bottom: 2rem;
@@ -263,9 +292,11 @@ input[type="file"]{
 .account_section input:read-only{
     color: rgba(255, 255, 255, 0.6);
 }
-.account_section .infos label{
+.account_section .infos label, .security_section label{
     display: block;
     white-space: nowrap;
+    margin-bottom: 3rem;
+    font-weight: 300;
 }
 .account_section button, .security_section button{
     display: block;
@@ -276,8 +307,14 @@ input[type="file"]{
     color: white;
     cursor: pointer;
     margin-top: 5rem;
-    font-family: Moonic;
-    letter-spacing: 2px;
+    font-family: Montserrat;
+    letter-spacing: 0px;
+    font-size: 2rem;
+}
+.account_section button{
+    font-family: Montserrat;
+    font-size: 2rem;
+    margin-top: 10rem;
 }
 .account_section .pp label{
     display: block;
@@ -288,10 +325,9 @@ input[type="file"]{
     background-color: #080808;
     color: white;
     border: solid #DAC469 1px;
-    padding: 1rem;
+    padding: 1rem 2rem;
     cursor: pointer;
-    font-family: Moonic;
-    letter-spacing: 2px;
+    letter-spacing: 0px;
 }
 .security_section h2{
     font-weight: normal;
@@ -303,5 +339,8 @@ input[type="file"]{
     margin-top: 1rem;
 }
 .security_section form{
-    max-width: 60%;
+    width: 100%;
+}
+.security_section form div.form_section{
+    width: 45%;
 }

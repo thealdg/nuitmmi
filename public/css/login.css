@@ -25,7 +25,7 @@ main{
     font-size: 3rem;
 }
 #form form > label, #form form .form_section > label{
-    font-weight: normal;
+    font-weight: 300;
     margin-top: 2rem;
     margin-inline: 0;
 }
@@ -41,7 +41,11 @@ main{
     border: none;
     border-bottom: solid white 1px;
     color: white;
-    margin-block: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+}
+#form input[type="checkbox"]{
+    margin-block: 0;
 }
 #form input:focus{
     border-color: #DAC469;
@@ -58,7 +62,7 @@ main{
 #form form > div:not(.link,.form_section){
     display: flex;
    flex-direction: column;
-    margin-top: 3rem;
+    margin-top: -2rem;
     margin-bottom: 5rem;
 }
 #form form > div:not(.link,.form_section) > div{
@@ -88,10 +92,13 @@ main{
     width: 100%;
     border: solid white 1px;
     padding-inline: 1rem;
+    margin-block: 0;
 }
 #form form div.link + p{
     text-align: left;
     font-style: italic;
+    margin-bottom: 5rem;
+    margin-top: 3rem;
 }
 #form select option:hover{
     background-color: #DAC469;
@@ -108,7 +115,9 @@ main{
     text-align: center;
 }
 #form a span{
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-weight: normal;
 }
 #form a:hover{
@@ -133,7 +142,9 @@ main{
     margin-top: 0;
 }
 #form form p span{
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
 }
 #form form > a{
     margin-top: 2rem;
@@ -210,4 +221,5 @@ main{
 }
 #form .container > p{
     text-align: center;
+    margin-bottom: 5rem;
 }

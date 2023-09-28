@@ -33,6 +33,8 @@ Route::get("/participer",[Visuals::class,"participate"])->name("participate");
 Route::get("/boutique/panier",[Visuals::class,"cart"])->name("cart");
 Route::get("/boutique/panier/precommander",[Visuals::class,"preorder"])->name("preorder");
 Route::get("/profil/mot-de-passe",[Visuals::class,"password"])->name("password");
+Route::get("/legal",[Visuals::class,"legal"])->name("legal");
+Route::get("/presse",[Visuals::class,"press"])->name("press");
 
 Route::get("/admin",[Visuals::class,"admin"])->name("admin");
 Route::get("/admin/moderation",[Visuals::class,"moderation"])->name("moderation");

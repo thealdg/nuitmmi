@@ -21,10 +21,10 @@
             <div class="infos">
                 <h3>{{$work->name}}</h3>
                 <h4>par <span>{{$work->authors}}</span> - <span>MMI {{$work->year}}</span> </h4>
-                <p>Réalisé en <strong><?php setlocale(LC_TIME, 'fr_FR', "French"); echo strftime("%B %Y",strtotime($work->date));?></strong></p>
-                <p><strong>Conditions:</strong> {{$work->context}}</p>
-                <p><strong>Logiciels:</strong> {{$work->tools}}</p>
-                <p><strong>Démarche:</strong> {{$work->description}}</p>
+                <p><strong>Réalisé en</strong> <span><?php setlocale(LC_TIME, 'fr_FR', "French"); echo strftime("%B %Y",strtotime($work->date));?></span></p>
+                <p><strong>Conditions:</strong> <span>{{$work->context}}</span></p>
+                <p><strong>Logiciels:</strong> <span>{{$work->tools}}</span></p>
+                <p><strong>Démarche:</strong> <span>{{$work->description}}</span></p>
             </div>
         </div>
     </div>
