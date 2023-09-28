@@ -16,6 +16,9 @@
     </div>
 </section>
 <section id="staff">
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
     <div class="container">
         <h1>Notre équipe</h1>
         <div class="category">

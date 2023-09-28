@@ -30,13 +30,18 @@
     </div>
 </section>
 <section id="door">
-    <div><img src="{{asset('images/shapes/arche2.png')}}" alt="Arche"></div>
+    
+    <div></div>
+    <div class="scalable">
+        <div></div>
+        <div><img src="{{asset('images/shapes/arche2.png')}}" alt="Arche">
+        <h1>Lorem ipsum dolor sit amet consectetur.</h1></div>
+    </div>
+    <div></div>
+
 </section>
 <section id="about">
     <div class="container">
-        <div class="picture">
-            <img src="" alt="">
-        </div>
         <div class="text">
             <h2>Lorem ipsum dolor sit amet.</h2>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nobis eos neque! Unde expedita voluptas magnam neque aliquam et, deleniti, voluptates voluptate natus adipisci, eius dolore? Totam earum itaque sapiente.</p>
@@ -90,6 +95,7 @@
     </div>
 </section>
 @endsection
+<script src="{{asset('js/door.js')}}"></script>
 <script>
     var countDownDate = new Date("January 8, 2024 19:00:00").getTime();
     function countDown() {
