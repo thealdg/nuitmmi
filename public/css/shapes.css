@@ -1,0 +1,66 @@
+#home .home_text{
+    position: relative;
+}
+#home .home_text:after{
+    content: "";
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    transform: translate(-50%,-50%) scaleX(-1);
+    background: url("../images/shapes/circle.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1
+
+}
+#home .home_text:before{
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: -200px;
+    transform: translate(-50%,-50%) scaleX(-1);
+    top: 100%;
+    background: url("../images/shapes/falling_star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+@keyframes upNdown {
+    0%{
+        transform: translate(-50%,-50%) translateY(0px);
+    }
+    50%{
+        transform: translate(-50%,-50%) translateY(20px);
+    }
+    100%{
+        transform: translate(-50%,-50%) translateY(0);
+    }
+    
+}
+div#arrow {
+    position: fixed;
+    width: fit-content;
+    height: fit-content;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    right: 0;
+    animation: upNdown 2s infinite;
+}
+div#arrow img{
+    width: 100px;
+}
+#door{
+    width: 100vw;
+    height: calc(100vh - 200px);
+    background: url("../images/background3.jpg");
+    background-size: cover;
+    overflow: hidden;
+}
+#door img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

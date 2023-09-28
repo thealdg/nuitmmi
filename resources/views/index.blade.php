@@ -3,6 +3,9 @@
 @section("css")
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
 @section('content')
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
 <section id="home">
     <div class="container">
         <div class="home_text">
@@ -26,6 +29,8 @@
         </div>    
     </div>
 </section>
+<section id="door">
+    <div><img src="{{asset('images/shapes/arche2.png')}}" alt="Arche"></div>
 </section>
 <section id="about">
     <div class="container">
