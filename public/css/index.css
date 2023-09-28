@@ -109,11 +109,11 @@ body main{
     font-size: 2.5rem;
     font-family: Moonic;
     padding: 2rem 4rem;
-    border-radius: 10px;
     transition: all 0.2s;
     position: relative;
     letter-spacing: 2px;
     border: solid white 1px;
+    white-space: nowrap;
 
 }
 .buttons .cta:hover{
@@ -259,7 +259,7 @@ body main{
 
 #guests h2{
     font-size: 4rem;
-    margin-bottom: 5rem;
+    margin-bottom: 10rem;
     text-align: center;
     margin-top: 0;
     background: linear-gradient(to right,#845917,#DAC469 75%);
@@ -339,7 +339,6 @@ body main{
     align-items: center;
     font-family: Moonic;
     letter-spacing: 2px;
-    border-radius: 10px;
     transition: all 0.2s;
     
 }

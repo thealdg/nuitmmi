@@ -17,6 +17,7 @@
 </section>
 <section id="staff">
     <div class="container">
+        <h1>Notre équipe</h1>
         <div class="category">
             <h2>Événementiel</h2>
             <div class="cards">

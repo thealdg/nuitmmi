@@ -16,7 +16,7 @@
                         }
                     echo $sum;
                     ?>
-                    €
+                    EUR
                 </h2>
             </div>
         </div>
@@ -32,8 +32,11 @@
                 <div class="infos">
                     <div>
                         <h3>{{$article->name}}</h3>
-                        @if(property_exists($article,"size"))
+                        @if(property_exists($article,"size") and $article->size != null)
                         <h4>Taille: {{$article->size}}</h4>
+                        @else
+                        <h4>Taille: Unique</h4>
+                        
                         @endif
                         <h4>Couleur: <span style="text-transform: capitalize">{{$article->color}}</span></h4>
                     </div>
@@ -50,7 +53,7 @@
                             <?php
                             echo $article->quantity*$article->price;
                             ?>
-                            €
+                            EUR
                         </h3>
                     </div>
                     <a href="">Supprimer</a>

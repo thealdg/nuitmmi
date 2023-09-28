@@ -13,10 +13,13 @@ main > .container h1{
     margin-bottom: 10rem;
     font-family: Moonic;
     letter-spacing: 2px;
+    text-transform: none;
 }
 #general h2{
     font-size: 4rem;
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     text-align: center;
     font-family: Moonic;
     letter-spacing: 2px;
@@ -26,7 +29,6 @@ main > .container h1{
     text-align: center;
 }
 #general p{
-    max-width: 1000px;
     margin-inline: auto;
     text-align: justify;
 }
@@ -45,6 +47,7 @@ main > .container > form > button{
     background: none;
     cursor: pointer;
     font-family: Moonic;
+    text-transform: capitalize;
 }
 main > .container > form div{
     display: flex;

@@ -1,12 +1,16 @@
 #about .container{
     display: flex;
     flex-direction: column;
-    align-items: center;
+}
+#about h1, #staff h1{
+    font-size: 6rem;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     text-align: center;
 }
-#about h1{
-    font-size: 6rem;
-    color: #DAC469 ;
+#about p:nth-child(2){
+    margin-bottom: 5rem;
 }
 #about h2{
     font-size: 3rem;
@@ -30,7 +34,7 @@
     display: flex;
 }
 #staff .card{
-    flex-basis: 24%;
+    width: 24%;
     margin-right: 1%;
     position: relative;
 }
@@ -40,15 +44,16 @@
     transition: all 0.5s;
 }
 #staff .card img.back{
-    width: 100%;
+    width: 75%;
     position: absolute;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
 
 }
 #staff .card img.front{
     display: block;
-    width: 100%;
+    width: 75%;
     margin-inline: auto;
     position: relative;
     z-index: 1;
@@ -56,8 +61,10 @@
 
 }
 #staff .card:hover img.back{
-    transform: rotate3d(1,0,0,30deg) translateY(50px);
+    display: block;
+    transform: rotate3d(1,0,0,30deg) translateX(-50%) translateY(50px);
     opacity: 0.5;
+    margin-inline: auto;
 
 }
 #staff .card:hover img.front{

@@ -49,7 +49,7 @@
                     <option value="3">Production graphique</option>
                     <option value="4">Site Web</option>
                 </select>
-                <p>Selon la catégorie sélectionnée, plusieurs champs ci-dessous deviendront <span>obligatoires</span>. Nous vous invitons à vous référer à <a href="{{route('participate')}}?modalite"><span>ce lien</span></a> pour plus d'informations.</p>
+                <p>Selon la catégorie sélectionnée, plusieurs champs ci-dessous deviendront <span>obligatoires</span>. Pour relire les conditions de participation, référez vous à <a href="{{route('participate')}}?modalite"><span>ce lien</span></a>.</p>
             </div>
             <div class="input">
                 <label for="date">Date de réalisation</label>
@@ -57,7 +57,7 @@
             </div>
             <div class="input">
                 <label for="authors">Auteur(s)</label>
-                <input placeholder="Séparés par des virgules si plusieurs auteurs" type="text" name="authors" id="authors" required>
+                <input placeholder="Séparés par des virgules pour une oeuvre de groupe" type="text" name="authors" id="authors" required>
             </div>
             <div class="input">
                 <label for="video" class="not_required">Lien vidéo <br>(YouTube)</label>
@@ -65,7 +65,7 @@
             </div>
             <div class="input">
                 <label for="link" class="not_required">Lien externe <br>(site web)</label>
-                <input placeholder="http://www.iut-lens.univ-artois.fr/" type="text" name="link" id="link">
+                <input placeholder="https://exemple.com/" type="text" name="link" id="link">
             </div>
             <div class="input">
                 <label for="tools">Logiciels utilisés</label>
@@ -76,7 +76,7 @@
                     <div><input type="checkbox" name="conditions" id="conditions" value="true"> <label for="conditons">J'accepte les conditions générales de publication.</label></div>
                     <div><input type="checkbox" name="competition" id="competition" value="true"> <label for="competition" class="not_required">Je souhaite participer à la <span onclick="document.getElementById('popup').style.display='flex';">compétition.</span></label></div>
                 </div>
-                <button>Envoyer</button>
+                <button>Participer</button>
             </div>
             
         </form>

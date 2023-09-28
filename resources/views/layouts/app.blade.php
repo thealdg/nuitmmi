@@ -33,6 +33,12 @@ $headerCategories = DB::select("SELECT * FROM categories");
             </a>
             <div class="menu" id="menu">
                 <a href="/">Accueil</a>
+                @if(session()->has("admin") and session("admin")==true)
+                <a href="{{route('admin')}}">Administration</a>
+                @endif
+                <a href="{{route('about')}}">À propos</a>
+                <a href="{{route('shop')}}">Boutique</a>
+                <a href="{{route('participate')}}">Participer</a>
                 <div class="deroulant">
                     <a href="{{route('works')}}">Vos œuvres <i class='bx bx-chevron-down' ></i></a>
                     <div class="menu_deroulant">
@@ -41,13 +47,12 @@ $headerCategories = DB::select("SELECT * FROM categories");
                         @endforeach
                     </div>
                 </div>
-                <a href="{{route('shop')}}">Boutique</a>
-                <a href="{{route('about')}}">À propos</a>
-                @if(session()->has("admin") and session("admin")==true)
-                <a href="{{route('admin')}}">Administration</a>
-                @else
-                <a href="{{route('participate')}}">Participer</a>
-                @endif 
+                
+                
+               
+
+               
+
             </div>
             <div class="account">
                     <a href="#" class="button">Réserver</a>
@@ -106,6 +111,7 @@ $headerCategories = DB::select("SELECT * FROM categories");
 </div>
           <div class="footer_bottom">
                 <div class="rs"><a href="#"><i class='bx bxl-facebook'></i></a><a href="#"><i class='bx bxl-instagram' ></i></a><a href="#"><i class='bx bxl-tiktok' ></i></a></div>
+                <div class="links"><a href="#">Espace Presse</a><span>-</span><a href="#">Mentions légales</a></div>
                 <p><i class='bx bx-copyright' ></i> La Nuit MMI 2023, Tous droits réservés</p>
             </div>
         </div>

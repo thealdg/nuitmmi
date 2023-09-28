@@ -58,9 +58,6 @@ h1,h2,h3,h4,h5{
     font-family: Moonic;
     letter-spacing: 2px;
 }
-h1{
-    text-transform: uppercase;
-}
 a{
     text-decoration: none;
     color: inherit;
@@ -107,6 +104,8 @@ header nav .menu > a, .deroulant label, .deroulant > a{
     font-family: Moonic;
     font-size: 2.5rem;
     letter-spacing: 2px;
+    position: relative;
+    z-index: 1;
 
 }
 
@@ -138,6 +137,7 @@ header nav .menu{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .account .button{
@@ -204,14 +204,16 @@ header nav > label{
 }
 
 .menu_deroulant{
-    padding-top: 20px;
+    padding-top: 50px;
     display: block;
     position: absolute;
-    top: 100%;
+    top: 0;
     transform: scaleY(0);
     transform: all 0.5s;
     transform-origin: top;
     left: 2rem;
+    background-color: rgba(8, 8, 8,0.9);
+    z-index: 0;
 }
 .deroulant:hover .menu_deroulant{
     transform: scaleY(1);
@@ -253,7 +255,6 @@ header nav > label{
     text-decoration: none;
     font-weight: normal;
     white-space: nowrap;
-    background-color: rgba(0, 0, 0, 0.9);
     padding-inline: 2rem;
     font-family: Moonic;
     letter-spacing: 2px;
@@ -450,7 +451,20 @@ a#cart #count{
     transform: translateY(-50%) translateX(25%);
 }
 
-@media screen and (max-width: 1300px){
+footer .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 1rem;
+}
+footer .links span{
+    margin-inline: 1rem;
+}
+footer .links a{
+    margin: 0;
+}
+
+@media screen and (max-width: 1280px) {
     html{
         font-size: 55%;
     }

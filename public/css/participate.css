@@ -18,17 +18,19 @@ input[type="file"]{
     flex-direction: column;
     align-items: center;
     background-color: #080808;
-    padding: 4rem;
+    padding: 8rem 8rem 3rem 8rem;
     border: solid #DAC469 1px;
 
 }
 #popup p{
-    max-width: 500px;
+    max-width: 700px;
     text-align: justify;
     margin-block: 1rem;
 }
 #popup h2{
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-size: 3rem;
     margin-top: 0;
     margin-bottom: 2rem;
@@ -40,6 +42,8 @@ input[type="file"]{
     margin-bottom: 1.5rem;
     font-weight: 300;
     transition: all 0.2s;
+    background: none;
+    position: relative;
 }
 
 #popup a:hover{
@@ -47,19 +51,21 @@ input[type="file"]{
 }
 #popup button{
     display: block;
-    width: 100%;
-    text-transform: uppercase;
+    width: fit-content;
     font-size: 2rem;
     margin-top: 2rem;
     padding-block: 1rem;
     cursor: pointer;
     border-radius: 0;
     border: none;
-    font-family: Moonic;
     letter-spacing: 2px;
+    margin-inline: auto;
+    padding: 1rem 5rem;
+    letter-spacing: normal;
+    text-transform: capitalize;
 }
 #participate form{
-    width: 60%;
+    width: 100%;
 }
 #participate form > div:not(.validate){
     display: flex;
@@ -68,6 +74,7 @@ input[type="file"]{
     margin-block: 3rem;
     border: solid white 1px;
     position: relative;
+    width: 60%;
 }
 .input{
     align-items: center;
@@ -111,7 +118,9 @@ input[type="file"]{
 }
 section h1{
     font-size: 6rem;
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     text-align: center;
     margin-block: 10rem;
 }
@@ -152,14 +161,15 @@ section h1{
 }
 #participate form p{
     position: absolute;
-    left: 105%;
-    top: 0;
+    left: 100%;
+    bottom: 0;
     transform: translate(0,0);
-    width: 75%;
+    width: 70%;
     font-size: 2rem;
     font-weight: 300;
     text-align: justify;
     margin: 0;
+    margin-left: 3rem;
 }
 #participate form p span{
     color: #DAC469;
@@ -180,11 +190,14 @@ section h1{
     cursor: pointer;
     font-family: Moonic;
     letter-spacing: 2px;
-    text-transform: uppercase;
 }
 .validate{
     border: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
 }
 #participate form .conditions div{
     display: flex;
@@ -204,8 +217,10 @@ section h1{
     font-size: 2rem;
     font-weight: 300
 }
-#participate form .validate label span, #popup a{
-    color: #DAC469;
+#participate form .validate label span{
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     text-decoration: none;
     position: relative;
     display: inline-block;
@@ -217,12 +232,15 @@ section h1{
     position: absolute;
     width: 100%;
     height: 1px;
-    background-color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
     bottom: -5px;
     left: 0;
     transform: scaleX(0);
     transform-origin: left;
     transition: all 0.2s;
+}
+#popup a:after{
+    background: white;
 }
 #popup a:after{
     transform: scaleX(1);

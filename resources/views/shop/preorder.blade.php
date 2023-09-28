@@ -7,7 +7,7 @@
 <section id="confirm">
     <div>
         <h1>Vérifier votre adresse email</h1>
-        <p>Un code à six chiffres a été envoyé à l'adresse <span>{{session("preorder")["email"]}}</span>. Entrez le code ci-dessous pour confirmer votre adresse email.</p>
+        <p>Un code à six chiffres a été envoyé à l'adresse suivante : <span>{{session("preorder")["email"]}}</span>. Entrez le code ci-dessous pour confirmer votre adresse email.</p>
         <form action="{{route('preorderValidation')}}" method="post" id="verify">
             @csrf
             <input type="text" name="code" placeholder="XXXXXX" minlength="6" maxlength="6" id="code" size="5" required>

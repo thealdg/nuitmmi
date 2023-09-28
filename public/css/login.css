@@ -123,7 +123,6 @@ main{
     background: none;
     border: solid white 1px;
     color: white;
-    text-transform: uppercase;
     margin-bottom: 2rem;
     font-family: Moonic;
     letter-spacing: 2px;
@@ -162,15 +161,14 @@ main{
 }
 #confirm h1{
     font-size: 4rem;
-    background: linear-gradient(45deg,#845917,#DAC469 50%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
     margin-top: 0;
     margin-bottom: 1rem;
 }
 #confirm a{
     text-decoration: none;
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-size: 2rem;
     font-family: Cabin;
     display: block;
@@ -185,11 +183,14 @@ main{
     font-size: 1.8rem;
 }
 #confirm p span{
-    color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     font-weight: normal;
     font-family: Montserrat;
     text-decoration: underline;
     text-decoration-color: #DAC469;
+    text-decoration-thickness: 1px;
 }
 #confirm input{
     border: solid white 1px;
