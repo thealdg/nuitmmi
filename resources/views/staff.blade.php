@@ -4,9 +4,7 @@
 @endsection
 @section("content")
 <section id="staff">
-<div id="arrow">
-    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
-</div>
+
     <div class="container">
         <h1>Notre staff</h1>
         <div class="staff_category">
