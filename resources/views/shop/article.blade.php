@@ -56,10 +56,14 @@
                 <button type="submit">Ajouter au panier</button>
             </form>
         </div>
+        
     </div>
 </section>
 <section id="faq">
     <div class="container">
+        <div id="arrow">
+            <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+        </div>
         <h4>FAQ</h4>
         <div class="question_block hidden">
             <div class="question">

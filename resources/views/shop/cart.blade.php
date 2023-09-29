@@ -62,7 +62,9 @@
 
             @endforeach
         </div>
-        <a href="{{route('preorder')}}" class="cta">Précommander</a>
+        <div class="ctaButton"><div id="arrow">
+            <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+        </div><a href="{{route('preorder')}}" class="cta">Précommander</a></div>
     </div>
 </section>
 @endsection
