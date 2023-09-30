@@ -4,6 +4,9 @@
 <link rel="stylesheet" href="{{asset('css/work.css')}}">
 @endsection
 @section("content")
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
 <section id="work">
     <div class="container">
         <div class="category">

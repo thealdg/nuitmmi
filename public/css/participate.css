@@ -71,7 +71,7 @@ input[type="file"]{
     display: flex;
     background-color: #080808;
     padding: 2rem;
-    margin-block: 3rem;
+    margin-block: 5rem;
     border: solid white 1px;
     position: relative;
     width: 60%;

@@ -1,6 +1,6 @@
 main > .container > fieldset{
     padding: 3rem;
-    margin-block: 5rem;
+    margin-block: 10rem;
     border-width: 1px;
 }
 main > .container > fieldset legend{

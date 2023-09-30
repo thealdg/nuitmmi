@@ -4,7 +4,10 @@
 <link rel="stylesheet" href="{{asset('css/participation.css')}}">
 @endsection
 @section("content")
-<div class="container">
+<div class="container" id="participation">
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
     <h1>Participer à La Nuit MMI</h1>
     <div id="general">
         <h2>Conditions générales</h2>

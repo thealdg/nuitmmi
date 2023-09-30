@@ -4,6 +4,9 @@
 @endsection
 @section("content")
 <section id="categories">
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
     <div class="container">
         <div class="switch">
             <h3 class="current" onclick="exposition()" id="select_exposition">En exposition</h3>

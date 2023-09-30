@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('css/login.css')}}">
 @endsection
 @section("content")
-<section id="form">
+<section id="form" class="login">
     <div class="container">
         <h1>Connexion</h1>
         <form action="{{route('loginT')}}" method="post">

@@ -4,6 +4,7 @@
 <link rel="stylesheet" href="css/participate.css">
 @endsection
 @section("content")
+
 <div id="popup" style="display: none">
     <div class="box">
         <h2>Compétition</h2>
@@ -14,6 +15,9 @@
     </div>
 </div>
 <section id="participate">
+<div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+</div>
     <div class="container">
         <h1>Participer à La Nuit MMI</h1>
         <p>Les champs marqués d'un <span> * </span> sont obligatoires.</p>

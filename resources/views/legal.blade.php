@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="css/legal.css">
 @endsection
 @section("content")
-<div class="container">
+<div class="container" id="legal">
     <h1>Mentions légales</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
     <section id="partie1" class="part">
