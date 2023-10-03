@@ -244,7 +244,7 @@ div#arrow img{
     height: 200px;
     content: "";
     position: absolute;
-    top: 70%;
+    top: calc(100% - 100px);
     left: -100px;
     background: url("../images/shapes/star.png");
     background-size: contain;
@@ -691,10 +691,10 @@ div#arrow img{
     transform: rotate(30deg) translate(-50%,50%);
 
 }
-#participate form > div:nth-child(4){
+#participate form > div:nth-child(5){
     position: relative;
 }
-#participate form > div:nth-child(4)::before{
+#participate form > div:nth-child(5)::before{
     content: "";
     width: 150px;
     height: 150px;

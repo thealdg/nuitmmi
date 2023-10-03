@@ -21,12 +21,6 @@
             
         </div>
         
-        <div id="scroll">
-            <div class="arrow">
-            </div>
-            <div class="arrow">
-            </div>
-        </div>    
     </div>
 </section>
 <section id="door">

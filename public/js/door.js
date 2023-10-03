@@ -23,6 +23,10 @@ window.addEventListener("DOMContentLoaded",()=>{
                 door.querySelector("h1").style.opacity = 1;
             }
         }
+        if(document.querySelector("#about .container").getBoundingClientRect().top < window.innerHeight/1.5){
+            document.querySelector("#about .container").classList.add("active");
+        }
+
     })
 
 })

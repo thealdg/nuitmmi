@@ -47,6 +47,12 @@
                     <label for="{{$size}}">{{$size}}</label>
                     @endforeach
                 </div>
+                @else
+                <div id="sizes">
+                    <h3>Taille</h3>
+                    <input type="radio" name="size" value="unique" id="unique" checked>
+                    <label for="unique" id="uniqueLabel">Taille Unique</label>
+                </div>
                 @endif
                 <div id="quantity">
                     <h3>Quantité</h3>

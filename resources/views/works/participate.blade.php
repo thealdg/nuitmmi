@@ -20,6 +20,7 @@
 </div>
     <div class="container">
         <h1>Participer à La Nuit MMI</h1>
+        <h2>Dépot d'une oeuvre</h2>
         <p>Les champs marqués d'un <span> * </span> sont obligatoires.</p>
         <form action="{{route('participateT')}}" method="post" enctype="multipart/form-data">
             @csrf

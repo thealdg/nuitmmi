@@ -118,11 +118,18 @@ input[type="file"]{
 }
 section h1{
     font-size: 6rem;
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 5rem;
+}
+section h2{
     background: linear-gradient(45deg,#845917,#DAC469 50%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    font-size: 4rem;
     text-align: center;
-    margin-block: 10rem;
+    margin-top: 0;
+    margin-bottom: 10rem;
 }
 #participate input[type=text],#participate input[type=date],#participate select, #participate option,#participate textarea{
     font-size: 2rem;

@@ -118,6 +118,11 @@ input[type="radio"]{
     align-items: center;
     margin-right: 2.5rem;
 }
+#sizes label#uniqueLabel{
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem 2rem;
+}
 #sizes input:checked + label{
     background-color: white;
     color: black;

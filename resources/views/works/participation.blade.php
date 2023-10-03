@@ -24,13 +24,13 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsum obcaecati eveniet cupiditate corporis fuga itaque fugiat, eius pariatur officiis soluta impedit quas officia rem veritatis cumque ex consequatur modi maxime suscipit? Recusandae quae quasi, in distinctio saepe ducimus placeat, tempore magni enim minima commodi repudiandae molestiae culpa, nostrum dolor.</p>
         <p>Et perspiciatis, aspernatur culpa aliquam nulla in, maxime itaque fuga iste blanditiis nihil repellendus sit minus doloribus optio ducimus quasi consequatur dicta explicabo, laboriosam voluptatibus nam nemo enim? Incidunt nobis ullam culpa nihil corrupti nostrum possimus, officia dignissimos quis omnis ea enim harum, temporibus eos iusto porro perferendis cumque voluptatem.</p>
     </fieldset>
-    <fieldset id="graphique">
-        <legend>Production Graphique</legend>
+    <fieldset id="web">
+        <legend>Développement web</legend>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsum obcaecati eveniet cupiditate corporis fuga itaque fugiat, eius pariatur officiis soluta impedit quas officia rem veritatis cumque ex consequatur modi maxime suscipit? Recusandae quae quasi, in distinctio saepe ducimus placeat, tempore magni enim minima commodi repudiandae molestiae culpa, nostrum dolor.</p>
         <p>Et perspiciatis, aspernatur culpa aliquam nulla in, maxime itaque fuga iste blanditiis nihil repellendus sit minus doloribus optio ducimus quasi consequatur dicta explicabo, laboriosam voluptatibus nam nemo enim? Incidunt nobis ullam culpa nihil corrupti nostrum possimus, officia dignissimos quis omnis ea enim harum, temporibus eos iusto porro perferendis cumque voluptatem.</p>
     </fieldset>
-    <fieldset id="web">
-        <legend>Site web</legend>
+    <fieldset id="graphique">
+        <legend>Production Graphique</legend>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam ipsum obcaecati eveniet cupiditate corporis fuga itaque fugiat, eius pariatur officiis soluta impedit quas officia rem veritatis cumque ex consequatur modi maxime suscipit? Recusandae quae quasi, in distinctio saepe ducimus placeat, tempore magni enim minima commodi repudiandae molestiae culpa, nostrum dolor.</p>
         <p>Et perspiciatis, aspernatur culpa aliquam nulla in, maxime itaque fuga iste blanditiis nihil repellendus sit minus doloribus optio ducimus quasi consequatur dicta explicabo, laboriosam voluptatibus nam nemo enim? Incidunt nobis ullam culpa nihil corrupti nostrum possimus, officia dignissimos quis omnis ea enim harum, temporibus eos iusto porro perferendis cumque voluptatem.</p>
     </fieldset>
