@@ -29,16 +29,16 @@
                 @csrf
                 <div>
                 <div class="infos">
-                    <div class="entry">
+                    <div><div class="entry">
                     <label for="surname">Nom</label>
                     <input type="text" name="surname" id="surname" value="{{$data->surname}}" placeholder="{{$data->surname}}" readonly></div>
                     <div class="entry">
                     <label for="name">Prénom</label>
-                    <input type="text" name="name" id="name" value="{{$data->name}}" placeholder="{{$data->name}}" readonly></div>
-                    <div class="entry"><label for="email">Email</label>
+                    <input type="text" name="name" id="name" value="{{$data->name}}" placeholder="{{$data->name}}" readonly></div></div>
+                    <div><div class="entry"><label for="email">Email</label>
                     <input type="email" name="email" id="email" value="{{$data->email}}" placeholder="{{$data->email}}"></div>
                     <div class="entry"><label for="phone">Numéro de téléphone</label>
-                    <input type="tel" name="phone" id="phone" value="{{$data->phone}}" placeholder="01 02 03 04 05"></div>
+                    <input type="tel" name="phone" id="phone" value="{{$data->phone}}" placeholder="01 02 03 04 05"></div></div>
                     <div class="entry" id="linkedin"><label for="linkedin" style="font-size: 3rem"><i class='bx bxl-linkedin-square' ></i></label>
                     <input type="text" name="linkedin" id="linkedin" value="{{$data->linkedin}}" placeholder="https://www.linkedin.com">
                 </div>

@@ -7,6 +7,7 @@
     font-size: 6rem;
     text-transform: uppercase;
     margin-bottom: 10rem;
+    margin-top: 10rem;
 }
 #contact h2{
     font-size: 3rem;
@@ -33,6 +34,10 @@
     justify-content: space-between;
     align-items: center;
 }
+#press .link div{
+    display: flex;
+    align-items: center;
+}
 #press h4{
     font-family: Montserrat;
     font-size: 2rem;
@@ -47,6 +52,7 @@
     position: relative;
     font-family: Moonic;
     letter-spacing: 2px;
+    margin-left: 3rem;
 }
 #press a:after{
     content: "";

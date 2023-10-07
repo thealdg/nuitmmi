@@ -18,33 +18,33 @@
             <h3>Communiqués de Presse</h3>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
         </div>
         <div class="category">
             <h3>Dossier de Presse</h3>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
         </div>
         <div class="category">
             <h3>Documents publicitaires</h3>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
             <div class="link">
                 <h4>12 décembre 2023 - Lorem ipsum dolor sit amet.</h4>
-                <a href="#">Télécharger</a>
+                <div><a href="#">Aperçu</a><a href="#">Télécharger</a></div>
             </div>
         </div>
 

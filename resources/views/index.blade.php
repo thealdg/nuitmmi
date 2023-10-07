@@ -3,16 +3,17 @@
 @section("css")
 <link rel="stylesheet" href="{{asset('css/index.css')}}">
 @section('content')
-<div id="arrow">
-    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
-</div>
+
 <section id="home">
+    <div id="arrow">
+        <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+    </div>
     <div class="container">
         <div class="home_text">
             
             <h1>LA NUIT MMI</h1>
             <h2>Deuxième édition - Lundi 8 janvier 2024</h2>
-            <h4>Cérémonie de récompenses mettant à l'honneur les projets des étudiants dans l'ensemble de la formation.</h4>
+            <h4>Cérémonie de mise à l'honneur des projets étudiants.</h4>
             <div id="countdown"></div>
             <div class="buttons">
                 <a href="index.php?action=participate" class="cta">participation &nbsp;&rarr;</a>
@@ -29,7 +30,7 @@
     <div class="scalable">
         <div></div>
         <div><img src="{{asset('images/shapes/arche2.png')}}" alt="Arche">
-        <h1>Lorem ipsum dolor sit amet consectetur.</h1></div>
+        <h1>La Nuit MMI revient pour apporter la lumière !</h1></div>
     </div>
     <div></div>
 
@@ -37,9 +38,9 @@
 <section id="about">
     <div class="container">
         <div class="text">
-            <h2>Lorem ipsum dolor sit amet.</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit nobis eos neque! Unde expedita voluptas magnam neque aliquam et, deleniti, voluptates voluptate natus adipisci, eius dolore? Totam earum itaque sapiente.</p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam at culpa quas veritatis id magnam explicabo laudantium quibusdam beatae totam adipisci deleniti soluta ullam nostrum, ipsam unde! Porro dolorum quisquam quos deleniti nihil amet dolores praesentium voluptatum consequatur vitae consequuntur optio, libero, quia ad ab!</p>
+            <h2>L'occasion rêvée de briller !</h2>
+            <p>La nuit MMI revient pour sa deuxième édition le mardi 09 janvier 2024. Cette soirée, placée sur le signe de la rencontre et du partage, est le moment parfait pour exposer son travail, développer son réseau de contacts, se retrouver entre passionnés, anciens étudiants… ou tout simplement pour passer un bon moment en profitant de nombreuses activités sur place ! </p>
+            <p>Nous vous attendons nombreux pour cette nouvelle édition et nous sommes impatients de vous voir tous sur votre 31 pour illuminer de la plus belle des manières la formation MMI !</p>
             <a href="{{route('about')}}">En savoir plus &nbsp; &rarr;</a>
         </div>
     </div>
@@ -80,6 +81,7 @@
                         <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
                         <a href="#"><i class='bx bx-globe'></i></a>
                     </div>
+                    <div class="shape"></div>
                 </div>
                 <h3>Jean <br>Random</h3>
                 <h4>Chargée de communication de la mairie de Roubaix</h4>

@@ -14,21 +14,18 @@
         opacity: 1;
     }
 }
-body main{
-    padding: 0;
-}
 #home{
     padding-bottom: 0;
     padding: 0;
     position: relative;
 }
 #home .container{
-    min-height: 100vh;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     position: relative;
+    margin-top: 5rem;
     
     
 }
@@ -162,7 +159,7 @@ body main{
 }
 
 #guests{
-    padding-top: 5rem;
+    padding-top: 10rem;
     min-height: 100vh;
     background-color: #080808;
 }
@@ -294,6 +291,7 @@ body main{
 }
 #about .container{
     margin-block: 5rem;
+    margin-bottom: 200px;
     opacity: 0;
 }
 

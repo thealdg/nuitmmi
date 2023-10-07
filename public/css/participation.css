@@ -1,3 +1,7 @@
+main > .container{
+    width: calc(100% - 250px);
+    position: relative
+}
 main > .container > fieldset{
     padding: 3rem;
     margin-block: 10rem;

@@ -7,21 +7,21 @@
 <section id="about">
     <div class="container">
         <h1>Qui sommes-nous ?</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus nihil amet quos eaque beatae praesentium officiis incidunt id at veniam qui illo deserunt consequuntur vero, quis dicta. Blanditiis, rem porro!</p>
-        <h2>Partie 1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis tenetur dolor mollitia quis blanditiis quia, recusandae modi cumque ipsum assumenda, voluptas libero ea dolorem, neque asperiores vero nulla harum distinctio dolores eaque nostrum delectus at. Exercitationem cum ipsa maiores iusto!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto eaque doloremque veritatis natus vel dolorem nobis, placeat ad autem maxime quibusdam labore saepe, nostrum numquam!</p>
-        <h2>Partie2</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed natus at iusto accusantium, ipsam dolore non debitis doloribus quis consectetur quaerat vel. Aspernatur ipsa tempora quasi ratione iusto ullam nisi eligendi.</p>
+        <p>C’est avec un immense honneur que nous vous présentons la deuxième édition de La Nuit MMI. Cet événement est destiné à toutes les personnes intéressés par le multimédia et l’internet ou ayant un lien avec ce dernier. Fruit d’une réflexion étudiante poussée pour connecter des dizaines de promotions d’étudiants, nous sommes la relève en charge de reprendre ce projet novateur dans le monde étudiant. </p>
+        <h2>La soirée du comeback</h2>
+        <p>Repassez vos plus beaux habits, bouclez votre agenda car la Nuit MMI est de retour ! Plus ambitieuse, plus innovante, l’événement à ne pas rater revient sur le devant de la scène en s’appuyant sur ses fondations très solides instaurées par la première édition ! Préparez-vous à vivre une expérience renouvelée, de nouvelles opportunités, de nouvelles rencontres, de nouvelles découvertes et de nouvelles activités vous attendent.</p>
+        <h2>Notre ambition, votre participation</h2>
+        <p>Votre talent est notre priorité ! Cette soirée a pour but de mettre en lumière le talent et le travail des étudiants MMI de Lens. Nous sommes persuadés qu’au fond de chaque étudiant se cache un talent qui ne demande qu’à être exprimé et nous vous en offrons l’opportunité ! Alors n’hésitez plus et déposez votre oeuvre sur notre pour l’exposer et pouvoir échanger dessus avec des professionnels et d’autres étudiants dans un contexte bienveillant.</p>
     </div>
 </section>
 <section id="staff">
-<div id="arrow">
-    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
-</div>
+
     <div class="container">
         <h1>Notre équipe</h1>
         <div class="category">
+        <div id="arrow">
+            <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+        </div>
             <h2>Événementiel</h2>
             <div class="cards">
                 <div class="card">

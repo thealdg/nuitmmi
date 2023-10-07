@@ -2,7 +2,7 @@ input[type="radio"]{
     display: none;
 }
 #product{
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 #product .container{
     max-width: 600px;

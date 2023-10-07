@@ -54,7 +54,7 @@ input[type="radio"]{
 }
 #profil .container{
     display: flex;
-    margin-top: 6rem;
+    margin-top: 10rem;
 }
 #profil h1{
     font-size: 6rem;
@@ -219,18 +219,22 @@ h2.current:after, .switch h2:after{
     justify-content: space-between;
     align-items: center;
     padding-top: 5rem;
-    flex-wrap: wrap-reverse;
     
 }
 .account_section .infos{
     flex-basis: 60%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    align-items: center;
 }
 .account_section .infos .entry{
-    flex-basis: 45%;
+    flex-grow: 1;
+    margin-right: 3rem;
+}
+.account_section .infos > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.account_section .infos .entry input{
+    width: 100%;
 }
 .account_section .infos .entry#linkedin{
     display: flex;

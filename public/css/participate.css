@@ -82,7 +82,7 @@ input[type="file"]{
 }
 #participate .input label{
     display: block;
-    font-size: 2.3rem;
+    font-size: 2rem;
     flex-basis: 25%;
 }
 #participate label:not(.not_required)::after{
@@ -97,7 +97,7 @@ input[type="file"]{
     border-bottom: solid white 1px;
     padding: 2rem;
     padding-left: 0;
-    font-size: 2.3rem;
+    font-size: 2rem;
 }
 .files{
     display: flex;
@@ -105,7 +105,7 @@ input[type="file"]{
     padding: 2rem;
 }
 .files label{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: #080808;
     display: flex;
     align-items: center;
@@ -137,7 +137,7 @@ section h2{
     color: white;
     outline: none;
     background: none;
-    width: 75%;
+    width: 70%;
     padding-block: 1rem;
     font-weight: 300;
 }
@@ -171,12 +171,12 @@ section h2{
     left: 100%;
     bottom: 0;
     transform: translate(0,0);
-    width: 70%;
-    font-size: 2rem;
+    width: 60%;
+    font-size: 1.8rem;
     font-weight: 300;
     text-align: justify;
     margin: 0;
-    margin-left: 3rem;
+    margin-left: 3%;
 }
 #participate form p span{
     color: #DAC469;

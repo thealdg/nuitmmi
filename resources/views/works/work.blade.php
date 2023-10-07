@@ -4,9 +4,6 @@
 <link rel="stylesheet" href="{{asset('css/work.css')}}">
 @endsection
 @section("content")
-<div id="arrow">
-    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
-</div>
 <section id="work">
     <div class="container">
         <div class="category">
@@ -35,6 +32,9 @@
 @if(!empty($userWorks))
 <section id="userWorks">
     <div class="container">
+    <div id="arrow">
+    <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
+    </div>
         <h1>Découvrez les autres travaux de <span>@if(property_exists($userWorks[0], 'linkedin')) <a href="{{$userWorks[0]->linkedin}}">{{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}}</a>@else {{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}} @endif</span></h1>
         <div class="works">
             @foreach($userWorks as $work)

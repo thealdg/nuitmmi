@@ -4,6 +4,7 @@ main{
 #contact{
     background-color: #080808;
     color: white;
+    margin-top: 8rem;
 }
 #contact .container{
     display: flex;
