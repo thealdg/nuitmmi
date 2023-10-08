@@ -179,4 +179,36 @@ section h2.hidden{
     display: none;
 }
 
+@media screen and (max-width: 900px) {
+    section#title:not(.empty){
+        padding-top: 50px;
+    }
+    #title .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    #title .container h1{
+        margin-inline: auto;
+        text-align: center;
+    }
+    #title .container .switch h3{
+        margin-inline: 2rem;
+    }
+    #title .category_title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 3rem;
+    }
+    #works h4{
+        font-size: 2rem;
+    }
+    #works p{
+        font-size: 1.8rem;
+    }
+    #works .work{
+        flex-basis: 45%;
+    }
+}
 

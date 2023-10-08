@@ -10,15 +10,19 @@
     <h2>{{number_format($merch["infos"]->price,2,".","")}} EUR</h2></div>
         <div class="pictures">
             @foreach($merch["images"] as $color => $images)
-            <div id={{$color}} class="imagesGrid">
-                @foreach($images as $image)
-                <div>
-                    <img src="{{asset($image)}}" alt="image">
+            <div>
+                <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
+                <div id={{$color}} class="imagesGrid">
+                    @foreach($images as $image)
+                    <div>
+                        <img src="{{asset($image)}}" alt="image">
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
+                <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
             </div>
             @endforeach
-
+            
         </div>
         <div class="infos">
             <form action="{{route('addCart')}}" method="post">
@@ -73,38 +77,47 @@
         <h4>FAQ</h4>
         <div class="question_block hidden">
             <div class="question">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, iusto?</p>
+                <p>Que faire si le produit n’est pas à ma taille ?</p>
                 <i class='bx bx-chevron-down'></i>
             </div>
             <div class="answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sapiente qui repellendus, est velit id voluptatum facere numquam esse, blanditiis ab, incidunt dignissimos. Eius magnam neque sapiente error eum iure earum laborum vel voluptatibus perspiciatis. Ipsum, accusantium! Exercitationem aliquid nihil, nam maiores ipsam laboriosam consequatur neque impedit, consequuntur repudiandae culpa eveniet, rem voluptates natus magni. Vitae commodi aut sequi ut?</p>
+                <p>Si vous vous rendez compte d’une erreur sur votre taille lors de votre précommande, n’hésitez pas à nous contacter à merch@lanuitmmi.fr avec la nouvelle taille que vous souhaitez précommander. En cas de constat le jour de l’événement, nous pourrons, sous réserve des stocks disponibles, procéder à un échange de taille.</p>
             </div>
         </div>
         <div class="question_block hidden">
             <div class="question">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, iusto?</p>
+                <p>Quelles sont les méthodes de paiement ? </p>
                 <i class='bx bx-chevron-down'></i>
             </div>
             <div class="answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sapiente qui repellendus, est velit id voluptatum facere numquam esse, blanditiis ab, incidunt dignissimos. Eius magnam neque sapiente error eum iure earum laborum vel voluptatibus perspiciatis. Ipsum, accusantium! Exercitationem aliquid nihil, nam maiores ipsam laboriosam consequatur neque impedit, consequuntur repudiandae culpa eveniet, rem voluptates natus magni. Vitae commodi aut sequi ut?</p>
+                <p>Lorsque vous passez une précommande, vous vous engagez à payer cette dernière. Pour cela, il suffit de vous rendre au stand le jour de l’événement et vous pourrez régler votre commande par espèces, carte ou virement bancaire.</p>
             </div>
         </div>
         <div class="question_block hidden">
             <div class="question">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, iusto?</p>
+                <p>Comment récupérer ma commande si je suis absent le jour de l’événement ? </p>
                 <i class='bx bx-chevron-down'></i>
             </div>
             <div class="answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sapiente qui repellendus, est velit id voluptatum facere numquam esse, blanditiis ab, incidunt dignissimos. Eius magnam neque sapiente error eum iure earum laborum vel voluptatibus perspiciatis. Ipsum, accusantium! Exercitationem aliquid nihil, nam maiores ipsam laboriosam consequatur neque impedit, consequuntur repudiandae culpa eveniet, rem voluptates natus magni. Vitae commodi aut sequi ut?</p>
+                <p>Si un imprévu vous empêche d’assister à notre soirée, contactez notre équipe pour nous prévenir. Nous mettrons votre commande de côté et vous pourrez la retirer au Bureau des Étudiants après l’avoir payé.</p>
             </div>
         </div>
         <div class="question_block hidden">
             <div class="question">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, iusto?</p>
+                <p>Puis-je changer d’avis après avoir passer une commande ? </p>
                 <i class='bx bx-chevron-down'></i>
             </div>
             <div class="answer">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis sapiente qui repellendus, est velit id voluptatum facere numquam esse, blanditiis ab, incidunt dignissimos. Eius magnam neque sapiente error eum iure earum laborum vel voluptatibus perspiciatis. Ipsum, accusantium! Exercitationem aliquid nihil, nam maiores ipsam laboriosam consequatur neque impedit, consequuntur repudiandae culpa eveniet, rem voluptates natus magni. Vitae commodi aut sequi ut?</p>
+                <p>Oui, vous changez d’avis après avoir payé votre t-shirt, vous disposez de 14jours pour retourner le produit. Nous vous rembourserons au prix d’achat uniquement si le produit est de même qualité qu’à l’achat. </p>
+            </div>
+        </div>
+        <div class="question_block hidden">
+            <div class="question">
+                <p>Pourrais-je acheter des produits directement sur place ?  </p>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+            <div class="answer">
+                <p>Oui tout à fait. Si vous ne pouvez ou voulez pas précommander directement sur le site, vous pourrez acheter des produits directement sur place ! Attention, les quantités seront cependant limitées. </p>
             </div>
         </div>
     </div>
@@ -121,23 +134,68 @@
             }
         });
     }
+    
     function showImages(color){
         var test = document.getElementById("colors").getElementsByTagName("input");
         for(i=0;i<test.length;i++){
             if(test[i].id==color){
+                actualColor = test[i].id;
                 test[i].checked = true;
             }
         }
         var images = document.getElementById("product").getElementsByClassName("pictures")[0].getElementsByClassName("imagesGrid");
         for(i=0;i<images.length;i++){
             if(images[i].id==color){
-                images[i].style.display="grid";
+                images[i].parentElement.style.display = "block";
+                if(window.innerWidth <= 900){
+                    images[i].style.display="flex";
+                } else {
+                    images[i].style.display="grid";
+                }
             } else {
-                images[i].style.display="none";
+                console.log(images[i].parentElement);
+                images[i].parentElement.style.display="none";
             }
         }
 
     }
-    window.onload = showImages("{{$merch['colors'][0]}}");
+    let actualColor = "{{$merch['colors'][0]}}";
+    window.onload = showImages(actualColor);
+</script>
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+    let responsive = false;
+    window.addEventListener("DOMContentLoaded",()=>{
+    if(window.innerWidth <= 900){
+        carousselStaff(".imagesGrid","div");
+        if(!responsive){
+            showImages(actualColor);
+        }
+        responsive = true;
+    } else {
+        removeCaroussel(".imagesGrid");
+        if(responsive){
+            showImages(actualColor);
+        }
+        responsive = false;
+    }
+    window.addEventListener("resize",()=>{
+        if(window.innerWidth <= 900){
+            carousselStaff(".imagesGrid","div");
+            showImages(actualColor);
+            if(!responsive){
+            showImages(actualColor);
+            }
+            responsive = true;
+        } else {
+            removeCaroussel(".imagesGrid");
+            showImages(actualColor);
+            if(responsive){
+            showImages(actualColor);
+            }
+            responsive = false;
+        }
+    })
+})
 </script>
 @endsection

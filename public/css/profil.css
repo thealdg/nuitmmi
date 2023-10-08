@@ -24,6 +24,7 @@ input[type="radio"]{
     background-color: #080808;
     padding: 8rem 10rem;
     border: solid #DAC469 1px;
+    max-width: 90%;
 }
 #logout .box p{
     font-size: 3rem;
@@ -162,7 +163,7 @@ input[type="radio"]{
     font-weight: 300;
 
 }
-div.works.hidden{
+div.hidden{
     display: none;
 }
 .switch{
@@ -347,4 +348,186 @@ input[type="file"]{
 }
 .security_section form div.form_section{
     width: 45%;
+}
+.leftArrow, .rightArrow{
+    display: none;
+}
+@keyframes slideLeft {
+    from{
+        translate: -75% 0;
+    }
+    to{
+        translate: -25% 0;
+    }
+    
+}
+@keyframes slideRight {
+    from{
+        translate: -25% 0;
+    }
+    to{
+        translate: -75% 0;
+    }
+    
+}
+@media screen and (max-width: 900px) {
+
+    #profil .container{
+        flex-direction: column;
+        overflow: visible;
+    }
+    #profil section{
+        overflow: visible;
+    }
+    #profil .container nav{
+        padding: 0;
+        flex-direction: row;
+        justify-content: space-around;
+        border-right: none;
+        border-bottom: solid white 1px;
+        margin-block: 10rem;
+        position: relative;
+    }
+    #profil .container nav span{
+        position: absolute;
+        left: 50%;
+        top: 2rem;
+        translate: -50% 0;
+    }
+    #profil h1{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        translate: -50% 0;
+        white-space: nowrap;
+    }
+    #profil .container{
+        position: relative;
+    }
+    #profil .container section{
+        position: static;
+        padding: 0;
+    }
+    #profil .account_section form > div{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .account_section {
+        max-width: 400px;
+        margin-inline: auto;
+        overflow: visible;
+    }
+    .account_section .pp{
+        max-width: 150px;
+        margin-bottom: 8rem;
+    }
+    .account_section .pp img{
+        min-width: auto;
+    }
+    .account_section .infos .entry{
+        margin: 0;
+        flex-grow: unset;
+    }
+    .account_section .infos > .entry{
+        width: 100%;
+    }
+    .account_section .infos > div .entry{
+        flex-basis: 45%;
+    }
+    #profil .container nav label, #profil .container nav span{
+        font-size: 2.2rem;
+    }
+    #profil .container nav span{
+        font-size: 3rem;
+    }
+    .security_section form > div:not(.form_section){
+        flex-direction: column;
+    }
+    .security_section form div.form_section{
+        width: 60%;
+    }
+    .works_section p{
+        text-align: center;
+    }
+
+    section .works .work{
+        flex-basis: auto;
+        min-width: 50%;
+        max-width: 50%;
+        opacity: 0;
+        margin: 0;
+        transition: opacity 0.5s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section .works .work > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section .works .work h3{
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    section .works .work h4{
+        font-size: 2rem;
+        text-align: center;
+    }
+    section .works .work.active{
+        opacity: 1;
+    }
+    section .works{
+        flex-wrap: nowrap;
+        translate: -25% 0;
+        margin-top: 5rem;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    .leftArrow, .rightArrow{
+        display: block;
+        position: absolute;
+        top: 50%;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        animation: leftNright 2s infinite;
+        z-index: 1;
+    }
+    .leftArrow{
+        left: 0;
+        scale: -1 1;
+        translate: -300% 0%;
+    }
+    .rightArrow{
+        translate:  300% 0;
+        right: 0;
+    }
+    .leftArrow img, .rightArrow img{
+        width: 30px;
+    }
+    .switch h2{
+        font-size: 2.5rem;
+    }
+    .works_section .work img{
+        width: 100%;
+    }
+    .works_section .work h5{
+        font-size: 2rem;
+    }
+    section .works .work h3{
+        font-size: 2.2rem;
+    }
+    .works_section .works{
+        flex-wrap: nowrap;
+    }
+    .works_section > div{
+        position: relative;
+    }
+
+    
 }

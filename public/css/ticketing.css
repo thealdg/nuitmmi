@@ -1,0 +1,193 @@
+#tickets h1{
+    margin-top: 10rem;
+    font-size: 6rem;
+    width: fit-content;
+    margin-inline: auto;
+}
+#tickets .container{
+    max-width: 100%;
+}
+#tickets{
+    width: 100%;
+    margin-inline: auto;
+    overflow: visible;
+    padding-inline: 0;
+}
+#tickets .steps{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5rem;
+    max-width: 900px;
+    margin-inline: auto;
+}
+#tickets .steps h2{
+    font-size: 3rem;
+    opacity: 0.5;
+}
+#tickets .steps h2.checked{
+    opacity: 1;
+    cursor: pointer;
+}
+#tickets .steps h2.current{
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#tickets .steps span{
+    font-size: 4rem;
+}
+#tickets p{
+    text-align: justify;
+}
+#tickets section{
+    overflow: visible;
+    max-width: 900px;
+    margin-inline: auto;
+}
+#tickets form{
+    width: 100%;
+    margin-inline: auto;
+    position: relative;
+    padding-inline: 5rem;
+
+}
+#tickets form section{
+    padding: 0;
+    margin-top: 8rem;
+}
+
+#tickets form table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-inline: auto;
+    margin-top: 5rem;
+}
+#tickets form table th{
+    text-align: left;
+    font-family: Moonic;
+    font-size: 3rem;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-weight: normal;
+}
+#tickets form table th:first-child{
+    width: 40%;
+}
+#tickets form table th:last-child{
+    text-align: right;
+    width: 40%;
+}
+#tickets form table td{
+    font-size: 2.5rem;
+    font-weight: 200;
+}
+#tickets form table tr.split{
+    border-bottom: solid white 1px;
+}
+#tickets form table tr > *{
+    padding-block: 2rem;
+}
+#tickets form table td select, #tickets form table td select option{
+    background-color: #080808;
+    border: none;
+    color: white;
+    font-weight: 200;
+    margin-left: auto;
+    margin-right: 0;
+    text-align: right;
+    font-family: Montserrat;
+}
+#tickets form table td i{
+    font-size: 1.8rem;
+}
+#tickets form table td:not(.description):last-child{
+    text-align: right;
+}
+#tickets form button, #validation button{
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-family: Moonic;
+    border: solid white 1px;
+    padding: 1rem 4rem;
+    display: block;
+    width: fit-content;
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 5rem;
+    cursor: pointer;
+}
+#tickets form #validation button{
+    margin-inline: auto;
+    margin-top: 8rem;
+}
+#informations{
+    width: 100%;
+}
+#informations label{
+    font-size: 2rem;
+    margin-block: 1rem;
+    white-space: nowrap;
+    display: block;
+    font-weight: 300;
+
+}
+#informations h2{
+    font-size: 3rem;
+    margin-bottom: 5rem;
+}
+#informations > label, #informations .form_section > label{
+    font-weight: 300;
+    margin-top: 2rem;
+    margin-inline: 0;
+}
+#informations > label i, #informations .form_section > label i{
+    font-weight: 300;
+} 
+#informations input:focus{
+    border-color: #DAC469;
+}
+#informations input{
+    padding-block: 1rem;
+    font-size: 2rem;
+    font-weight: 300;
+    outline: none;
+    background-color: #080808;
+    border: none;
+    border-bottom: solid white 1px;
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 5rem;
+    width: 100%;
+}
+
+#validation p{
+    text-align: center;
+    margin-bottom: 5rem;
+}
+#validation div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#validation div label{
+    margin-left: 1rem;
+    font-weight: 200;
+    font-size: 1.5rem;
+}
+#validation div label span{
+    color: #DAC469;
+}
+#tickets form > div{
+    max-width: 900px;
+    margin-inline: auto;
+}
+@media screen and (max-width: 900px) {
+    #tickets .steps h2{
+        font-size: 2.5rem;
+    }
+    
+}

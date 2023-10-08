@@ -16,7 +16,7 @@
             <h4>Cérémonie de mise à l'honneur des projets étudiants.</h4>
             <div id="countdown"></div>
             <div class="buttons">
-                <a href="index.php?action=participate" class="cta">participation &nbsp;&rarr;</a>
+                <a href="{{route('participate')}}" class="cta">participation &nbsp;&rarr;</a>
                 <a href="#" class="cta">réserver &nbsp;&rarr;</a>
             </div>
             
@@ -25,7 +25,6 @@
     </div>
 </section>
 <section id="door">
-    
     <div></div>
     <div class="scalable">
         <div></div>
@@ -69,6 +68,7 @@
                         <a href="#"><i class='bx bxl-linkedin-square' ></i></a>
                         <a href="#"><i class='bx bx-globe'></i></a>
                     </div>
+                    <div class="shape"></div>
                 </div>
                 <h3>bidule <br>chose</h3>
                 <h4>Développeur chez Infogrames</h4>
@@ -85,8 +85,7 @@
                 </div>
                 <h3>Jean <br>Random</h3>
                 <h4>Chargée de communication de la mairie de Roubaix</h4>
-            </div>
-      
+            </div>      
         </div>
     </div>
 </section>
@@ -120,3 +119,15 @@
     // Update the count down every 1 second
     setInterval(countDown, 1000);
 </script>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+        for(let guest of document.querySelectorAll("#guests .photo")){
+        console.log("test");
+        guest.addEventListener("click",()=>{
+            guest.querySelector(".social_networks").style.display = "flex";
+            
+        })
+    }
+    })
+</script>
+

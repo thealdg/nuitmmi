@@ -35,6 +35,9 @@ Route::get("/boutique/panier/precommander",[Visuals::class,"preorder"])->name("p
 Route::get("/profil/mot-de-passe",[Visuals::class,"password"])->name("password");
 Route::get("/legal",[Visuals::class,"legal"])->name("legal");
 Route::get("/presse",[Visuals::class,"press"])->name("press");
+Route::get("/conditions-generales",[Visuals::class,"conditions"])->name("conditions");
+Route::get("/participer/competition",[Visuals::class,"competition"])->name("competition");
+Route::get("/billeterie",[Visuals::class,"ticketing"])->name("ticketing");
 
 Route::get("/admin",[Visuals::class,"admin"])->name("admin");
 Route::get("/admin/moderation",[Visuals::class,"moderation"])->name("moderation");

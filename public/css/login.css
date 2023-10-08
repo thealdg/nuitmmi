@@ -7,6 +7,11 @@ main{
     text-align: center;
     margin-top: 10rem;
 }
+#form.login h1{
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
 #form form{
     width: 60%;
     margin-inline: auto;
@@ -52,7 +57,7 @@ main{
     border-color: #DAC469;
 }
 #form input[type="checkbox"]{
-    transform: scale(1.5) translateY(0);
+    transform: scale(1) translateY(0);
 }
 #form form div.form_section{
     display: flex;
@@ -191,7 +196,7 @@ main{
 }
 #confirm p{
     max-width: 700px;
-    text-align: center;
+    text-align: justify;
     font-size: 1.8rem;
 }
 #confirm p span{
@@ -219,6 +224,7 @@ main{
 }
 #confirm form + p{
     font-style: italic;
+    text-align: center;
 }
 #form .container > p{
     text-align: center;
@@ -226,4 +232,26 @@ main{
 }
 #confirm.hidden{
     display: none;
+}
+
+@media screen and (max-width: 900px){
+    #form form{
+        width: 100%;
+        max-width: 400px;
+    }
+    #confirm > div{
+        max-width: 90%;
+        padding-inline: 5rem;
+    }
+    #confirm h1{
+        text-align: center;
+    }
+    #form form > div > div label{
+        font-size: 1.5rem;
+        white-space: normal;
+    }
+    #form form > div > div label a span{
+        font-size: 1.5rem;
+    }
+    
 }

@@ -1,4 +1,8 @@
-
+#shop h1{
+    font-size: 6rem;
+    margin-top: 10rem;
+    text-align: center;
+}
 #shop .articles{
     display: flex;
     justify-content: center;
@@ -33,4 +37,75 @@
 #shop .article h1{
     font-size: 6rem;
     text-align: center;
+}
+.leftArrow, .rightArrow{
+    display: none;
+}
+@keyframes slideLeft {
+    from{
+        translate: -33% 0;
+    }
+    to{
+        translate: 0% 0;
+    }
+    
+}
+@keyframes slideRight {
+    from{
+        translate: 0% 0;
+    }
+    to{
+        translate: -33% 0;
+    }
+    
+}
+@media screen and (max-width: 900px){
+    #shop{
+        padding-inline: 0;
+    }
+    #shop .articles{
+        justify-content: flex-start;
+    }
+    #shop .article{
+        min-width: 33%;
+        max-width: 33%;
+        opacity: 0.5;
+        margin-inline: 0;
+        z-index: -1;
+        transition: all 0.5s;
+    }
+    #shop .article.active{
+        opacity: 1;
+        translate: 0 -25px;
+        z-index: 1;
+    }
+    .leftArrow, .rightArrow{
+        display: block;
+        position: absolute;
+        top: 50%;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        animation: leftNright 2s infinite;
+        z-index: 1;
+    }
+    .leftArrow{
+        left: 0;
+        scale: -1 1;
+        translate: -150% 100%;
+    }
+    .rightArrow{
+        translate: 150% 100%;
+        right: 0;
+    }
+    .leftArrow img, .rightArrow img{
+        width: 35px;
+    }
+    #shop .article a img{
+        width: calc(100% - 2rem);
+        display: block;
+        margin-inline: auto;
+    }
 }

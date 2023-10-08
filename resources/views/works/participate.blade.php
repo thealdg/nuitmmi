@@ -10,7 +10,7 @@
         <h2>Compétition</h2>
         <p>Vous venez de sélectionner votre oeuvre dans la catégorie “compétition”. Pour rappel, ce domaine vise à élire la meilleure production dans chaque catégorie, aux yeux du jury et du public. De fait, il y aura des vainqueurs et des vaincus ! Mais avant tout, il y aura des personnes qui auront pu saisir l’opportunité de confronter son projet à d’autres afin de voir où ils en sont dans une compétition de niveau pouvant être professionnelle. </p>
         <p>Une fois votre oeuvre inscrite en compétition, elle sera visible dans l’exposition et dans la compétition mais vous ne pourrez la retirer d’une seule catégorie à la fois.</p>
-        <a href="">En savoir plus</a>
+        <a href="{{route('competition')}}">En savoir plus</a>
         <button onclick="document.getElementById('popup').style.display='none'">fermer</button>
     </div>
 </div>

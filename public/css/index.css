@@ -18,6 +18,7 @@
     padding-bottom: 0;
     padding: 0;
     position: relative;
+    height: fit-content;
 }
 #home .container{
     display: flex;
@@ -54,18 +55,7 @@
     margin-inline: auto;
     align-items: center;
 }
-.home_image{
-    opacity: 0.7;
-    width: 20%;
-    height: 100%;
-}
-.home_image img{
-    display: block;
-    height: 100%;
-    width: 100%;
-    margin-inline: auto;
-    object-fit: contain;
-}
+
 #home h1{
     font-size: 12rem;
     margin-top: 3rem;
@@ -166,6 +156,7 @@
 #guests .guests{
     display: flex;
     justify-content: center;
+    height: max-content;
 }
 #guests .guest{
     flex-basis: 22.5%;
@@ -272,10 +263,11 @@
 #guests h3{
     text-transform: uppercase;
     font-size: 4rem;
-    margin-top: -4rem;
     position: relative;
+    transform: translateY(-4rem);
     z-index: 3;
     margin-bottom: 0;
+    margin-top: 0;
     transition: all 0.5s;
     
 
@@ -284,6 +276,7 @@
     font-weight: normal;
     font-size: 2rem;
     margin-top: 1rem;
+    transform: translateY(-4rem);
     font-style: italic;
     font-weight: 300;
     font-family: Montserrat;
@@ -356,5 +349,72 @@
 #about a:hover{
     color: #DAC469;
     border-color: #DAC469;
+}
+
+@media screen and (max-width: 900px) {
+    #home{
+        margin-top: 10rem;
+    }
+    #home h1{
+        font-size: 8rem;
+    }
+    #home h2{
+        font-size: 2.5rem;
+    }
+    #home #countdown h2{
+        font-size: 6rem;
+    }
+    #home .buttons{
+        flex-direction: column;
+        text-align: center;
+    }
+    #home .buttons a{
+        margin-block: 2rem;
+        font-size: 2rem;
+    }
+    section h2{
+        text-align: center;
+    }
+    #guests{
+        padding-inline: 0;
+        min-height: auto;
+    }
+    #guests .guests{
+        justify-content: flex-start;
+        overflow-x: scroll;
+        align-items: flex-start;
+        position: relative;
+
+        
+    }
+    #guests .guests .guest{
+        min-width: 45%;
+        flex-basis: auto;
+        transform: translate(0);
+        margin-inline: 2rem;
+    }
+    #guests .guests .guest h4{
+        font-size: 1.8rem;
+    }
+    #guests .guests .guest:first-child{
+        margin-top: 15rem;
+        margin-left: 10rem;
+    }
+    #guests .guests .guest:last-child{
+        margin-top: 30rem;
+    }
+    #guests .guest .photo{
+        width: 75%;
+    }
+    #guests .guest .photo > img{
+        width: 100%;
+        aspect-ratio: 10/16;
+    }
+    #guests .social_networks{
+        display: none;
+        background-color: rgba(8, 8, 8, 0.5);
+        opacity: 1;
+    }
+    
 }
    

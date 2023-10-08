@@ -36,6 +36,7 @@
     <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
     </div>
         <h1>Découvrez les autres travaux de <span>@if(property_exists($userWorks[0], 'linkedin')) <a href="{{$userWorks[0]->linkedin}}">{{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}}</a>@else {{$userWorks[0]->userName}} {{$userWorks[0]->userSurname}} @endif</span></h1>
+        @if(count($userWorks) > 1)<button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
         <div class="works">
             @foreach($userWorks as $work)
             <div class="work">
@@ -50,6 +51,7 @@
             @endforeach
 
         </div>
+        @if(count($userWorks) > 1)<button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
     </div>
 </section>
 @endif
@@ -57,6 +59,7 @@
 <section id="categoryWorks">
     <div class="container">
         <h1>Dans la même catégorie</h1>
+        @if(count($categoryWorks)>1)<button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
         <div class="works">
         @foreach($categoryWorks as $work)
             <div class="work">
@@ -70,7 +73,26 @@
             @endforeach
 
         </div>
+        @if(count($categoryWorks)>1)<button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
     </div>
 </section>
 @endif
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+    if(window.innerWidth <= 900){
+        carousselStaff(".works",".work");
+    } else {
+        removeCaroussel(".works");
+    }
+    window.addEventListener("resize",()=>{
+        if(window.innerWidth <= 900){
+            carousselStaff(".works",".work");
+        } else {
+            removeCaroussel(".works");
+    
+        }
+    })
+})
+</script>
 @endsection

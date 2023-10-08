@@ -1,15 +1,15 @@
-#contact .container{
+#contactPress .container{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-#contact h1{
+#contactPress h1{
     font-size: 6rem;
     text-transform: uppercase;
     margin-bottom: 10rem;
     margin-top: 10rem;
 }
-#contact h2{
+#contactPress h2{
     font-size: 3rem;
     background: linear-gradient(to right,#845917,#DAC469 75%);
     -webkit-text-fill-color: transparent;
@@ -18,7 +18,7 @@
 
 }
 
-#contact a{
+#contactPress a{
     font-size: 2rem;
     display: block;
     margin-bottom: 1rem;
@@ -65,4 +65,17 @@
 }
 #press .category{
     margin-bottom: 10rem;
+}
+
+@media screen and (max-width: 900px){
+    #press h4{
+        font-size: 1.8rem;
+    }
+    #press .link div a{
+        font-size: 1.8rem;
+    }
+    #contactPress h1{
+        margin-top: 18rem;
+    }
+    
 }

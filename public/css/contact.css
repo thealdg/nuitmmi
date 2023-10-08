@@ -23,7 +23,6 @@ main{
 .contact_form{
     font-size: 2rem;
     font-weight: 300;
-    padding-top: 50px;
     border-top: solid white 1px;
     flex-basis: 60%;
     display: inline;
@@ -45,7 +44,7 @@ main{
 }
 
 .contact_form form > *{
-    margin-block: 3rem;
+    margin-block: 8rem;
 }
 .contact_form input, .contact_form textarea{
     background: none;
@@ -61,17 +60,15 @@ main{
     width: 100%;
     resize: vertical;
 }
-.contact_form form > div{
+.contact_form form > div:nth-child(1){
     display: flex;
+    justify-content: space-between;
 }
-.contact_form form > div input{
-    flex-grow: 1;
+.contact_form form > div:nth-child(1) .entry{
+    width: 45%;
 }
-.contact_form form > div input:nth-child(1){
-    margin-right: 10px;
-}
-.contact_form form > div input:nth-child(2){
-    margin-left: 10px;
+.contact_form form .entry input{
+    width: 100%;
 }
 .contact_form > div{
     display: flex;
@@ -96,4 +93,22 @@ main{
 }
 .contact_info > div p{
     margin-block: 1rem;
+}
+#contact label{
+    display: none;
+}
+@media screen and (max-width: 900px) {
+    #contact .container{
+        flex-direction: column;
+    }
+    #contact label{
+        display: block;
+        margin-bottom: 3rem;
+    }
+    #contact form button{
+        margin-inline: auto;
+    }
+    .contact_info{
+        display: none;
+    }
 }

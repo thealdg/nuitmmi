@@ -9,10 +9,23 @@
         <div class="contact_form">
             <form action="index.php?action=contactT" method="post">
                 <div>
-                    <input type="text" name="name" placeholder="Votre nom" required>
-                    <input type="email" name="email" placeholder="Votre email" required>
+                    <div class="entry">
+                        <label for="name">Nom</label>
+                        <input type="text" name="name" placeholder="Votre nom" required id="name">
+                    </div>
+                    <div class="entry">
+                        <label for="surname">Prénom</label>
+                        <input type="text" name="surname" placeholder="Votre prénom" required id="surname">
+                    </div>
                 </div>
-                <textarea name="message" placeholder="Votre message" rows="1"></textarea>
+                <div class="entry">
+                    <label for="email">Adresse mail</label>
+                    <input type="email" name="email" placeholder="Votre email" required id="email">
+                </div>
+                <div class="entry">
+                    <label for="message">Message</label>
+                    <textarea name="message" placeholder="Votre message" rows="1" id="message"></textarea>
+                </div>
                 <button type="submit">Valider</button>
             </form>
             <div>

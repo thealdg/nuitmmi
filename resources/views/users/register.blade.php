@@ -48,7 +48,7 @@
             <div class="form_section"><h2>Réseaux</h2><div class="link"><label for="linkedin"><i class='bx bxl-linkedin-square' ></i></label><input type="text" name="linkedin" placeholder="https://www.linkedin.com/"></div>
             <p>Votre profil LinkedIn sera visible sur les pages dédiées à vos œuvres.</p></div>
             <div>
-            <div><div><input type="checkbox" name="conditions" id="conditions" value="true"><label for="conditions">J'accepte les <a href="#"><span>conditions générales</span></a> *.</label></div>
+            <div><div><input type="checkbox" name="conditions" id="conditions" value="true"><label for="conditions">J'accepte les <a href="{{route('conditions')}}"><span>conditions générales</span></a> *.</label></div>
             <div><input type="checkbox" name="newsletter" id="newsletter" value="true"><label for="newsletter">J'accepte de recevoir par email des informations relatives à cet événement.</label></div></div>
                 
             </div>

@@ -195,4 +195,13 @@ class Visuals extends Controller
     function press(){
         return view("press");
     }
+    function conditions(){
+        return view("conditions");
+    }
+    function competition(){
+        return view("works/competition");
+    }
+    function ticketing(){
+        return view("tickets/ticketing");
+    }
 }  

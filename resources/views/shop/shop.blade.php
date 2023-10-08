@@ -1,10 +1,12 @@
 @extends("layouts.app")
 @section("css")
-<link rel="stylesheet" href="css/shop.css">
+<link rel="stylesheet" href="{{asset('css/shop.css')}}">
 @endsection
 @section("content")
 <section id="shop">
     <div class="container">
+        <h1>Boutique</h1>
+        <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
         <div class="articles">
                 <div class="article">
                     <a href="{{route('article',$merch[0]->id)}}">
@@ -25,6 +27,25 @@
                     </a>
                 </div>
         </div>
+        <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
     </div>
 </section>
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+    if(window.innerWidth <= 900){
+        carousselStaff(".articles",".article");
+    } else {
+        removeCaroussel(".articles");
+    }
+    window.addEventListener("resize",()=>{
+        if(window.innerWidth <= 900){
+            carousselStaff(".articles",".article");
+        } else {
+            removeCaroussel(".articles");
+    
+        }
+    })
+})
+</script>
 @endsection

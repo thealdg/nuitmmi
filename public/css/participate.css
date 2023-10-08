@@ -9,7 +9,7 @@ input[type="file"]{
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 3;
     backdrop-filter: brightness(0.5);
 }
 #popup .box{
@@ -20,6 +20,7 @@ input[type="file"]{
     background-color: #080808;
     padding: 8rem 8rem 3rem 8rem;
     border: solid #DAC469 1px;
+    max-width: 90%;
 
 }
 #popup p{
@@ -28,10 +29,7 @@ input[type="file"]{
     margin-block: 1rem;
 }
 #popup h2{
-    background: linear-gradient(45deg,#845917,#DAC469 50%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-size: 3rem;
+    font-size: 4rem;
     margin-top: 0;
     margin-bottom: 2rem;
 }
@@ -272,4 +270,30 @@ section h2{
     width: auto;
     object-fit: contain;
 
+}
+
+@media screen and (max-width: 900px) {
+    #participate{
+        margin-top: 50px;
+    }
+    #participate form{
+        width: calc(100%);
+        margin-inline: auto;
+        max-width: 400px;
+    }
+    #participate form > div:not(.validate){
+        width: 100%;
+    }
+   
+    #participate form p{
+        left: 0;
+        width: 100%;
+        bottom: -3rem;
+        margin: 0;
+        translate: 0 100%;
+    }
+    #participate form > div:not(.validate).description, #participate form > div:not(.validate).description + .input{
+        margin-bottom: 15rem;
+    }
+    
 }

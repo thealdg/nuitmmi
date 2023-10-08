@@ -23,7 +23,9 @@
             <img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche">
         </div>
             <h2>Événementiel</h2>
+            <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
             <div class="cards">
+                
                 <div class="card">
                     <img src="{{asset('images/staff/Dos/Logan.png')}}" alt="" class="back">
                     <img src="{{asset('images/staff/Face/Logan.png')}}" alt="" class="front">
@@ -40,11 +42,15 @@
                         <h4>Animateur et chargé de communication</h4>
                     </div>
                 </div>
+                
             </div>
+            <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
         </div>
         <div class="category">
             <h2>Administration</h2>
+            <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
             <div class="cards">
+           
                 <div class="card">
                     <img src="{{asset('images/staff/Dos/Thea.png')}}" alt="" class="back">
                     <img src="{{asset('images/staff/Face/Thea.png')}}" alt="" class="front">
@@ -61,11 +67,15 @@
                         <h4>Trésorier</h4>
                     </div>
                 </div>
+               
             </div>
+            <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
         </div>
         <div class="category">
             <h2>Développement</h2>
+            <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
             <div class="cards">
+           
                 <div class="card">
                     <img src="{{asset('images/staff/Dos/May.png')}}" alt="" class="back">
                     <img src="{{asset('images/staff/Face/May.png')}}" alt="" class="front">
@@ -82,8 +92,28 @@
                         <h4>Développeur</h4>
                     </div>
                 </div>
+               
             </div>
+            <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
         </div>
     </div>
 </section>
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+    if(window.innerWidth <= 900){
+        carousselStaff(".cards",".card");
+    } else {
+        removeCaroussel(".cards");
+    }
+    window.addEventListener("resize",()=>{
+        if(window.innerWidth <= 900){
+            carousselStaff(".cards",".card");
+        } else {
+            removeCaroussel(".cards");
+    
+        }
+    })
+})
+</script>
 @endsection

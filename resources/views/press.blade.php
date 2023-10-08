@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{asset('css/press.css')}}">
 @endsection
 @section("content")
-<section id="contact">
+<section id="contactPress">
     <div class="container">
         <h1>espace presse</h1>
         <h2>Contact Presse</h2>

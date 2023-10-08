@@ -23,7 +23,7 @@
     content: "";
     width: 100%;
     height: 1px;
-    background-color: linear-gradient(45deg,#845917,#DAC469 50%);
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
     bottom: -5px;
     left: 0;
     position: absolute;
@@ -145,5 +145,138 @@ section .works h4{
     -webkit-background-clip: text;
     font-family: Montserrat;
     letter-spacing: 0;
+    
+}
+.leftArrow, .rightArrow{
+    display: none;
+}
+@keyframes slideLeft {
+    from{
+        translate: -75% 0;
+    }
+    to{
+        translate: -25% 0;
+    }
+}
+
+@keyframes slideRight {
+    from{
+        translate: -25% 0;
+    }
+    to{
+        translate: -75% 0;
+    }
+    
+}
+
+@media screen and (max-width: 900px){
+    #work .category{
+        flex-direction: column;
+        align-items: center;
+    }
+    #work .category h1{
+        margin-bottom: 3rem;
+        text-align: center;
+    }
+    #work .work{
+        flex-direction: column;
+        position: relative;
+        padding-top: 6rem;
+    }
+    #work .work h3{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        translate: -50% -50%;
+        font-family: Moonic;
+    }
+    #work .work h4{
+        margin-bottom: 5rem;
+    }
+    #work .work .infos{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #work .work .infos p{
+        margin-block: 2rem;
+        font-size: 2rem;
+    }
+    #work .work .thumbnail{
+        width: 75%;
+        margin-inline: auto;
+    }
+    #userWorks #arrow{
+        display: none;
+    }
+    section{
+        position: relative;
+    }
+    section h1{
+        font-size: 3rem;
+        margin-top: 5rem;
+    }
+    section .container{
+        position: relative;
+    }
+    section .works .work{
+        flex-basis: auto;
+        min-width: 50%;
+        max-width: 50%;
+        opacity: 0;
+        margin: 0;
+        transition: opacity 0.5s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section .works .work > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    section .works .work h3{
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    section .works .work h4{
+        font-size: 2rem;
+        text-align: center;
+    }
+    section .works .work.active{
+        opacity: 1;
+    }
+    section .works{
+        flex-wrap: nowrap;
+        translate: -25% 0;
+        margin-top: 5rem;
+        overflow-x: hidden;
+        align-items: center;
+    }
+    .leftArrow, .rightArrow{
+        display: block;
+        position: absolute;
+        top: 50%;
+        padding: 0;
+        margin: 0;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        animation: leftNright 2s infinite;
+        z-index: 1;
+    }
+    .leftArrow{
+        left: 0;
+        scale: -1 1;
+        translate: -300% 25%;
+    }
+    .rightArrow{
+        translate:  300% 25%;
+        right: 0;
+    }
+    .leftArrow img, .rightArrow img{
+        width: 30px;
+    }
     
 }

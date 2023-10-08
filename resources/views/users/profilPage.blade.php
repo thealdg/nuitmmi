@@ -19,10 +19,10 @@
         <nav>
             <label for="account" class="current">Mon compte</label>
             <label for="security">Sécurité</label>
-            <label for="works">Mes œuvres</label>
+            <label for="works" onclick="startCaroussel();">Mes œuvres</label>
             <span onclick="document.getElementById('logout').style.display='flex'">Déconnexion</span>
         </nav>
-        <input type="radio" id="account" name="section" checked>
+        <input type="radio" id="account" name="section">
         <section class="account_section">
             <h1>Mon compte</h1>
             <form action="{{route('edit')}}" method="post" enctype="multipart/form-data">
@@ -82,61 +82,52 @@
             <h2 class="current" onclick="exposition()" id="select_exposition">En exposition</h3>
             <h2 onclick="participation()" id="select_competition">En compétition</h3>
         </div>
-            <div class="works" id="exposition">
-                @foreach($works as $work)
-                <div class="work">
-                    <h5>{{$work->category}}</h5>
-                    <img src="{{asset($work->thumbnail)}}" alt="miniature">
-                    <h3>{{$work->name}}</h3>
-                    @if($work->result==0 and !is_null($work->result))
-                    <h4>Refusé</h4>
-                    @elseif($work->result==1)
-                    <h4>Validé</h4>
-                    @else
-                    <h4>En cours</h4>
-                    @endif
+        <div id="exposition">
+            <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
+                <div class="works">
+                    @foreach($works as $work)
+                    <div class="work">
+                        <h5>{{$work->category}}</h5>
+                        <img src="{{asset($work->thumbnail)}}" alt="miniature">
+                        <h3>{{$work->name}}</h3>
+                        @if($work->result==0 and !is_null($work->result))
+                        <h4>Refusé</h4>
+                        @elseif($work->result==1)
+                        <h4>Validé</h4>
+                        @else
+                        <h4>En cours</h4>
+                        @endif
+                    </div>
+                    @endforeach
                 </div>
-                @endforeach
-            </div>
-            <div class="works hidden" id="participation">
-                @foreach($works as $work)
-                @if($work->competition==1)
-                <div class="work">
-                    <h5>{{$work->category}}</h5>
-                    <img src="{{asset($work->thumbnail)}}" alt="miniature">
-                    <h3>{{$work->name}}</h3>
-                    @if($work->result==0 and !is_null($work->result))
-                    <h4>Refusé</h4>
-                    @elseif($work->result==1)
-                    <h4>Validé</h4>
-                    @else
-                    <h4>En cours</h4>
+            <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
+        </div>
+        <div id="participation" class="hidden">
+            <button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
+                <div class="works">
+                    @foreach($works as $work)
+                    @if($work->competition==1)
+                    <div class="work">
+                        <h5>{{$work->category}}</h5>
+                        <img src="{{asset($work->thumbnail)}}" alt="miniature">
+                        <h3>{{$work->name}}</h3>
+                        @if($work->result==0 and !is_null($work->result))
+                        <h4>Refusé</h4>
+                        @elseif($work->result==1)
+                        <h4>Validé</h4>
+                        @else
+                        <h4>En cours</h4>
+                        @endif
+                    </div>
                     @endif
+                    @endforeach
                 </div>
-                @endif
-                @endforeach
-            </div>
+            <button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>
+        </div>
         </section>
     </div>
 </section>
 <script>
-    function exposition(){
-        document.getElementById('participation').classList.add("hidden");
-        document.getElementById('exposition').classList.remove("hidden");
-        document.getElementById("select_exposition").classList.add("current");
-        document.getElementById("select_competition").classList.remove("current");
-        document.getElementById('count_exposition').classList.remove("hidden");
-        document.getElementById('count_participation').classList.add("hidden");
-    }
-    function participation(){
-        document.getElementById('participation').classList.remove("hidden");
-        document.getElementById('exposition').classList.add("hidden");
-        document.getElementById("select_competition").classList.add("current");
-        document.getElementById("select_exposition").classList.remove("current");
-        document.getElementById('count_exposition').classList.add("hidden");
-        document.getElementById('count_participation').classList.remove("hidden");
-
-    }
     var labels = document.getElementById("profil").getElementsByTagName("nav")[0].getElementsByTagName("label");
     for(i=0;i<labels.length;i++){
         labels[i].addEventListener("click",function(){
@@ -147,6 +138,7 @@
 
         })
     }
+    document.querySelector("input[type='radio']").checked = true;
     var loadFile = function(event) {
     var output = document.getElementById('preview');
     output.src = URL.createObjectURL(event.target.files[0]);
@@ -154,7 +146,30 @@
       URL.revokeObjectURL(output.src) // free memory
     }
   };
-
-
 </script>
+<script src="{{asset('js/changeCategory.js')}}"></script>
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+
+    function startCaroussel(){
+        if(window.innerWidth <= 900){
+            carousselStaff(".works",".work");
+        } else {
+            removeCaroussel(".works");
+        }
+        window.addEventListener("resize",()=>{
+            if(window.innerWidth <= 900){
+                carousselStaff(".works",".work");
+            } else {
+                removeCaroussel(".works");
+        
+            }
+        })
+    }
+</script>
+    
+
+
+
+
 @endsection

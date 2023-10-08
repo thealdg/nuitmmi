@@ -1,6 +1,7 @@
 main > .container > section{
     padding: 0;
     margin-block: 10rem;
+    overflow: visible;
 }
 main > .container {
     margin-top: 10rem;
@@ -21,4 +22,16 @@ main > .container > p{
 main > .container h2{
     font-size: 3rem;
     font-weight: normal;
+}
+
+@media screen and (max-width: 900px){
+    main > .container{
+        width: 100%;
+        padding-inline: 5rem;
+    }
+    main > .container h1{
+        font-size: 4rem;
+        margin-top: 5rem;
+    }
+    
 }

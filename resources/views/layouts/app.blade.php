@@ -15,18 +15,6 @@ $headerCategories = DB::select("SELECT * FROM categories");
     @yield("css")
 </head>
 <body>
-    @if(session()->has("cart") and !empty(session("cart")))
-    <a href="{{route('cart')}}" id="cart">
-        <img src="{{asset('images/icons/market.png')}}" alt="panier" style="width: 40px">
-        <div id="count">
-            <?php $total = 0;
-            foreach(session("cart") as $product){
-                $total += $product->quantity;
-            }
-            echo $total;
-            ?>
-        </div></a>
-    @endif
     <header>
         <nav>
             <a href="/">
@@ -48,14 +36,45 @@ $headerCategories = DB::select("SELECT * FROM categories");
                         @endforeach
                     </div>
                 </div>
-                
-                
-               
-
-               
-
+            </div>
+            <div class="menu" id="phoneMenu">
+                <div class="deroulant">
+                    <a href="{{route('works')}}">Vos œuvres <i class='bx bx-chevron-down' ></i></a>
+                    <script>window.addEventListener("DOMContentLoaded",()=>{
+                        document.querySelector("#phoneMenu .deroulant > a").addEventListener("click",(e)=>{
+                            e.preventDefault();
+                            document.querySelector("#phoneMenu .deroulant > a").parentElement.classList.toggle("active");
+                        })
+                    });</script>
+                    <div class="menu_deroulant">
+                        @foreach($headerCategories as $headerCategory)
+                        <a href="{{route('category',$headerCategory->name)}}">{{$headerCategory->name}}</a>
+                        @endforeach
+                    </div>
+                </div>
+                <a href="{{route('shop')}}">Boutique</a>
+                <a href="{{route('about')}}">À propos</a>
+                <div class="main_links">
+                    <a href="{{route('participate')}}">Participer</a>
+                    <a href="#">Réserver</a>
+                </div>
+                <div>
+                    <a href="{{route('profil')}}">Mon compte</a>
+                </div>
             </div>
             <div class="account">
+                 @if(session()->has("cart") and !empty(session("cart")))
+                <a href="{{route('cart')}}" id="cart">
+                    <img src="{{asset('images/icons/market.png')}}" alt="panier">
+                    <div id="count">
+                        <?php $total = 0;
+                        foreach(session("cart") as $product){
+                            $total += $product->quantity;
+                        }
+                        echo $total;
+                        ?>
+                    </div></a>
+                    @endif
                     <a href="#" class="button">Réserver</a>
                         @if(session()->has('id'))
                         <a href="{{route('profil')}}">
@@ -66,9 +85,12 @@ $headerCategories = DB::select("SELECT * FROM categories");
                             <img src="{{asset(session('profilePicture'))}}" alt="Photo de profil">
 
                             @else
-                            <img src="{{asset('images/icons/profile.png')}}" alt="Photo de profil">
+                            <img src="{{asset('images/icons/profile.png')}}" alt="Photo de profil" style="border-radius: 0">
                            
                             @endif</a>
+                            <div id="burger" onclick="document.querySelector('header').classList.toggle('active')">
+                                <div></div>
+                            </div>
             </div>
         </nav>
     </header>
@@ -82,9 +104,9 @@ $headerCategories = DB::select("SELECT * FROM categories");
                     <div class="footer_title">
                         <h3>La Nuit MMI</h3>
                         <div class="underline"></div>
-                        <a href="index.php?action=legal">Modalités</a>
-                        <a href="#">Compétition</a>
-                        <a href="#">Édition précédente</a>
+                        <a href="{{route('participate')}}?modalites">Modalités</a>
+                        <a href="{{route('competition')}}">Compétition</a>
+                        <a href="https://www.youtube.com/watch?v=BOHiQL9b2UY">Édition précédente</a>
                     </div>
                 </div>
                 <div class="footer_part">
@@ -112,24 +134,10 @@ $headerCategories = DB::select("SELECT * FROM categories");
 </div>
           <div class="footer_bottom">
                 <div class="rs"><a href="#"><i class='bx bxl-facebook'></i></a><a href="#"><i class='bx bxl-instagram' ></i></a><a href="#"><i class='bx bxl-tiktok' ></i></a></div>
-                <div class="links"><a href="{{route('press')}}">Espace Presse</a><span>-</span><a href="{{route('legal')}}">Mentions légales</a></div>
+                <div class="links"><a href="{{route('press')}}">Espace Presse</a><span>-</span><a href="{{route('legal')}}">Mentions légales</a><span>-</span><a href="{{route('conditions')}}">Conditions d'utilisation</a></div>
                 <p><i class='bx bx-copyright' ></i> La Nuit MMI 2023, Tous droits réservés</p>
             </div>
         </div>
     </footer>
-    <script type="text/javascript">
-        const navbar = document.querySelector('header');
-    window.addEventListener('scroll', function (e) {
-      const lastPosition = window.scrollY;
-      if (lastPosition > 200) {
-        navbar.classList.add('active');
-      } else if (navbar.classList.contains('active')) {
-        navbar.classList.remove('active');
-      } else {
-        navbar.classList.remove('active');
-      }
-    });
-    </script>
-
 </body>
 </html>

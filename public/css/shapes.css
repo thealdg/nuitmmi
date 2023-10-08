@@ -31,31 +31,38 @@
 }
 @keyframes upNdown {
     0%{
-        transform: translate(-50%,-50%) translateY(0px);
+        transform: translateY(-50%);
     }
     50%{
-        transform: translate(-50%,-50%) translateY(20px);
+        transform: translateY(calc(-50% - 15px));
     }
     100%{
-        transform: translate(-50%,-50%) translateY(0);
+        transform: translateY(-50%);
     }
     
 }
-div#arrow {
+div#arrow, div.arrow {
     position: absolute;
     width: fit-content;
     height: fit-content;
     animation: upNdown 2s infinite;
     z-index: -1;
+    translate: -50% 0;
 }
-div#arrow img{
+div#arrow img, div.arrow img{
     width: 75px;
 }
 #home #arrow{
     top: 50%;
-    left: 95%;
+    right: 20px;
 }
+@media screen and (min-width: 1280px) {
+    #home #arrow{
+        right: calc((100% - 1280px)/4);
 
+    }
+    
+}
 #door{
     width: 100vw;
     height: 100vh; 
@@ -70,32 +77,31 @@ div#arrow img{
     justify-content: space-between;
     overflow: hidden;
 }
-#door > div:not(:empty){
-    width: 25%;
-    height: 100%;
+#door > .scalable{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: hidden;
-    max-width: none;
+    width: fit-content;
 
 }
-#door > div:not(:empty) > div:not(:empty){
+#door > .scalable > div:not(:empty){
     position: relative;
+    max-width: 100vw;
+    overflow: hidden;
 }
 #door div:empty{
     flex-grow: 1;
     background-color: #080808;
 }
 #door img{
-    display: block;
     width: 100%;
+    height: 100%;
+    display: block;
     object-fit: cover;
     object-position: bottom;
-    max-width: 110%;
     position: relative;
     z-index: 1;
-    transition: all 0.2s;
+    transition: opacity 0.2s;
 
 }
 #door h1{
@@ -105,8 +111,8 @@ div#arrow img{
     left: 50%;
     font-size: 6rem;
     text-align: center;
-    white-space: nowrap;
-    transition: all 0.2s;
+    transition: opacity 0.2s;
+    width: 100vw;
 }
 
 #guests .guest:nth-child(2){
@@ -153,12 +159,12 @@ div#arrow img{
     }
     
 }
-#staff h1, #contact h1, #legal h1, #categories .category:last-child h1, #title h1, #participate h1{
+#staff h1, #contactPress h1, #legal h1, #categories .category:last-child h1, #title h1, #participate h1{
     position: relative;
     width: fit-content;
     margin-inline: auto;
 }
-#staff h1::before, #contact h1::before, #legal h1::before, #categories .category:last-child h1::before, #participate h1::before{
+#staff h1::before, #contactPress h1::before, #legal h1::before, #categories .category:last-child h1::before, #participate h1::before{
     content: "";
     width: 200px;
     height: 200px;
@@ -173,8 +179,14 @@ div#arrow img{
 
 }
 #staff #arrow{
-    left: -40px;
+    left: -50px;
     top: 50%;
+}
+
+@media screen and (min-width: 1280px) {
+     #staff #arrow{
+        left: calc((-100vw + 1280px) / 4 - 50px);
+     }
 }
 #staff .category:last-child{
     position: relative;
@@ -294,13 +306,16 @@ div#arrow img{
     left: -60px;
     top: 50%;
 }
+@media screen and (min-width: 1280px) {
+    #participation #arrow{
+        left: calc((-100vw + 1280px) / 4 - 30px);
+    }
+    
+}
 #categories .container{
     position: relative;
 }
-#categories #arrow{
-    left: -100px;
-    top: 50%;
-}
+
 #participate{
     position: relative;
 }
@@ -457,10 +472,10 @@ div#arrow img{
     z-index: -1;
 
 }
-#form form button{
+#form form button, #participation a{
     position: relative;
 }
-#form form button::before{
+#form form button::before, #participation a::before{
     content: "";
     width: 100px;
     height: 100px;
@@ -472,7 +487,6 @@ div#arrow img{
     background-repeat: no-repeat;
     transform: rotate(-90deg) translateY(calc(-100% - 50px)) translateX(75%);
     animation: leftNright infinite 2s;
-
 }
 #form form .form_section:nth-child(2),#form form .form_section:nth-child(3),#form form .form_section:nth-child(4) {
     position: relative;
@@ -489,8 +503,6 @@ div#arrow img{
     background-size: contain;
     background-repeat: no-repeat;
     z-index: -1;
-
-
 }
 #form form .form_section:nth-child(3):after{
     content: "";
@@ -746,4 +758,614 @@ div#arrow img{
     background: url("../images/shapes/star.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+#guests .guests .arrow{
+    display: none;
+}
+#tickets #reservation table{
+    position: relative;
+}
+#tickets #reservation table::after{
+    content: "";
+    aspect-ratio: 1/1;
+    height: 150%;
+    width: auto;
+    background: url("../images/shapes/circle_thin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    scale: -1 1;
+    translate: -50% -50%;
+    rotate: 15deg;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+#tickets #reservation table::before{
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: -20px;
+    top: 100%;
+    background: url("../images/shapes/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate infinite linear 5s;
+    translate: -100% 0;
+}
+
+#tickets #informations::before{
+    content: "";
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    background: url("../images/shapes/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate infinite linear 5s;
+    translate: -50% -50%;
+}
+#tickets #informations > div:first-child{
+    position: relative;
+}
+#tickets #informations > div:first-child::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 150px;
+    height: 150px;
+    background: url("../images/shapes/falling_star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    translate: 20px -50%;
+}
+#tickets #validation::after{
+    content: "";
+    width: 400px;
+    height: 400px;
+    background: url("../images/shapes/circle_thin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    translate: -50% -50%;
+}
+#tickets #validation::before{
+    content: "";
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: calc(100% - (100% - 900px)/4);
+    top: 50%;
+    background: url("../images/shapes/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate infinite linear 5s;
+    translate: -50% -50%;
+}
+#tickets #validation > p:first-child::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: calc((100% - 900px)/4);
+    width: 150px;
+    height: 150px;
+    background: url("../images/shapes/falling_star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    scale: -1 1;
+    translate: -50% -100%;
+}
+@media screen and (max-width: 900px){
+    #tickets #validation > p:first-child::before{
+        width: 75px;
+        height: 75px;
+    }
+    #tickets #informations > div:first-child::after{
+        width: 75px;
+        height: 75px;
+    }
+    #tickets #informations::before{
+        width: 150px;
+        height: 150px;
+    }
+    #tickets #reservation table::before{
+        display: none;
+    }
+    #home #arrow{
+        display: none;
+    }
+    #home .home_text:after{
+        display: none;
+    }
+    #home .home_text:before{
+        background: url("../images/shapes/circle_thin.png");
+        left: 0;
+        top: 50%;
+        background-size: contain;
+        transform: scale(1) translateX(-75%) translateY(-50%);
+        background-repeat: no-repeat;
+        width: 300px;
+        height: 300px;
+        opacity: 0.5;
+    }
+    #door h1{
+        font-size: 5rem;
+    }
+    #guests .guest:nth-child(2):after{
+        display: none;
+    }
+    #guests .guest:nth-child(2) .shape{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(100% - 50px);
+        top: calc(100% - 50px);
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+    }
+    #guests .guest:nth-child(3) .shape{
+        display: none;
+    }
+    div#arrow img, div.arrow img{
+        width: 40px;
+    }
+    #guests .guests .arrow{
+        display: block;
+
+    }
+    #guests .guests{
+        position: relative;
+    }
+    #guests .guests .guest{
+        position: relative;
+    }
+    #guests .guests .guest:first-child::before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        background: url("../images/shapes/fleche.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -75px;
+        left: -50%;
+        scale: -1 1;
+        translate: 0 0;
+        animation: leftNright 2s infinite;
+
+    }
+    #guests .guests .guest:last-child::after{
+        content: "";
+        width: 75px;
+        height: 75px;
+        background: url("../images/shapes/fleche.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -75px;
+        left: 0;
+        translate: 125% 0;
+        animation: leftNright 2s infinite;
+
+    }
+    #staff h1::before, #contactPress h1::before, #legal h1::before, #categories .category:last-child h1::before, #participate h1::before{
+        width: 100px;
+        height: 100px;
+    }
+    #staff #arrow{
+        display: none;
+    }
+    #staff .category:last-child:after{
+        display: none;
+    }
+    #press:after{
+        width: 150px;
+        height: 150px;
+        content: "";
+        position: absolute;
+        top: calc(50% - 75px);
+        right: -75px;
+        z-index: -1;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        animation: rotate linear infinite 5s;
+    }
+    
+    #press .container:before{
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 75px;
+        height: 75px;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform:  translateX(-50%) translateY(25%) scale(-1);
+    
+    }
+    #title h1::after{
+        width: 100px;
+        height: 100px;
+    }
+    #works::after{
+        display: none;
+    }
+    #work h2::before{
+        display: none;
+    }
+    #work .work{
+        position: relative;
+    }
+    #work .work:after{
+        content: "";
+        width: 75px;
+        height: 75px;
+        background: url("../images/shapes/fleche.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: calc(100% - 40px);
+        left: calc(100% - 40px);
+        animation: upNdown infinite 2s;
+    }
+    #userWorks::after{
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        translate: 0 -50%;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #participation fieldset:nth-last-child(4){
+        position: relative;
+    }
+    #participation fieldset:nth-last-child(5)::after{
+        display: none;
+    }
+    #participation fieldset:nth-last-child(4)::after{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(100% - 50px);
+        top: calc(100% - 50px);
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+    }
+    #participation #arrow{
+        display: none;
+    }
+    #participation form::after{
+        width: 75px;
+        height: 75px;
+    }
+    #participate #arrow{
+        display: none;
+    }
+    #participate form > div:nth-child(2)::after{
+        width: 75px;
+        height: 75px;
+        right: -50%;
+    }
+    #participate form > div:nth-child(5)::before{
+        width: 150px;
+        height: 150px;
+        top: calc(100% - 75px);
+        left: -160px;
+        animation: rotate infinite 5s linear;
+    }
+    #participate form > div:nth-last-child(2)::after{
+        display: none;
+    }
+    #shop .article{
+        position: static;
+        margin: 0;
+    }
+    #shop{
+        position: relative;
+    }
+    #shop .article:first-child::before{
+        width: 150px;
+        height: 150px;
+        top: 0;
+        left: 0;
+        translate: -50% 25%;
+    }
+    #shop .article:last-child::after{
+        width: 150px;
+        height: 150px;
+        top: 100%;
+        left: 100%;
+        translate: -50% -0%;
+    }
+    #product .container .pictures::before{
+        display: none;
+
+    }
+    #faq::before{
+        width: 150px;
+        height: 150px;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -75px;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+        z-index: 1;
+    }
+    #product .infos{
+        position: relative;
+    }
+    #product .infos::before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 0;
+        left: -50px;
+        scale: -1;
+        translate: -100% 0;
+    }
+    #cart a.cta::before{
+        width: 50px;
+        height: 50px;
+    }
+    #cart .container{
+        position: relative;
+    }
+    #cart .container::after{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        right: 0;
+        top: 0;
+        translate: 75% 50%;
+    }
+    #form form button::before, #participation a::before{
+        width: 50px;
+        height: 50px;
+    }
+    #contact form button{
+        position: relative;
+    }
+    #contact form button::before{
+        content: "";
+        width: 50px;
+        height: 50px;
+        background: url("../images/shapes/fleche.png");
+        position: absolute;
+        left: 0;
+        top: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: rotate(-90deg) translateY(calc(-100% - 50px)) translateX(75%);
+        animation: leftNright infinite 2s;
+    }
+    #verify::before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        translate: -125% -25%;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+    
+    }
+    #contact{
+        position: relative;
+    }
+    #contact::before{
+        width: 150px;
+        height: 150px;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+        z-index: 1;
+        translate: -50% 0;
+    }
+    #contact::after{
+        width: 200px;
+        height: 200px;
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+        z-index: 1;
+        translate: 50% 25%;
+    }
+    #legal section:nth-child(4)::after{
+        display: none;
+    }
+    #legal:after{
+        width: 75px;
+        height: 75px;
+        transform: translateX(0); 
+        scale: -1;
+    }
+    #form.login form:after{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: 0px;
+        top:  -50px;
+        translate: 50% 0;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+    
+    }
+    #form p + form:before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        left: auto;
+        right: 0;
+        transform: none;
+        top: 0;
+        translate: 100% 0;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+    
+    }
+    #form form .form_section:nth-child(2):before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        left: -20px;
+        transform: translate(-100%,-75%) scaleX(-1);
+        top: 100%;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    #form form .form_section:nth-child(3):after{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 100%;
+        top: 100%;
+        translate: -25% 100%;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        animation: rotate infinite linear 5s;
+    }
+    #form form .form_section:nth-child(4)::after{
+        content: "";
+        width: 66%;
+        aspect-ratio: 1/1;
+        height: auto;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        transform: scaleX(-1) translateX(0);
+        background: url("../images/shapes/circle.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1
+    
+    }
+    #profil .container section::after{
+        display: none;
+    }
+    #profil .account_section form > div{
+        position: relative;
+    }
+    #profil .account_section form > div::after{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        top: 100%;
+        left: calc(100% + 50px);
+        transform: translate(0,-50%) scaleY(-1);
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    #profil .account_section form > div::before{
+        content: "";
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        translate: -50% -50%;
+        background: url("../images/shapes/star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    #profil .security_section form{
+        position: relative;
+    }
+    #profil .security_section form::after{
+        content: "";
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        left: 60%;
+        top: 0;
+        background: url("../images/shapes/circle.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+        transform: scaleY(-1) rotate(90deg);
+        opacity: 0.2;
+
+    }
+    #profil .security_section form::before{
+        content: "";
+        width: 75px;
+        height: 75px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        translate: 0 -100%;
+        background: url("../images/shapes/falling_star.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    #contactPress h1::before{
+        width: 150px;
+        height: 150px;
+        rotate: 20deg;
+        top: 75%;
+    }
+    
+
+    
+   
+    
+   
+
+    
 }

@@ -2,6 +2,18 @@ main > .container{
     width: calc(100% - 250px);
     position: relative
 }
+main > .container p{
+    text-align: justify;
+}
+main > .container a{
+    font-size: 3rem;
+    font-family: Moonic;
+    display: block;
+    border: solid white 1px;
+    width: fit-content;
+    margin-inline: auto;
+    padding: 2rem 3rem;
+}
 main > .container > fieldset{
     padding: 3rem;
     margin-block: 10rem;
@@ -69,4 +81,12 @@ main > .container > form div input{
     cursor: pointer;
 }
 
+@media screen and (max-width: 900px) {
+    main > .container{
+        width: 100%;
+        margin-top: 50px;
+
+    }
+    
+}
 

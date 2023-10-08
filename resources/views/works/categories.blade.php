@@ -4,7 +4,6 @@
 @endsection
 @section("content")
 <section id="categories">
-
     <div class="container">
         <div class="switch">
             <h3 class="current" onclick="exposition()" id="select_exposition">En exposition</h3>
@@ -15,8 +14,11 @@
             <div class="category">
                 <div class="categoryName">
                 <a href="{{route('category',$category)}}"><h1>{{$category}}  <span> - <?php echo count($works);?> œuvre(s)</span></h1></a>
+                <a href="{{route('category',$category)}}" class="more">Voir tout</a>
                 </div>
+                @if(count($works) > 1)<button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
                 <div class="works">
+                
                     @foreach($works as $work)
                     <div class="work">
                         <a href="{{route('work',[$category,$work->id])}}">
@@ -28,7 +30,9 @@
                     </div>
 
                     @endforeach
+                    
                 </div>
+                @if(count($works) > 1)<button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
             </div>
             @endforeach
         </div>
@@ -37,8 +41,10 @@
             <div class="category">
                 <div class="categoryName">
                 <a href="{{route('category',$category)}}"><h1>{{$category}}  <span> - <?php echo count($works);?> œuvre(s)</span></h1></a>
+                <a href="{{route('category',$category)}}" class="more">Voir tout</a>
                 </div>
-                <div class="works">
+                @if(count($works) > 1)<button class="leftArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
+                <div class="works">  
                     @foreach($works as $work)
                     <div class="work">
                         <a href="{{route('work',[$category,$work->id])}}">
@@ -50,11 +56,32 @@
                     </div>
 
                     @endforeach
+                    
                 </div>
+                @if(count($works) > 1)<button class="rightArrow"><img src="{{asset('images/shapes/fleche.png')}}" alt="Flèche"></button>@endif
             </div>
             @endforeach
         </div>
     </div>
 </section>
 <script src="{{asset('js/changeCategory.js')}}"></script>
+<script src="{{asset('js/caroussel.js')}}"></script>
+<script>
+    window.addEventListener("DOMContentLoaded",()=>{
+    if(window.innerWidth <= 900){
+        carousselStaff(".category .works",".work");
+    } else {
+        removeCaroussel(".works");
+    }
+    window.addEventListener("resize",()=>{
+        if(window.innerWidth <= 900){
+            carousselStaff(".category .works",".work");
+        } else {
+            removeCaroussel(".works");
+    
+        }
+    })
+})
+</script>
+
 @endsection
