@@ -4,7 +4,7 @@ input[type="radio"]{
 .container input[type="radio"]:not(:checked) + section{
     display: none;
 }
-#logout{
+#logout,#big_ticket{
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -15,6 +15,47 @@ input[type="radio"]{
     left: 0;
     backdrop-filter: brightness(0.5);
     z-index: 2;
+}
+#big_ticket > div{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border-radius: 30px;
+    position: relative;
+    padding-bottom: 5rem;
+}
+#big_ticket > div img{
+    width: 100%;
+    padding: 3rem;
+}
+#big_ticket > div h2{
+    font-size: 4rem;
+    margin-block: 1rem;
+    color: black;
+}
+#big_ticket button{
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    border: solid #DAC469 1px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+#big_ticket button::after{
+    content: "";
+    width: 30px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
 }
 #logout .box{
     width: fit-content;
@@ -56,6 +97,9 @@ input[type="radio"]{
 #profil .container{
     display: flex;
     margin-top: 10rem;
+}
+#profil section{
+    overflow: visible;
 }
 #profil h1{
     font-size: 6rem;
@@ -352,6 +396,111 @@ input[type="file"]{
 .leftArrow, .rightArrow{
     display: none;
 }
+.tickets_section .leftArrow, .tickets_section .rightArrow{
+    display: block;
+    position: absolute;
+    top: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    animation: leftNright 2s infinite;
+    z-index: 1;
+}
+.leftArrow{
+    left: 0;
+    scale: -1 1;
+    translate: -300% 0%;
+}
+.rightArrow{
+    translate:  300% 0;
+    right: 0;
+}
+.leftArrow img, .rightArrow img{
+    width: 30px;
+}
+.tickets_section {
+    max-width: 100%;
+}
+.tickets_section > div{
+    margin-top: 10rem;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    max-width: 100%;
+}
+.tickets_section .tickets{
+    display: flex;
+    width: 100%;
+    translate: -25% 0;
+    align-items: flex-end;
+    
+}
+.tickets_section .ticket{
+    min-width: 50%;
+    max-width: 50%;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.tickets_section .ticket.active{
+    opacity: 1;
+}
+.tickets_section .ticket{
+    margin-bottom: 50px;
+}
+.tickets_section .ticket div{
+    width: 90%;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 15px;
+    position: relative;
+    padding-bottom: 3rem;
+}
+.tickets_section .ticket div button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: white;
+    border: solid #DAC469 1px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+.tickets_section .ticket div button::after{
+    content: "";
+    width: 20px;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+.tickets_section .ticket div button::before{
+    content: "";
+    width: 1px;
+    height: 20px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+.tickets_section .ticket div img{
+    width: 100%;
+    padding: 2rem;
+}
+.tickets_section .ticket div h2{
+    font-size: 2.5rem;
+    color: black;
+    margin-block: 1rem;
+}
 @keyframes slideLeft {
     from{
         translate: -75% 0;
@@ -387,11 +536,12 @@ input[type="file"]{
         border-bottom: solid white 1px;
         margin-block: 10rem;
         position: relative;
+        flex-wrap: wrap;
     }
     #profil .container nav span{
         position: absolute;
         left: 50%;
-        top: 2rem;
+        bottom: -10rem;
         translate: -50% 0;
     }
     #profil h1{
@@ -527,6 +677,28 @@ input[type="file"]{
     }
     .works_section > div{
         position: relative;
+    }
+    .tickets_section p {
+        text-align: center;
+    }
+    .tickets_section .ticket div button{
+        width: 30px;
+        height: 30px;
+    }
+    .tickets_section .ticket div button::before{
+        width: 15px;
+        height: 1px;
+    }
+    .tickets_section .ticket div button::after{
+        width: 1px;
+        height: 15px;
+    }
+    #big_ticket > div{
+        width: 300px;
+    }
+    #big_ticket button{
+        width: 50px;
+        height: 50px;
     }
 
     

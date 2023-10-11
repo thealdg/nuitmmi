@@ -33,7 +33,7 @@
             <tbody>
                 @foreach($preorders AS $preorder)
                 <tr>
-                    <td>{{$preorder6>name}} {{$preorder->surname}}</td>
+                    <td>{{$preorder->name}} {{$preorder->surname}}</td>
                     <td>{{$preorder->productName}}</td>
                     <td style="text-transform: capitalize">{{$preorder->color}}</td>
                     <td>{{$preorder->size}}</td>

@@ -34,6 +34,7 @@
         <p>Laissez votre âme créative s’exprimer ! Emmenez nous dans votre univers graphique en partageant vos productions ! Identité visuelle, simple logo, refonte graphique, infographies diverses et variés, nous acceptons bon nombre de supports pour montrer à quel point les MMI sont talentueux !</p>
         <p>Chaque production devra être accompagnée de visuels ainsi que des fichiers de nature (.psd, .ai …) afin de prouver que les travaux vous appartiennent bien ! Vous pouvez également si vous le souhaitez, faire une vidéo pour expliquer votre production, illustrer ses étapes de construction …</p>
     </fieldset>
+    @if(url()->previous() == route('participate') || url()->full() == route('participate'))
     <form action="{{route('participateRead')}}" method="post">
         @csrf
         <div>
@@ -42,6 +43,7 @@
         </div>
         <button type="submit">participer</button>
     </form>
+    @endif
 
 
 </div>

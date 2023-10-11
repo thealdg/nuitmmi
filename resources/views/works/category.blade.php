@@ -7,7 +7,7 @@
 <section id="title" class="empty">
     <div class="container">
         <h1>Aucune œuvre n'est pour l'instant exposée.</h1>
-        <h2>Revenez plus tard, ou <span><a href="index.php?action=participate">tentez d'exposer la vôtre</a></span>.</h2>
+        <h2>Revenez plus tard, ou <span><a href="{{route('participate')}}">tentez d'exposer la vôtre</a></span>.</h2>
     </div>
 </section>
 @else

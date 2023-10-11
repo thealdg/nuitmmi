@@ -12,7 +12,7 @@
             <label for="password2">Confirmation du nouveau mot de passe</label><input type="password" name="password2"  placeholder="Confirmer nouveau mot de passe" required id="password2"></div>
             @if(session()->has("error"))
             <p id="error">{{session("error")}}</p>
-            @unset($_SESSION["error"])
+            {{session()->forget("error")}}
             @endif
             <button type="submit">Valider</button>
         </form>

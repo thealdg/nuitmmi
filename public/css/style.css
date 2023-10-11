@@ -409,7 +409,10 @@ section{
 }
 
 #error{
-    color: red;
+    color: #DAC469;
+    text-align: center;
+    width: fit-content;
+    margin-inline: auto;
 }
 header nav #cart{
     background: white;
@@ -430,6 +433,8 @@ header nav #cart{
 header nav #cart img{
     margin: 0;
     border-radius: 0;
+    object-fit: contain;
+    filter: brightness(0);
 }
 a#cart:hover{
     transform: scale(1.02);
@@ -579,7 +584,7 @@ header nav #phoneMenu{
     .account{
         flex-basis: auto;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
     }
     header.active .account a{
         display: none;
@@ -651,6 +656,8 @@ header nav #phoneMenu{
     }
     .account a{
         margin-left: 2rem;
+        width: 40px;
+        height: 40px;
     }
 }
 @media screen and (max-width: 900px) {

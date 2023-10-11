@@ -3,6 +3,16 @@
 <link rel="stylesheet" href="{{asset('css/shop.css')}}">
 @endsection
 @section("content")
+@if(session()->has("preorder_confirm"))
+<div id="confirm">
+    <div class="box">
+        <h1>Merci pour votre précommande !</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis tempora inventore necessitatibus excepturi laborum facere officiis alias. Earum libero provident cumque vitae molestiae officiis rerum odio ipsam hic. Optio mollitia non dicta, sapiente porro nobis autem atque distinctio aut deserunt?</p>
+        <button onclick="this.closest('#confirm').remove();">Fermer</button>
+    </div>
+</div>
+{{session()->forget('preorder_confirm')}}
+@endif
 <section id="shop">
     <div class="container">
         <h1>Boutique</h1>

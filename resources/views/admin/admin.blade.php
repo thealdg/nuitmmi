@@ -7,7 +7,7 @@
     <div class="container">
         <h1>Administration</h1>
         <div class="links">
-            <a href="{{route('moderation')}}">Modération</a><a href="{{route('preorders')}}">Précommandes</a><a href="{{route('stocks')}}">Stocks</a>
+            <a href="{{route('moderation')}}">Modération</a><a href="{{route('preorders')}}">Précommandes</a><a href="{{route('stocks')}}">Stocks</a><a href="{{route('tickets')}}">Billets</a>
         </div>
     </div>
 </section>

@@ -97,10 +97,23 @@ input[type="file"]{
     padding-left: 0;
     font-size: 2rem;
 }
+.description > div:nth-child(2){
+    position: relative;
+}
+.description .count{
+    position: absolute;
+    right: 0;
+    top: 1rem;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
 .files{
     display: flex;
     background-color: rgba(255, 255, 255,0.8);
     padding: 2rem;
+}
+.files > div{
+    display: block;
 }
 .files label{
     font-size: 1.8rem;
@@ -264,11 +277,17 @@ section h2{
 .hidden{
     display: none;
 }
+#preview.hidden{
+    display: none;
+}
 #preview{
     aspect-ratio: 16/9;
+    display: block;
     height: 100px;
     width: auto;
     object-fit: contain;
+    margin-top: 1rem;
+    margin-inline: auto;
 
 }
 

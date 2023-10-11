@@ -41,9 +41,9 @@
                         <h4>Couleur: <span style="text-transform: capitalize">{{$article->color}}</span></h4>
                     </div>
                     <div class="quantity">
-                        <a href="">-</a>
+                        <a href="{{route('lessCart',$article->id)}}">-</a>
                         <h4>Quantité {{$article->quantity}}</h4>
-                        <a href="">+</a>
+                        <a href="{{route('moreCart',$article->id)}}">+</a>
                     </div>
                 </div>
                 <div class="amount">
@@ -56,7 +56,7 @@
                             EUR
                         </h3>
                     </div>
-                    <a href="">Supprimer</a>
+                    <a href="{{route('deleteCart',$article->id)}}">Supprimer</a>
                 </div>
             </div>
 

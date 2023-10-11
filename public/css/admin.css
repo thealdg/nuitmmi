@@ -51,7 +51,7 @@ section td{
 section table{
     width: 100%;
     margin-inline: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 section thead, section tbody{
@@ -70,7 +70,7 @@ section i{
     margin: 0;
 }
 section a, section label{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #DAC469;
     text-decoration: none;
     cursor: pointer;
@@ -161,6 +161,8 @@ section form div.search{
     border-bottom: solid white 1px;
     padding-bottom: 0.5rem;
     font-size: 2rem;
+    width: fit-content;
+    
 }
 section form input[type="search"]{
     background: none;
@@ -168,11 +170,13 @@ section form input[type="search"]{
     outline: none;
     color: white;
     width: 200px;
-    margin-right: 1rem
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    width: 100%;
 }
 section form select, section form option{
     background: #080808;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: white;
     border: none;
     outline: none;
@@ -222,4 +226,42 @@ section .links a:hover:after{
 }
 body main {
     padding: 0;
+}
+#tickets td, #tickets th{
+    font-size: 2.5rem;
+}
+#tickets span{
+    color: #DAC469;
+}
+#tickets h2{
+    font-size: 3rem;
+    text-align: center;
+}
+@media screen and (max-width: 1280px){
+    section#validations th:nth-child(6),section#validations td:nth-child(6){
+        display: none;
+    }
+    section#validations th:nth-child(5),section#validations td:nth-child(5){
+        display: none;
+    }
+    section#validations th:nth-child(9),section#validations td:nth-child(9){
+        display: none;
+    }
+    
+    
+    
+}
+@media screen and (max-width: 900px) {
+    section#validations th:nth-child(4),section#validations td:nth-child(4){
+        display: none;
+    }
+    
+    section#validations th:nth-child(8),section#validations td:nth-child(8){
+        display: none;
+    }
+    section form div label{
+        display: none;
+    }
+    
+    
 }

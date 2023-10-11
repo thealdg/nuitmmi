@@ -15,8 +15,22 @@
             @endif
         </div>
         <div class="work">
+            @if(property_exists($work,"video") || property_exists($work,"link"))
+            <div class="thumbnail grow">
+            @else
             <div class="thumbnail">
+            @endif
                 <img src="{{asset($work->thumbnail)}}" alt="Miniature">
+                @if(property_exists($work,"video") || property_exists($work,"link"))
+                <div class="links">
+                    @if(property_exists($work,"video"))
+                    <a href="{{$work->video}}"><i class='bx bxl-youtube'></i></a>
+                    @endif
+                    @if(property_exists($work,"link"))
+                    <a href="{{$work->link}}"><i class='bx bx-link-alt' ></i></a>
+                    @endif
+                </div>
+                @endif
             </div>
             <div class="infos">
                 <h3>{{$work->name}}</h3>
@@ -29,6 +43,23 @@
         </div>
     </div>
 </section>
+@if(session()->has("admin"))
+<section id="choice">
+    <div class="container">
+        <h1>Décision de la modération</h1>
+        <form action="{{route('deny')}}" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{$work->id}}"> 
+            <div class="choice">
+                <a href="{{route('allow',$work->id)}}">Valider</a>
+                <button type="submit">Refuser</button>
+            </div>
+            <label for="more_reasons">Raisons du refus</label>
+            <textarea name="more_reasons" id="more_reasons" rows="1" placeholder="Expliquer la ou les raisons du refus" required></textarea>
+        </form>
+    </div>
+</section>
+@endif
 @if(!empty($userWorks))
 <section id="userWorks">
     <div class="container">

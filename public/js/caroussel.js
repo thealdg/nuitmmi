@@ -9,18 +9,18 @@ function carousselStaff(rowClass, cardClass){
             if(!initialRows.includes(cardRow)){
                 initialRows.push(cardRow.cloneNode(true));
             }
-
             let cards = cardRow.querySelectorAll(cardClass);
-            console.log(cards);
-            if(cards.length < 3){
-                i = 0;
-                while(cards.length < 4){
-                    cardRow.append(cards[i].cloneNode(true));
-                    i ++;
-                    cards = cardRow.querySelectorAll(cardClass);
+                if(cards.length > 0){
+                    if(cards.length < 3){
+                    i = 0;
+                    while(cards.length < 4){
+                        cardRow.append(cards[i].cloneNode(true));
+                        i ++;
+                        cards = cardRow.querySelectorAll(cardClass);
+                    }
                 }
+                cards[1].classList.add("active");  
             }
-            cards[1].classList.add("active");
             
             if(cardRow.parentElement.querySelector(".leftArrow") != null && cardRow.parentElement.querySelector(".rightArrow") != null){
                 let triggerLeft = ()=>{
@@ -51,6 +51,7 @@ function removeCaroussel(rowClass){
         for(let i = 0;i<cardRows.length;i++){
             cardRows[i].innerHTML = initialRows[i].innerHTML;
         }
+        initialRows = [];
         caroussel = false;
     }
 }

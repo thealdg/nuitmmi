@@ -20,6 +20,7 @@ class Users extends Controller
         } else{
             $line = DB::select("SELECT * FROM users WHERE email=? AND password=SHA1(?)",[$_POST["email"],$_POST["password"]]);
             if(empty($line)){
+                session(["error"=>"Email ou mot de passe incorrect, veuillez recommencer."]);
                 return redirect(route("login"));
             } else {
                 $line = $line[0];
@@ -34,7 +35,7 @@ class Users extends Controller
                 if($line->admin == 1){
                     session(["admin"=>true]);
                 }
-                return redirect("/");
+                return redirect(route("profil"));
             }
            
         }
@@ -43,37 +44,66 @@ class Users extends Controller
         if(!session()->has("id")){
             return redirect(route("login"));
         } else {
-            session()->flush();
+            session()->forget("id");
+            session()->forget("profilePicture");
+            Cookie::queue(Cookie::forget("email"));
+            Cookie::queue(Cookie::forget("password"));
             return redirect(route("login"));
         }
     }
     function register(){
+            $register = [];
+            $allow = true;
             if(!isset($_POST['name'])){
                 session(["error" => "Erreur lors de l'insertion du prénom, veuillez recommencer."]);
-                return redirect(route("register"));
-            } else if(!isset($_POST['surname'])){
+                $allow = false;
+            } else{
+                $register["name"] = $_POST["name"];
+            }
+            if(!isset($_POST['surname'])){
                 session(["error" => "Erreur lors de l'insertion du nom, veuillez recommencer."]);
-                return redirect(route("register"));
-            } else if(!isset($_POST['year'])){
+                $allow = false;
+            } else{
+                $register["surname"] = $_POST["surname"];
+            }
+            if(!isset($_POST['year'])){
                 session(["error" => "Erreur lors de l'insertion du niveau d'étude, veuillez recommencer."]);
-                return redirect(route("register"));
-            } else if(!isset($_POST['email']) or !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
+                $allow = false;
+            } else{
+                $register["year"] = $_POST["year"];
+            }
+            if(!isset($_POST['email']) or !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
                 session(["error" => "Erreur lors de l'insertion de l'email, veuillez recommencer."]);
-                return redirect(route("register"));
-            } else if(!isset($_POST['password']) or !isset($_POST['password2'])){
+                $allow = false;
+            } else{
+                $register["email"] = $_POST["email"];
+            }
+            if(!isset($_POST['password']) or !isset($_POST['password2'])){
                 session(["error" => "Erreur lors de l'insertion du mot de passe, veuillez recommencer."]);
-                return redirect(route("register"));
-            } else if($_POST['password'] != $_POST['password2']){
+                $allow = false;
+            } else{
+                $register["password"] = $_POST["password"];
+            }
+            if($_POST['password'] != $_POST['password2']){
                 session(["error" => 'Les mots de passe ne correspondent pas, veuillez recommencer.']);
-                return redirect(route("register"));
-            } else if($_POST['conditions']!='true'){
+                $allow = false;
+            } else{
+                $register["password2"] = $_POST["password2"];
+            }
+            if($_POST['conditions']!='true'){
                 session(["error" => "Veuillez accepter les conditions générales d'utilisation."]);
-                return redirect(route("register"));
+                $allow = false;
             } else {
+                $register["conditions"] = $_POST["conditions"];
+                if(!$allow){
+                    session(["register"=>$register]);
+                    return back();
+                }
                 $query = DB::select("SELECT * FROM users WHERE email=?",[$_POST["email"]]);
                 if(!empty($query)){
-                    session(["error"=>"'Adresse email déjà existante, veuillez recommencer.'"]);
-                    return redirect(route("register"));
+                    session(["error"=>"Adresse email déjà existante, veuillez recommencer."]);
+                    session(["register"=>$register]);
+                    return back();
                 } else {
                     session(["register"=>$_POST]);
                     $code = strtoupper(bin2hex(random_bytes(3)));
@@ -84,14 +114,13 @@ class Users extends Controller
             }
         }
         function validation(){
-            if(!session()->has("register") or !isset($_POST["code"]) or Cookie::get("verify")==null){
+            if(!session()->has("register") or !isset($_POST["code"]) or !Cookie::has("verify")){
                 return redirect(route("register"));
             } else {
                 if($_POST["code"] != Cookie::get("verify")){
                     session(["error"=>"Le code rentré n'est pas le bon, veuillez recommencer."]);
                     return redirect(route("register"));
                 } else {
-                    Cookie::queue(Cookie::forget("verify"));
                     DB::insert("INSERT INTO users(name,surname,email,password,year) VALUES (?,?,?,SHA1(?),?)",[session("register")["name"],session("register")["surname"],session("register")["email"],session("register")["password"],session("register")["year"]]);
                     $id = DB::select("SELECT LAST_INSERT_ID() AS id;")[0];
                     if(isset(session("register")["phone"])){
@@ -100,9 +129,13 @@ class Users extends Controller
                     if(isset(session("register")["linkedin"]) and filter_var(session("register")["linkedin"],FILTER_VALIDATE_URL) and str_contains(session("register")["linkedin"],"https://www.linkedin.com/in")){
                         DB::update("UPDATE users SET linkedin = ? WHERE id = ?",[session("register")["linkedin"],$id->id]);
                     }
-                    session()->flush();
+                    if(isset(session("register")["newsletter"])){
+                        DB::update("UPDATE users SET newsletter = 1 where id = ?",[$id->id]);
+                    }
+                    session()->forget("register");
+                    Cookie::queue(Cookie::forget("verify"));
                     session(["id"=>$id->id]);
-                    return redirect("/");
+                    return redirect(route("profil"));
                 }
             }
         }
@@ -161,6 +194,13 @@ class Users extends Controller
                         session(["error"=>"Adresse email non reconnue, veuillez recommencer."]);
                         return back();
                     } else {
+                        if(session()->has("email_timeout")){
+                            if(session("email_timeout") > time()){
+                                session(["error"=>"La prochaine requête sera disponible dans ".session("email_timeout")-time()." secondes"]);
+                                return back();
+                            }
+                        }
+                        session(["email_timeout"=>time()+180]);
                         $query = $query[0];
                         session(["token"=>["email"=>$_POST["email"],"code"=>bin2hex(random_bytes(10))]]);
                         Mail::to($_POST["email"])->send(new ResetPassword($query->name." ".$query->surname,$query->email,session("token")["code"]));
@@ -171,7 +211,7 @@ class Users extends Controller
             }
             function changePasswordT(){
                 if(!isset($_POST["password1"]) or !isset($_POST["password2"]) or !session()->has("token")){
-                    session(["error"=>"Erreur lors de l'insertion des mots de passes, veuillez recommencer."]);
+                    session(["error"=>"Erreur lors de l'insertion des mots de passe, veuillez recommencer."]);
                     return back();
                 } else {
                     if($_POST["password1"]!=$_POST["password2"]){
@@ -181,6 +221,32 @@ class Users extends Controller
                         DB::update("UPDATE users SET password = SHA1(?) WHERE email LIKE ?",[$_POST["password1"],session("token")["email"]]);
                         return redirect(route("login"));
                     }
+                }
+            }
+            function resetCode(){
+                if(!Cookie::has("verify") or (!session()->has("register") and !session()->has("preorder"))){
+                    return redirect(url()->previous());
+                } else {
+                    if(session()->has("email_timeout")){
+                        if(session("email_timeout") > time()){
+                            session(["error"=>"La prochaine requête sera disponible dans ".session("email_timeout")-time()." secondes"]);
+                            return redirect(url()->previous());
+                        }
+                    }
+                    session(["email_timeout"=>time()+180]);
+                    $code = strtoupper(bin2hex(random_bytes(3)));
+                    Cookie::queue("verify",$code,15);
+                    if(session()->has("register")){
+                        $email = session("register")["email"];
+                        $name = session("register")["name"];
+                        $surname = session("register")["surname"];
+                    } else if(session()->has("preorder")){
+                        $email = session("preorder")["email"];
+                        $name = session("preorder")["name"];
+                        $surname = session("preorder")["surname"];
+                    }
+                    Mail::to($email)->send(new Validation($name." ".$surname,$code));
+                    return redirect(url()->previous());
                 }
             }
         }

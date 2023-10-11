@@ -17,7 +17,7 @@
             <div id="countdown"></div>
             <div class="buttons">
                 <a href="{{route('participate')}}" class="cta">participation &nbsp;&rarr;</a>
-                <a href="#" class="cta">réserver &nbsp;&rarr;</a>
+                <a href="{{route('ticketing')}}" class="cta">réserver &nbsp;&rarr;</a>
             </div>
             
         </div>

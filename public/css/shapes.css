@@ -825,7 +825,7 @@ div#arrow img, div.arrow img{
     background-repeat: no-repeat;
     translate: 20px -50%;
 }
-#tickets #validation::after{
+#tickets #validation::after, #tickets #validated::after{
     content: "";
     width: 400px;
     height: 400px;
@@ -837,7 +837,7 @@ div#arrow img, div.arrow img{
     top: 50%;
     translate: -50% -50%;
 }
-#tickets #validation::before{
+#tickets #validation::before, #tickets #validated::before{
     content: "";
     width: 150px;
     height: 150px;
@@ -850,7 +850,7 @@ div#arrow img, div.arrow img{
     animation: rotate infinite linear 5s;
     translate: -50% -50%;
 }
-#tickets #validation > p:first-child::before{
+#tickets #validation > p:first-child::before, #tickets #validated > p:nth-child(2)::before{
     content: "";
     position: absolute;
     top: -20px;
@@ -863,8 +863,23 @@ div#arrow img, div.arrow img{
     scale: -1 1;
     translate: -50% -100%;
 }
+
+#tickets #validated > p:nth-child(2)::before{
+    top: 15rem;
+    translate: -50% 0;
+}
+
+#error_404 .container .error .star{
+    width: 150px;
+    height: 150px;
+    background: url("../images/shapes/star.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: rotate linear infinite 5s;
+    margin-inline: 2rem;
+}
 @media screen and (max-width: 900px){
-    #tickets #validation > p:first-child::before{
+    #tickets #validation > p:first-child::before, #tickets #validated > p:nth-child(2)::before{
         width: 75px;
         height: 75px;
     }

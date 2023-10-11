@@ -14,7 +14,7 @@ class Shop extends Controller
         if(!isset($_POST["color"]) or !isset($_POST["quantity"]) or !isset($_POST["id"])){
             return back();
         } else {
-            if(isset($_POST["size"])){
+            if(isset($_POST["size"]) && $_POST["size"]!="unique"){
                 $line = DB::select("SELECT products.* , merch.name, merch.price FROM products JOIN merch ON products.idMerch = merch.id WHERE idMerch = ? AND size = ? AND color = ?",[$_POST["id"],$_POST["size"],$_POST["color"]]);
             } else {
                 $line = DB::select("SELECT products.* , merch.name, merch.price FROM products JOIN merch ON products.idMerch = merch.id WHERE idMerch = ? AND color = ?",[$_POST["id"],$_POST["color"]]);
@@ -25,10 +25,8 @@ class Shop extends Controller
                 $line = $line[0];
                 $line->quantity = intval($_POST["quantity"]);
                 if(!session()->has("cart") or empty(session("cart"))){
-                    $firstArticle = true;
                     session(["cart"=>[$line->id=>$line]]);
                 } else {
-                    $firstArticle = false;
                     if(isset(session("cart")[$line->id])){
                         session("cart")[$line->id]->quantity += $line->quantity;
                     } else {
@@ -77,7 +75,7 @@ class Shop extends Controller
                         for($i=0;$i<6;$i++){
                             $orderNumber = $orderNumber.rand(0,9);
                         }
-                        DB::insert("INSERT INTO preorders(orderNumber, name, surname, email, idProduct, quantity) VALUES (?,?,?,?,?,?); ",[$orderNumber,session("preorder")["name"],session("preorder")["surname"],session("preorder")["email"],$product->id,$product->quantity]);
+                        DB::insert("INSERT INTO preorders(orderNumber, name, surname, email, idProduct, quantity, date) VALUES (?,?,?,?,?,?,?); ",[$orderNumber,session("preorder")["name"],session("preorder")["surname"],session("preorder")["email"],$product->id,$product->quantity,date("Y-m-d")]);
                         DB::update("UPDATE products SET sold = (sold + ?) WHERE id = ?",[$product->quantity,$product->id]);
                         $article = [];
                         foreach($product as $k=>$v){
@@ -89,9 +87,46 @@ class Shop extends Controller
                     Mail::to(session("preorder")["email"])->send(new Preorder($cart,session("preorder")));
                     session()->forget("cart");
                     session()->forget("preorder");
+                    session(["preorder_confirm"=>true]);
                     return redirect(route("shop"));
 
             }
+        }
+    }
+
+    function deleteCart($id){
+        if(!session()->has("cart") || !array_key_exists($id,session("cart"))){
+            abort("404");
+        } else {
+            $cart = session("cart");
+            unset($cart[$id]);
+            session(["cart"=>$cart]);
+            return redirect(route("cart"));
+        }
+    }
+
+    function moreCart($id){
+        if(!session()->has("cart") || !array_key_exists($id,session("cart"))){
+            abort("404");
+        } else {
+            $cart = session("cart");
+            $cart[$id]->quantity+=1;
+            session(["cart"=>$cart]);
+            return redirect(route("cart"));
+        }
+    }
+
+    function lessCart($id){
+        if(!session()->has("cart") || !array_key_exists($id,session("cart"))){
+            abort("404");
+        } else {
+            $cart = session("cart");
+            $cart[$id]->quantity-=1;
+            if($cart[$id]->quantity<=0){
+                unset($cart[$id]);
+            }
+            session(["cart"=>$cart]);
+            return redirect(route("cart"));
         }
     }
 }

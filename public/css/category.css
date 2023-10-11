@@ -14,6 +14,16 @@ section#title.empty{
     min-height: 100vh;
     padding: 0;
 }
+section#title.empty h1{
+    text-align: center;
+}
+section#title.empty h2{
+    text-align: center;
+    font-family: Moonic;
+}
+section#title.empty h2 span a{
+    font-family: Moonic;
+}
 section#title.empty a{
     text-decoration: none;
     position: relative;
@@ -37,7 +47,7 @@ section#title.empty a::after{
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: #DAC469;
+    background: linear-gradient(45deg,#845917,#DAC469 50%);
     bottom: -5px;
     left: 0;
     transform: scaleX(0);

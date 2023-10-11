@@ -13,10 +13,10 @@
             <input type="text" name="code" placeholder="XXXXXX" minlength="6" maxlength="6" id="code" size="5" required>
         </form>
         <p>Veuillez garder cette page ouverte tout au long de la procédure.</p>
-        <a href="index.php?action=resetPreorderCode">Renvoyer un nouveau code</a>
-        @if(isset($_SESSION["error"]))
-            <p id="error">{{$_SESSION["error"]}}</p>
-            @unset($_SESSION["error"])
+        <a href="{{route('resetCode')}}">Renvoyer un nouveau code</a>
+        @if(session()->has("error"))
+            <p id="error">{{session("error")}}</p>
+            {{session()->forget("error")}}
             @endif
     </div>
 </section>

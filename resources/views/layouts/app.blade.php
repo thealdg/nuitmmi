@@ -56,10 +56,11 @@ $headerCategories = DB::select("SELECT * FROM categories");
                 <a href="{{route('about')}}">À propos</a>
                 <div class="main_links">
                     <a href="{{route('participate')}}">Participer</a>
-                    <a href="#">Réserver</a>
+                    <a href="{{route('ticketing')}}">Réserver</a>
                 </div>
                 <div>
                     <a href="{{route('profil')}}">Mon compte</a>
+                    <a href="{{route('admin')}}">Administration</a>
                 </div>
             </div>
             <div class="account">
@@ -75,17 +76,13 @@ $headerCategories = DB::select("SELECT * FROM categories");
                         ?>
                     </div></a>
                     @endif
-                    <a href="#" class="button">Réserver</a>
-                        @if(session()->has('id'))
-                        <a href="{{route('profil')}}">
-                        @else
-                        <a href="{{route('login')}}">
-                        @endif
+                    <a href="{{route('ticketing')}}" class="button">Réserver</a>
+                       <a href="{{route('profil')}}">
                             @if(session()->has("profilePicture"))
                             <img src="{{asset(session('profilePicture'))}}" alt="Photo de profil">
 
                             @else
-                            <img src="{{asset('images/icons/profile.png')}}" alt="Photo de profil" style="border-radius: 0">
+                            <img src="{{asset('images/icons/profile.png')}}" alt="Photo de profil" style="border-radius: 0; object-fit: contain">
                            
                             @endif</a>
                             <div id="burger" onclick="document.querySelector('header').classList.toggle('active')">
@@ -104,7 +101,7 @@ $headerCategories = DB::select("SELECT * FROM categories");
                     <div class="footer_title">
                         <h3>La Nuit MMI</h3>
                         <div class="underline"></div>
-                        <a href="{{route('participate')}}?modalites">Modalités</a>
+                        <a href="{{route('modalites')}}">Modalités</a>
                         <a href="{{route('competition')}}">Compétition</a>
                         <a href="https://www.youtube.com/watch?v=BOHiQL9b2UY">Édition précédente</a>
                     </div>

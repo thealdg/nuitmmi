@@ -41,6 +41,46 @@
 .leftArrow, .rightArrow{
     display: none;
 }
+#confirm{
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: brightness(0.3);
+    z-index: 4;
+}
+#confirm > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid #DAC469 1px;
+    background-color: #080808;
+    padding: 5rem 8rem;
+}
+#confirm h1{
+    font-size: 4rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+#confirm p{
+    max-width: 700px;
+    text-align: justify;
+    font-size: 1.8rem;
+}
+#confirm button{
+    background-color: white;
+    border: none;
+    font-size: 2rem;
+    color: black;
+    padding: 1rem 4rem;
+    margin-top: 5rem;
+    cursor: pointer;
+}
 @keyframes slideLeft {
     from{
         translate: -33% 0;
@@ -60,6 +100,12 @@
     
 }
 @media screen and (max-width: 900px){
+    #confirm > div{
+        max-width: 90%;
+    }
+    #confirm h1{
+        text-align: center;
+    }
     #shop{
         padding-inline: 0;
     }

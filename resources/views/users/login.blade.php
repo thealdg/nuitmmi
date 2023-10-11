@@ -12,9 +12,9 @@
             <div>
                 <div><div><input type="checkbox" name="remember" id="remember" value="true"><label for="remember">Se souvenir de moi</label></div></div>
             </div>
-            @if(isset($_SESSION["error"]))
-            <p id="error">{{$_SESSION["error"]}}</p>
-            @unset($_SESSION["error"])
+            @if(session()->has("error"))
+            <p id="error">{{session("error")}}</p>
+            {{session()->forget("error")}}
             @endif
             <button type="submit">Valider</button>
             <a href="{{route('register')}}">Pas de compte ? <span>Inscrivez-vous !</span></a>

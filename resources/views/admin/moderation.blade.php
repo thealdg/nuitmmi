@@ -10,14 +10,15 @@
         <table>
             <thead>
                 <tr>
-                    <th>Nom du participant</th>
+                    <th>Nom</th>
                     <th>Titre</th>
                     <th>Catégorie</th>
                     <th>Email</th>
                     <th>Téléphone</th>
                     <th>Compétition</th>
-                    <th>Accéder à l'oeuvre</th>
-                    <th>Décision</th>
+                    <th>Accéder</th>
+                    <th>Archive</th>
+                    <th>Statut</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,37 +36,8 @@
                     <td>Non</td>
                     @endif
                     <td><a href="{{route('work',[$validation->categoryName,$validation->workId])}}">Voir</a></td>
-                    <td><div class="decision">
-                                <label for="deny">X</label>
-                                <input type="checkbox" id="deny">
-                                <div class="deny_form">
-                                    <div>
-                                        <label for="deny">X</label>
-                                        <h2>Rejeter une oeuvre</h2>
-                                        <form action="{{route('deny')}}" method="post">
-                                            @csrf
-                                            <div class="reasons">
-                                                <div>
-                                                    <input type="checkbox" name="reasons[]" id="plagiat" value="Atteinte aux droits d'auteurs">
-                                                    <label for="plagiat">Atteinte aux droits d'auteurs</label>
-                                                </div>
-                                                <div>
-                                                    <input type="checkbox" name="reasons[]" id="respect" value="Non respect des conditions de participation">
-                                                    <label for="respect">Non respect des conditions de participation</label>
-                                                </div>
-                                                <div>
-                                                    <input type="checkbox" name="reasons[]" id="neutral" value="Oeuvre non neutre">
-                                                    <label for="neutral">Oeuvre non neutre</label>
-                                                </div>
-                                            </div>
-                                            <textarea name="more_reasons" rows="5" placeholder="Autres raisons"></textarea>
-                                            <input type="hidden" name="id" value="{{$validation->workId}}">
-                                            <button type="submit">Rejeter la participation</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            <a href="{{route('allow',[$validation->workId])}}"><i class='bx bx-check'></i></a>
-                        </div></td>
+                    <td><a href="{{url($validation->proof)}}">Télécharger</a></td>
+                    <td>@if($validation->result == 1) Validée @elseif($validation->result == 0 && $validation->result != null) Refusée @else En cours @endif</td>
                 </tr>
                 @endforeach
                 @endif
