@@ -57,5 +57,5 @@ les administrateurs.
 -------------------------------------------
 
 Je pense avoir dit le principal. Je vous souhaite bon courage dans l'exploration du site, en espérant qu'il soit conforme à vos attentes.
-Bonne journéé, et merci d'avoir lu !
+Bonne journée, et merci d'avoir lu !
 	
